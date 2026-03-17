@@ -19,6 +19,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from package_manager import PackageManager
+from update_check import (
+    check_pakman_update,
+    check_package_updates,
+    is_locally_modified,
+    PAKMAN_VERSION,
+)
 
 _pm = None
 _registry = None
@@ -87,6 +93,7 @@ def cmd_list(args):
     packages = pm.list_packages()
     if not packages:
         print("No packages installed.")
+        _print_update_notices([])
         return
     print(f"{'Package':<28} {'Version':<10} {'Status':<12} Source")
     print("-" * 72)
@@ -97,6 +104,28 @@ def cmd_list(args):
         source  = p.get("source", "local")
         print(f"{name:<28} {version:<10} {status:<12} {source}")
     print(f"\n{len(packages)} package(s) installed.")
+    _print_update_notices(packages)
+
+
+def _print_update_notices(packages: list):
+    """Quietly check for updates (cached 24h) and print a one-line notice if any."""
+    try:
+        # PakMan self-update
+        newer_pakman = check_pakman_update()
+        if newer_pakman:
+            print(f"\n  [pakman] New version available: {PAKMAN_VERSION} -> {newer_pakman}")
+            print(  "           Run: pip install --upgrade git+https://github.com/udahar/PakMan.git")
+
+        # Package updates (packages that exist in the remote registry)
+        if packages:
+            available = check_package_updates(packages)
+            if available:
+                names = ", ".join(p["name"] for p in available[:5])
+                extra = f" (+{len(available)-5} more)" if len(available) > 5 else ""
+                print(f"\n  [packages] Updates may be available for: {names}{extra}")
+                print(  "             Run: pakman update")
+    except Exception:
+        pass  # Never let the update check crash the main command
 
 
 def cmd_install(args):
@@ -132,11 +161,34 @@ def cmd_remove(args):
 
 def cmd_update(args):
     pm = _get_pm()
-    name = args.package or None
-    target = name or "all packages"
-    print(f"Updating {target} ...")
+    packages = pm.list_packages()
+
+    # Determine which packages to update
+    targets = [p for p in packages if not args.package or p["name"] == args.package]
+    if not targets:
+        print(f"Package '{args.package}' not installed." if args.package else "No packages installed.")
+        return
+
+    # Hash guard: warn about locally-modified packages before overwriting
+    modified = []
+    for p in targets:
+        if is_locally_modified(p["name"], pm.packages_dir, p.get("hash", "")):
+            modified.append(p["name"])
+
+    if modified and not args.yes:
+        print("  Warning: these packages have been modified locally:")
+        for m in modified:
+            print(f"    - {m}")
+        print("  Updating will overwrite your local changes.")
+        answer = input("  Continue? [y/N] ").strip().lower()
+        if answer != "y":
+            print("  Aborted.")
+            return
+
+    target_label = args.package or "all packages"
+    print(f"Updating {target_label} ...")
     try:
-        pm.update(name, auto_confirm=True)
+        pm.update(args.package or None, auto_confirm=True)
         print("  Done.")
     except Exception as e:
         print(f"  Error: {e}", file=sys.stderr)
@@ -243,6 +295,8 @@ def main():
     # update
     p_update = sub.add_parser("update", help="update packages")
     p_update.add_argument("package", nargs="?", help="package name (omit for all)")
+    p_update.add_argument("--yes", "-y", action="store_true",
+                          help="skip modified-file warning (CI/automation)")
     p_update.set_defaults(func=cmd_update)
 
     # info

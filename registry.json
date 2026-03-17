@@ -1,6 +1,7 @@
 {
   "_comment": "Official PakMan package registry. All packages are hosted at github.com/udahar/. Only udahar repos are trusted by the security layer \u00e2\u20ac\u201d this is not user-configurable.",
   "_registry_url": "https://raw.githubusercontent.com/udahar/PakMan/master/registry.json",
+  "_pakman_version": "1.0.0",
   "packages": {
     "PromptSKLib": {
       "repo": "github.com/udahar/PakMan",

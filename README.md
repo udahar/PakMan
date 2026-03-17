@@ -1,427 +1,231 @@
-# ModLib - Module Library & Package Manager
+# PakMan
 
-**Purpose:** Self-awareness layer + package manager for the Frank AI platform
-
-**Features:**
-- ✅ Module registry (auto-discovery)
-- ✅ Health monitoring & compliance checks
-- ✅ **Package Manager** (install from GitHub/local)
-- ✅ **Hot-reload** (load/reload modules without restart)
-- ✅ File watching (auto-reload on changes)
-- ✅ Capability discovery
-
----
-
-## Quick Start
-
-### Install Packages
-
-```python
-from ModLib import install, list_packages, get_package
-
-# Install from GitHub
-install("github.com/richard/browser_memory")
-install("github.com/richard/memory_graph")
-
-# Install from local path
-install("./browser_memory")
-
-# List installed
-packages = list_packages()
-for pkg in packages:
-    print(f"{pkg['name']} - {pkg['status']}")
-
-# Get and use
-bm = get_package("browser_memory")
-memory = bm.BrowserMemory()
-```
-
-### Hot-Reload
-
-```python
-from ModLib import hotload
-
-# Load without restart
-mod = hotload.load("browser_memory")
-
-# Auto-reload on file changes
-import asyncio
-asyncio.run(hotload.start_watching(auto_reload=True))
-```
-
-### Module Registry
-
-```python
-from ModLib import modules, status
-
-# Quick status
-print(status())
-
-# Output:
-# 🟢 browser_memory – online
-# 🟢 memory_graph – online
-# 🟢 AiOSKernel – online
-```
-
----
-
-## Package Manager Usage
-
-### Install
-
-```python
-from ModLib import install
-
-# From GitHub
-install("github.com/richard/browser_memory")
-
-# From local path
-install("./my_package")
-
-# Upgrade existing
-install("github.com/richard/browser_memory", upgrade=True)
-```
-
-### List Packages
-
-```python
-from ModLib import list_packages
-
-packages = list_packages()
-for pkg in packages:
-    print(f"{pkg['name']} v{pkg['version']} - {pkg['status']}")
-    print(f"  Source: {pkg['source']}")
-    print(f"  Importable: {pkg['importable']}")
-```
-
-### Get Package
-
-```python
-from ModLib import get_package
-
-# Get module
-bm = get_package("browser_memory")
-
-# Use it
-memory = bm.BrowserMemory()
-```
-
-### Update
-
-```python
-from ModLib import update
-
-# Update all
-update()
-
-# Update specific
-update("browser_memory")
-```
-
-### Uninstall
-
-```python
-from ModLib import uninstall
-
-uninstall("browser_memory")
-```
-
-### Search
-
-```python
-from ModLib import search
-
-results = search("memory")
-for pkg in results:
-    print(f"{pkg['name']}: {pkg['source']}")
-```
-
-### Stats
-
-```python
-from ModLib import get_stats
-
-stats = get_stats()
-print(f"Total packages: {stats['total_packages']}")
-print(f"Importable: {stats['importable']}")
-print(f"Packages dir: {stats['packages_dir']}")
-```
-
----
-
-## Hot-Reload Usage
-
-### Manual Reload
-
-```python
-from ModLib import hotload
-
-# Load
-mod = hotload.load("MyModule")
-
-# Reload
-mod = hotload.reload("MyModule")
-
-# Unload
-hotload.unload("MyModule")
-```
-
-### Auto-Watch
-
-```python
-import asyncio
-from ModLib import hotload
-
-# Start watching
-asyncio.run(hotload.start_watching(auto_reload=True))
-
-# Stop watching
-asyncio.run(hotload.stop_watching())
-```
-
-### Callbacks
-
-```python
-from ModLib import register_callback
-
-def on_loaded(name):
-    print(f"✅ {name} loaded")
-
-def on_reloaded(name):
-    print(f"🔄 {name} reloaded")
-
-register_callback("loaded", on_loaded)
-register_callback("reloaded", on_reloaded)
-```
-
----
-
-## Health Monitoring
-
-```python
-from ModLib import get_registry
-
-registry = get_registry()
-
-# Get health scores
-health = registry.check_health()
-
-for module, score in health.items():
-    status = "🟢" if score > 0.8 else "🟡" if score > 0.5 else "🔴"
-    print(f"{status} {module}: {score*100:.0f}%")
-```
-
----
-
-## CLI Usage
+**Package manager for AI-native apps. Install a package, and every app that knows about PakMan gains the capability automatically.**
 
 ```bash
-# Show all modules
-python -m ModLib
-
-# Show online modules
-python -m ModLib --status online
-
-# Show capabilities
-python -m ModLib --capabilities
-
-# Health check
-python -m ModLib --health
-
-# List installed packages
-python -m ModLib --packages
-
-# Install package
-python -m ModLib --install github.com/richard/browser_memory
-
-# Update packages
-python -m ModLib --update
+pip install git+https://github.com/udahar/PakMan.git
+pakman install PromptSKLib
+pakman list
 ```
 
 ---
 
-## Architecture
+## What It Is
 
+PakMan is a lightweight package manager layer for a growing ecosystem of AI productivity tools. The core idea is simple:
+
+- You install **PakMan** once.
+- You install **packages** individually — only what you need.
+- Any **app** in the ecosystem that hooks into PakMan auto-discovers your installed packages and expands its own capabilities without any extra wiring.
+
+Think of it like a plugin bus. The packages are the plugins. The apps are the hosts. PakMan is the registry that connects them.
+
+---
+
+## The Ecosystem
+
+### Apps (hosts)
+
+Apps hook into PakMan on startup and discover whatever packages are installed. Installing a package extends **all** compatible apps at once.
+
+| App | What it does |
+|-----|-------------|
+| **Claw** | AI coding and automation layer |
+| **ZolaPress** | AI-native CMS |
+| **[Browser]** | Semantic web intelligence *(name TBD)* |
+
+### Packages (capabilities)
+
+Each package lives in its own repo and is installed individually.
+
+| Package | What it adds |
+|---------|-------------|
+| `PromptSKLib` | 26 reusable AI reasoning skills and strategy scaffolds |
+| `PromptForge` | A/B prompt testing and prompt evolution pipeline |
+| `PromptOS` | Prompt runtime with memory, routing, and state |
+| `context_distiller` | Passage-based summarization for long documents |
+| `cost_optimizer` | Model routing by price/quality tradeoff |
+| `model_router` | Task-type → model strategy selection |
+| `GapMan` | Gap analysis and hard test generation |
+| `eval_framework` | Evaluation harness for model outputs |
+| *(more coming)* | |
+
+---
+
+## Install
+
+### 1. Install PakMan
+
+```bash
+pip install git+https://github.com/udahar/PakMan.git
 ```
-Frank AI Platform
-    │
-    ├─ ModLib (Package Manager + Registry)
-    │   ├─ Package Manager
-    │   │   ├─ install() - from GitHub/local
-    │   │   ├─ uninstall()
-    │   │   ├─ update()
-    │   │   └─ list_packages()
-    │   │
-    │   ├─ Hot-Loader
-    │   │   ├─ load()
-    │   │   ├─ reload()
-    │   │   ├─ unload()
-    │   │   └─ watch() [auto-reload]
-    │   │
-    │   ├─ Registry
-    │   │   ├─ scan_modules()
-    │   │   ├─ list_modules()
-    │   │   └─ check_health()
-    │   │
-    │   └─ Health
-    │       ├─ compliance checks
-    │       └─ dependency tracking
-    │
-    └─ packages/ (installed packages)
-        ├─ browser_memory/
-        ├─ memory_graph/
-        └─ AiOSKernel/
+
+This gives you the `pakman` command. No packages are installed yet.
+
+### 2. Install only what you need
+
+```bash
+pakman install PromptSKLib      # pull just this package
+pakman install context_distiller
+pakman install cost_optimizer
+```
+
+Each `install` pulls only the requested package from its own repo. You don't get the whole ecosystem — just what you asked for.
+
+### 3. See what's installed
+
+```bash
+pakman list
 ```
 
 ---
 
-## Storage
+## CLI Reference
 
-### SQLite Database
-
-**modlib_packages.db:**
-```sql
-CREATE TABLE packages (
-    name TEXT PRIMARY KEY,
-    source TEXT,
-    version TEXT,
-    installed_at TEXT,
-    updated_at TEXT,
-    status TEXT,
-    requirements TEXT,
-    metadata TEXT
-)
-```
-
-### Packages Directory
-
-```
-ModLib/packages/
-├── browser_memory/
-│   ├── __init__.py
-│   ├── README.md
-│   └── requirements.txt
-├── memory_graph/
-└── AiOSKernel/
+```bash
+pakman install <name>       # install a package by name
+pakman install <name> -u    # upgrade if already installed
+pakman list                 # show installed packages
+pakman remove <name>        # uninstall
+pakman update [name]        # update one or all packages
+pakman info <name>          # show package details
+pakman search <query>       # search available packages
 ```
 
 ---
 
-## GitHub Integration
+## How Packages Auto-Wire Into Apps
 
-### Supported URL Formats
+When you install a package, it lands in PakMan's `packages/` directory. Every PakMan-aware app checks this directory on startup (or via hot-reload) and loads what's there.
+
+```
+User installs PromptSKLib
+       ↓
+pakman downloads udahar/PromptSKLib → packages/PromptSKLib/
+       ↓
+Claw starts up → scans packages/ → finds PromptSKLib
+       ↓
+Claw's task briefs now include PromptSKLib strategy scaffolds automatically
+       ↓
+No config. No wiring. Just works.
+```
+
+The same PromptSKLib install also wires into ZolaPress, the Browser, and any other PakMan-aware app running on the same machine.
+
+---
+
+## How App Authors Hook In
+
+Apps discover PakMan packages by scanning the install directory:
 
 ```python
-# Full URL
-install("github.com/richard/browser_memory")
+from package_manager import PackageManager
 
-# With branch
-install("github.com/richard/browser_memory/tree/main")
+pm = PackageManager()
+installed = pm.list_packages()
 
-# Short form
-install("richard/browser_memory")
+for pkg in installed:
+    # load and use pkg["name"]
+    module = pm.get_package(pkg["name"])
+    # expand app capabilities with module
 ```
 
-### How It Works
-
-1. Clone from GitHub to `ModLib/packages/`
-2. Install `requirements.txt` dependencies via pip
-3. Register in SQLite database
-4. Hot-load the module
-5. Ready to import!
+Or via the hot-load watcher — apps can subscribe to package install/remove events and update themselves live without a restart.
 
 ---
 
-## Examples
+## Package Registry
 
-### Example 1: Install Browser Memory
+PakMan resolves short names (e.g. `PromptSKLib`) to GitHub repos via a registry file. When you run `pakman install PromptSKLib`, it looks up the registry, finds the repo URL, and clones just that package.
 
-```python
-from ModLib import install, get_package
-
-# Install
-install("github.com/richard/browser_memory")
-
-# Use
-bm = get_package("browser_memory")
-memory = bm.BrowserMemory()
-
-# Add pages
-memory.add_page(
-    url="https://example.com",
-    title="My Page",
-    content="Content..."
-)
-
-# Search
-results = memory.search("authentication")
+```json
+{
+  "PromptSKLib":       "github.com/udahar/PromptSKLib",
+  "PromptForge":       "github.com/udahar/PromptForge",
+  "context_distiller": "github.com/udahar/context_distiller",
+  "cost_optimizer":    "github.com/udahar/cost_optimizer"
+}
 ```
 
-### Example 2: Development Workflow
+You can also install directly by URL:
 
-```python
-from ModLib import hotload, install
-
-# Install for first time
-install("./browser_memory")
-
-# Start watching
-import asyncio
-asyncio.run(hotload.start_watching(auto_reload=True))
-
-# Now edit browser_memory files
-# Changes auto-reload!
-```
-
-### Example 3: Update All Packages
-
-```python
-from ModLib import update, list_packages
-
-# Update all
-updated = update()
-print(f"Updated {len(updated)} packages")
-
-# Check versions
-packages = list_packages()
-for pkg in packages:
-    print(f"{pkg['name']} v{pkg['version']}")
+```bash
+pakman install github.com/udahar/PromptSKLib
+pakman install ./my_local_package
 ```
 
 ---
 
-## Files
+## Philosophy
 
-| File | Purpose | Lines |
-|------|---------|-------|
-| `__init__.py` | Main exports | ~100 |
-| `package_manager.py` | Package installer | ~400 |
-| `hotload.py` | Hot-reload loader | ~300 |
-| `health.py` | Health checks | ~250 |
-| `README.md` | This documentation | - |
+- **Base is small.** Installing PakMan gives you the manager, nothing else.
+- **Packages are optional.** Install only what your use case needs.
+- **No manual wiring.** Apps auto-expand when you install a package.
+- **Each package is independent.** Separate repos, separate versioning, separate changelog.
+- **Read the manual.** Each package has its own README describing what it adds and how to get the most out of it.
 
-**Total:** ~1,050 lines
+---
+
+## Security
+
+- Packages from `github.com/udahar/*` are trusted by default.
+- All installs compute and store a SHA256 hash for integrity verification.
+- Rollback to any previous version at any time.
+- Changelog is displayed before upgrades.
+
+```bash
+pakman update PromptSKLib     # shows changelog, then upgrades
+```
 
 ---
 
 ## Status
 
-**✅ Implemented:**
-- Module registry (auto-discovery)
-- Health monitoring
-- Package installer (GitHub/local)
-- Hot-reload (manual + auto-watch)
-- SQLite persistence
-- Dependency management
+**Implemented:**
+- `pakman` CLI (install / list / remove / update / info / search)
+- pip-installable via `pip install git+https://...`
+- GitHub install, local install, upgrade, rollback
+- SHA256 hash verification
+- Hot-reload (load packages without app restart)
+- SQLite package registry
 
-**🔧 TODO:**
-- CLI interface
-- GitHub authentication (for private repos)
-- Package versioning
-- Dependency resolution
-- Uninstall cleanup
+**Coming:**
+- Public package registry JSON (short-name → repo URL resolution)
+- Per-package `pakman.toml` manifest standard
+- Dependency resolution between packages
+- Private repo support (GitHub token)
+- `pakman publish` to register a new package
 
 ---
 
-**Version:** 2.0 (with package manager)
-**Next:** CLI and versioning
+## Writing a Package
+
+Any directory with an `__init__.py` and a `README.md` is a valid PakMan package.
+
+```
+my_package/
+├── __init__.py          # export your API
+├── README.md            # required — what does this package add?
+├── pakman.toml          # optional — name, version, deps, compatible apps
+└── requirements.txt     # optional — pip dependencies
+```
+
+```toml
+# pakman.toml
+[package]
+name = "my_package"
+version = "1.0.0"
+description = "What this adds to the ecosystem"
+compatible_apps = ["Claw", "ZolaPress"]
+```
+
+Publish it to GitHub and it's installable by anyone:
+
+```bash
+pakman install github.com/you/my_package
+```
+
+---
+
+**Author:** udahar
+**License:** MIT *(coming — currently private)*

@@ -1,255 +1,406 @@
 {
-  "_comment": "Official PakMan package registry. All packages are hosted at github.com/udahar/. Only udahar repos are trusted by the security layer — this is not user-configurable.",
+  "_comment": "Official PakMan package registry. All packages are hosted at github.com/udahar/. Only udahar repos are trusted by the security layer \u00e2\u20ac\u201d this is not user-configurable.",
   "_registry_url": "https://raw.githubusercontent.com/udahar/PakMan/master/registry.json",
   "packages": {
-
     "PromptSKLib": {
-      "repo": "github.com/udahar/PromptSKLib",
+      "repo": "github.com/udahar/PakMan",
       "description": "26 reusable AI reasoning skills and strategy scaffolds. Injected into task briefs automatically.",
       "category": "prompting",
-      "tags": ["prompting", "reasoning", "scaffolding", "skills"],
-      "status": "stable"
+      "tags": [
+        "prompting",
+        "reasoning",
+        "scaffolding",
+        "skills"
+      ],
+      "status": "stable",
+      "path": "packages/PromptSKLib"
     },
-
     "PromptForge": {
-      "repo": "github.com/udahar/PromptForge",
+      "repo": "github.com/udahar/PakMan",
       "description": "A/B prompt testing and prompt evolution pipeline. Benchmark prompts against each other.",
       "category": "prompting",
-      "tags": ["prompting", "testing", "evolution", "ab-test"],
-      "status": "beta"
+      "tags": [
+        "prompting",
+        "testing",
+        "evolution",
+        "ab-test"
+      ],
+      "status": "beta",
+      "path": "packages/PromptForge"
     },
-
     "PromptOS": {
-      "repo": "github.com/udahar/PromptOS",
+      "repo": "github.com/udahar/PakMan",
       "description": "Prompt runtime with memory, routing, and state management.",
       "category": "prompting",
-      "tags": ["prompting", "runtime", "memory", "routing"],
-      "status": "beta"
+      "tags": [
+        "prompting",
+        "runtime",
+        "memory",
+        "routing"
+      ],
+      "status": "beta",
+      "path": "packages/PromptOS"
     },
-
     "context_distiller": {
-      "repo": "github.com/udahar/context_distiller",
+      "repo": "github.com/udahar/PakMan",
       "description": "Passage-based summarization for long documents. Reduces context without losing signal.",
       "category": "context",
-      "tags": ["context", "summarization", "compression", "passages"],
-      "status": "stable"
+      "tags": [
+        "context",
+        "summarization",
+        "compression",
+        "passages"
+      ],
+      "status": "stable",
+      "path": "packages/context_distiller"
     },
-
     "recursive_context": {
-      "repo": "github.com/udahar/recursive_context",
-      "description": "Recursive context compression — iteratively distills long context to fit model windows.",
+      "repo": "github.com/udahar/PakMan",
+      "description": "Recursive context compression \u00e2\u20ac\u201d iteratively distills long context to fit model windows.",
       "category": "context",
-      "tags": ["context", "compression", "recursive"],
-      "status": "beta"
+      "tags": [
+        "context",
+        "compression",
+        "recursive"
+      ],
+      "status": "beta",
+      "path": "packages/recursive_context"
     },
-
     "context_cache": {
-      "repo": "github.com/udahar/context_cache",
+      "repo": "github.com/udahar/PakMan",
       "description": "Persistent context cache across sessions. Avoids re-processing identical inputs.",
       "category": "context",
-      "tags": ["context", "cache", "performance"],
-      "status": "beta"
+      "tags": [
+        "context",
+        "cache",
+        "performance"
+      ],
+      "status": "beta",
+      "path": "packages/context_cache"
     },
-
     "cost_optimizer": {
-      "repo": "github.com/udahar/cost_optimizer",
+      "repo": "github.com/udahar/PakMan",
       "description": "Model routing by price/quality tradeoff. Tracks token spend and routes cheap tasks to cheap models.",
       "category": "routing",
-      "tags": ["routing", "cost", "tokens", "optimization"],
-      "status": "stable"
+      "tags": [
+        "routing",
+        "cost",
+        "tokens",
+        "optimization"
+      ],
+      "status": "stable",
+      "path": "packages/cost_optimizer"
     },
-
     "model_router": {
-      "repo": "github.com/udahar/model_router",
+      "repo": "github.com/udahar/PakMan",
       "description": "Task-type to model strategy selection. Routes by capability, not just cost.",
       "category": "routing",
-      "tags": ["routing", "models", "strategy", "selection"],
-      "status": "stable"
+      "tags": [
+        "routing",
+        "models",
+        "strategy",
+        "selection"
+      ],
+      "status": "stable",
+      "path": "packages/model_router"
     },
-
     "multi_model_orchestrator": {
-      "repo": "github.com/udahar/multi_model_orchestrator",
+      "repo": "github.com/udahar/PakMan",
       "description": "Run multiple models in parallel and synthesize their outputs.",
       "category": "routing",
-      "tags": ["orchestration", "parallel", "multi-model"],
-      "status": "beta"
+      "tags": [
+        "orchestration",
+        "parallel",
+        "multi-model"
+      ],
+      "status": "beta",
+      "path": "packages/multi_model_orchestrator"
     },
-
     "GapMan": {
-      "repo": "github.com/udahar/GapMan",
+      "repo": "github.com/udahar/PakMan",
       "description": "Gap analysis engine. Finds what your model can't do yet and generates targeted hard tests.",
       "category": "evaluation",
-      "tags": ["evaluation", "gaps", "testing", "hard-tests"],
-      "status": "beta"
+      "tags": [
+        "evaluation",
+        "gaps",
+        "testing",
+        "hard-tests"
+      ],
+      "status": "beta",
+      "path": "packages/GapMan"
     },
-
     "eval_framework": {
-      "repo": "github.com/udahar/eval_framework",
+      "repo": "github.com/udahar/PakMan",
       "description": "Evaluation harness for model outputs. Pluggable validators, difficulty weights, scoring.",
       "category": "evaluation",
-      "tags": ["evaluation", "scoring", "validators", "harness"],
-      "status": "stable"
+      "tags": [
+        "evaluation",
+        "scoring",
+        "validators",
+        "harness"
+      ],
+      "status": "stable",
+      "path": "packages/eval_framework"
     },
-
     "benchmark_arena": {
-      "repo": "github.com/udahar/benchmark_arena",
+      "repo": "github.com/udahar/PakMan",
       "description": "Head-to-head model benchmarking arena with leaderboards and rankings.",
       "category": "evaluation",
-      "tags": ["benchmark", "arena", "leaderboard", "ranking"],
-      "status": "beta"
+      "tags": [
+        "benchmark",
+        "arena",
+        "leaderboard",
+        "ranking"
+      ],
+      "status": "beta",
+      "path": "packages/benchmark_arena"
     },
-
     "memory_graph": {
-      "repo": "github.com/udahar/memory_graph",
+      "repo": "github.com/udahar/PakMan",
       "description": "Graph-based persistent memory for AI agents. Nodes, edges, semantic search.",
       "category": "memory",
-      "tags": ["memory", "graph", "persistence", "semantic"],
-      "status": "beta"
+      "tags": [
+        "memory",
+        "graph",
+        "persistence",
+        "semantic"
+      ],
+      "status": "beta",
+      "path": "packages/memory_graph"
     },
-
     "browser_memory": {
-      "repo": "github.com/udahar/browser_memory",
-      "description": "Semantic browser memory — saves and searches web pages by meaning, not just URL.",
+      "repo": "github.com/udahar/PakMan",
+      "description": "Semantic browser memory \u00e2\u20ac\u201d saves and searches web pages by meaning, not just URL.",
       "category": "memory",
-      "tags": ["memory", "browser", "semantic", "search"],
-      "status": "beta"
+      "tags": [
+        "memory",
+        "browser",
+        "semantic",
+        "search"
+      ],
+      "status": "beta",
+      "path": "packages/browser_memory"
     },
-
     "safety_sentry": {
-      "repo": "github.com/udahar/safety_sentry",
+      "repo": "github.com/udahar/PakMan",
       "description": "LLM output safety guard. Reviews generated code and content before use.",
       "category": "safety",
-      "tags": ["safety", "review", "guard", "validation"],
-      "status": "beta"
+      "tags": [
+        "safety",
+        "review",
+        "guard",
+        "validation"
+      ],
+      "status": "beta",
+      "path": "packages/safety_sentry"
     },
-
     "council": {
-      "repo": "github.com/udahar/council",
+      "repo": "github.com/udahar/PakMan",
       "description": "Multi-agent debate council. Multiple models argue a question, synthesize a decision.",
       "category": "agents",
-      "tags": ["agents", "debate", "council", "synthesis"],
-      "status": "beta"
+      "tags": [
+        "agents",
+        "debate",
+        "council",
+        "synthesis"
+      ],
+      "status": "beta",
+      "path": "packages/council"
     },
-
     "courtroom": {
-      "repo": "github.com/udahar/courtroom",
+      "repo": "github.com/udahar/PakMan",
       "description": "Adversarial agent framework. Prosecution, defence, and judge roles for rigorous reasoning.",
       "category": "agents",
-      "tags": ["agents", "adversarial", "reasoning", "courtroom"],
-      "status": "alpha"
+      "tags": [
+        "agents",
+        "adversarial",
+        "reasoning",
+        "courtroom"
+      ],
+      "status": "alpha",
+      "path": "packages/courtroom"
     },
-
     "scheduler": {
-      "repo": "github.com/udahar/scheduler",
+      "repo": "github.com/udahar/PakMan",
       "description": "Cron-style job scheduler for AI tasks. Supports async jobs, retries, and priority queues.",
       "category": "infrastructure",
-      "tags": ["scheduler", "cron", "async", "jobs"],
-      "status": "stable"
+      "tags": [
+        "scheduler",
+        "cron",
+        "async",
+        "jobs"
+      ],
+      "status": "stable",
+      "path": "packages/scheduler"
     },
-
     "tickets": {
-      "repo": "github.com/udahar/tickets",
+      "repo": "github.com/udahar/PakMan",
       "description": "Lightweight ticket and task tracker for AI workflows.",
       "category": "infrastructure",
-      "tags": ["tickets", "tasks", "workflow", "tracking"],
-      "status": "beta"
+      "tags": [
+        "tickets",
+        "tasks",
+        "workflow",
+        "tracking"
+      ],
+      "status": "beta",
+      "path": "packages/tickets"
     },
-
     "prompt_library": {
-      "repo": "github.com/udahar/prompt_library",
+      "repo": "github.com/udahar/PakMan",
       "description": "Versioned prompt library. Store, tag, search, and reuse prompts across projects.",
       "category": "prompting",
-      "tags": ["prompts", "library", "versioning", "reuse"],
-      "status": "beta"
+      "tags": [
+        "prompts",
+        "library",
+        "versioning",
+        "reuse"
+      ],
+      "status": "beta",
+      "path": "packages/prompt_library"
     },
-
     "prompt_version_control": {
-      "repo": "github.com/udahar/prompt_version_control",
+      "repo": "github.com/udahar/PakMan",
       "description": "Git-style version control for prompts. Diff, branch, and roll back prompts.",
       "category": "prompting",
-      "tags": ["prompts", "version-control", "diff", "rollback"],
-      "status": "alpha"
+      "tags": [
+        "prompts",
+        "version-control",
+        "diff",
+        "rollback"
+      ],
+      "status": "alpha",
+      "path": "packages/prompt_version_control"
     },
-
     "prompt_evolution": {
-      "repo": "github.com/udahar/prompt_evolution",
+      "repo": "github.com/udahar/PakMan",
       "description": "Evolutionary prompt optimization. Mutate, crossover, and select best-performing prompts.",
       "category": "prompting",
-      "tags": ["prompts", "evolution", "optimization", "genetic"],
-      "status": "alpha"
+      "tags": [
+        "prompts",
+        "evolution",
+        "optimization",
+        "genetic"
+      ],
+      "status": "alpha",
+      "path": "packages/prompt_evolution"
     },
-
     "skills_framework": {
-      "repo": "github.com/udahar/skills_framework",
+      "repo": "github.com/udahar/PakMan",
       "description": "Core framework for building and loading AI skills. The engine behind PromptSKLib.",
       "category": "prompting",
-      "tags": ["skills", "framework", "core", "loading"],
-      "status": "stable"
+      "tags": [
+        "skills",
+        "framework",
+        "core",
+        "loading"
+      ],
+      "status": "stable",
+      "path": "packages/skills_framework"
     },
-
     "skills_registry": {
-      "repo": "github.com/udahar/skills_registry",
+      "repo": "github.com/udahar/PakMan",
       "description": "Registry of available skills with search, tagging, and match scoring.",
       "category": "prompting",
-      "tags": ["skills", "registry", "search", "matching"],
-      "status": "stable"
+      "tags": [
+        "skills",
+        "registry",
+        "search",
+        "matching"
+      ],
+      "status": "stable",
+      "path": "packages/skills_registry"
     },
-
     "tool_builder": {
-      "repo": "github.com/udahar/tool_builder",
+      "repo": "github.com/udahar/PakMan",
       "description": "Build LLM tool definitions from Python functions. Auto-generates JSON Schema.",
       "category": "tools",
-      "tags": ["tools", "functions", "schema", "llm"],
-      "status": "beta"
+      "tags": [
+        "tools",
+        "functions",
+        "schema",
+        "llm"
+      ],
+      "status": "beta",
+      "path": "packages/tool_builder"
     },
-
     "tool_composer": {
-      "repo": "github.com/udahar/tool_composer",
+      "repo": "github.com/udahar/PakMan",
       "description": "Compose multiple tools into pipelines. Chain tool calls with routing and fallback.",
       "category": "tools",
-      "tags": ["tools", "pipelines", "composition", "chaining"],
-      "status": "alpha"
+      "tags": [
+        "tools",
+        "pipelines",
+        "composition",
+        "chaining"
+      ],
+      "status": "alpha",
+      "path": "packages/tool_composer"
     },
-
     "Alfred.rust": {
-      "repo": "github.com/udahar/Alfred.rust",
+      "repo": "github.com/udahar/PakMan",
       "description": "48 Rust utility crates for high-performance AI infrastructure (fs_scan, file_hash, http_get, etc.).",
       "category": "infrastructure",
-      "tags": ["rust", "utilities", "performance", "infrastructure"],
-      "status": "beta"
+      "tags": [
+        "rust",
+        "utilities",
+        "performance",
+        "infrastructure"
+      ],
+      "status": "beta",
+      "path": "packages/Alfred.rust"
     },
-
     "AutoCode": {
-      "repo": "github.com/udahar/AutoCode",
-      "description": "Automated code generation pipeline. Task → brief → code → validate → commit.",
+      "repo": "github.com/udahar/PakMan",
+      "description": "Automated code generation pipeline. Task \u00e2\u2020\u2019 brief \u00e2\u2020\u2019 code \u00e2\u2020\u2019 validate \u00e2\u2020\u2019 commit.",
       "category": "coding",
-      "tags": ["coding", "automation", "generation", "pipeline"],
-      "status": "beta"
+      "tags": [
+        "coding",
+        "automation",
+        "generation",
+        "pipeline"
+      ],
+      "status": "beta",
+      "path": "packages/AutoCode"
     },
-
     "AiOSKernel": {
-      "repo": "github.com/udahar/AiOSKernel",
-      "description": "Core kernel for AI operating system primitives — process model, memory model, I/O model.",
+      "repo": "github.com/udahar/PakMan",
+      "description": "Core kernel for AI operating system primitives \u00e2\u20ac\u201d process model, memory model, I/O model.",
       "category": "infrastructure",
-      "tags": ["kernel", "os", "primitives", "infrastructure"],
-      "status": "alpha"
+      "tags": [
+        "kernel",
+        "os",
+        "primitives",
+        "infrastructure"
+      ],
+      "status": "alpha",
+      "path": "packages/AiOSKernel"
     },
-
     "apikey": {
-      "repo": "github.com/udahar/apikey",
+      "repo": "github.com/udahar/PakMan",
       "description": "Secure API key management. Store, rotate, and scope API keys for AI services.",
       "category": "security",
-      "tags": ["security", "api-keys", "rotation", "scoping"],
-      "status": "stable"
+      "tags": [
+        "security",
+        "api-keys",
+        "rotation",
+        "scoping"
+      ],
+      "status": "stable",
+      "path": "packages/apikey"
     },
-
     "blueprints": {
-      "repo": "github.com/udahar/blueprints",
+      "repo": "github.com/udahar/PakMan",
       "description": "Project and app blueprints. Templates for common AI app patterns, pre-wired with PakMan.",
       "category": "scaffolding",
-      "tags": ["blueprints", "templates", "scaffolding", "apps"],
-      "status": "alpha"
+      "tags": [
+        "blueprints",
+        "templates",
+        "scaffolding",
+        "apps"
+      ],
+      "status": "alpha",
+      "path": "packages/blueprints"
     }
-
   }
 }

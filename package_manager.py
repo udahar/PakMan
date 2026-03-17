@@ -53,18 +53,23 @@ class PackageManager:
         """
         Initialize package manager.
 
+        Default install location is ~/.pakman/ — clean, per-user, survives pip upgrades.
+        Override with PAKMAN_HOME env var or explicit args.
+
         Args:
-            packages_dir: Where to install packages (default: ./packages/)
-            db_path: SQLite database path (default: ./pkgman_packages.db)
+            packages_dir: Where to install packages (default: ~/.pakman/packages/)
+            db_path: SQLite database path (default: ~/.pakman/pakman.db)
         """
-        # Find ModLib directory
-        self.modlib_dir = Path(__file__).parent
+        # ~/.pakman/ is the user's home for all PakMan data.
+        # PAKMAN_HOME env var lets power users point it elsewhere (e.g. a shared drive).
+        pakman_home = Path(os.environ.get("PAKMAN_HOME", str(Path.home() / ".pakman")))
+        pakman_home.mkdir(parents=True, exist_ok=True)
 
         # Set packages directory
         if packages_dir:
             self.packages_dir = Path(packages_dir)
         else:
-            self.packages_dir = self.modlib_dir / "packages"
+            self.packages_dir = pakman_home / "packages"
 
         # Create packages directory
         self.packages_dir.mkdir(exist_ok=True)
@@ -77,7 +82,7 @@ class PackageManager:
         if db_path:
             self.db_path = Path(db_path)
         else:
-            self.db_path = self.modlib_dir / "pkgman_packages.db"
+            self.db_path = pakman_home / "pakman.db"
 
         # Initialize security manager
         self.security = get_security_manager(str(self.packages_dir), str(self.db_path))
@@ -227,25 +232,74 @@ class PackageManager:
             raise RuntimeError(f"Installation failed: {e}")
 
     def _parse_github_name(self, url: str) -> str:
-        """Extract package name from GitHub URL"""
-        # github.com/udahar/repo  repo
+        """Extract package name from GitHub URL.
+
+        Supports two formats:
+          github.com/udahar/MyRepo          -> "MyRepo"
+          github.com/udahar/PakMan#packages/PromptSKLib  -> "PromptSKLib"
+        """
+        # Subfolder syntax: repo#path/to/subfolder  -> name is last path segment
+        if "#" in url:
+            _, subfolder = url.split("#", 1)
+            return subfolder.rstrip("/").split("/")[-1]
         parts = url.split("/")
         if len(parts) >= 3:
             return parts[2]
         return url.replace("github.com/", "").split("/")[0]
 
     def _install_from_github(self, url: str, dest: Path, upgrade: bool):
-        """Clone from GitHub"""
-        if upgrade and dest.exists():
-            # Pull latest
+        """Clone from GitHub, or sparse-checkout a subfolder via # syntax.
+
+        Full repo:   github.com/udahar/MyRepo
+        Subfolder:   github.com/udahar/PakMan#packages/PromptSKLib
+        """
+        if "#" in url:
+            repo_url, subfolder = url.split("#", 1)
+            self._install_github_sparse(repo_url, subfolder.strip("/"), dest, upgrade)
+        elif upgrade and dest.exists():
             subprocess.run(["git", "pull"], cwd=dest, check=True, capture_output=True)
         else:
-            # Clone
             subprocess.run(
                 ["git", "clone", f"https://{url}", str(dest)],
                 check=True,
                 capture_output=True,
             )
+
+    def _install_github_sparse(self, repo_url: str, subfolder: str, dest: Path, upgrade: bool):
+        """Pull only a subfolder from a repo using git sparse-checkout.
+
+        No full repo clone — downloads just the files you need.
+        Works on git >= 2.25 (sparse-checkout) and >= 2.27 (--filter=blob:none).
+        """
+        import tempfile
+
+        if upgrade and dest.exists():
+            shutil.rmtree(dest)
+
+        full_url = f"https://{repo_url}"
+
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            # Init a bare-minimum repo, configure sparse, then fetch
+            subprocess.run(["git", "init", str(tmp)], check=True, capture_output=True)
+            subprocess.run(["git", "-C", str(tmp), "remote", "add", "origin", full_url],
+                           check=True, capture_output=True)
+            subprocess.run(["git", "-C", str(tmp), "config", "core.sparseCheckout", "true"],
+                           check=True, capture_output=True)
+            sparse_file = tmp / ".git" / "info" / "sparse-checkout"
+            sparse_file.write_text(subfolder + "/\n")
+            subprocess.run(
+                ["git", "-C", str(tmp), "pull", "--depth=1", "origin", "HEAD"],
+                check=True, capture_output=True,
+            )
+            # Move the subfolder into place
+            src = tmp / subfolder
+            if not src.exists():
+                raise RuntimeError(
+                    f"Subfolder '{subfolder}' not found in {repo_url}. "
+                    "Check registry.json path field."
+                )
+            shutil.copytree(str(src), str(dest))
 
     def _install_from_local(self, source: str, dest: Path, upgrade: bool):
         """Copy from local path"""

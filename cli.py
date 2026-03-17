@@ -50,9 +50,13 @@ def _get_registry() -> dict:
 
 def _resolve_source(name: str) -> tuple[str, dict | None]:
     """
-    Resolve a short package name to a GitHub URL via registry.json.
+    Resolve a short package name to a GitHub source string via registry.json.
     Returns (resolved_source, registry_entry | None).
-    If name is already a URL or path, pass it through unchanged.
+
+    Source format:
+      - Full repo clone:         github.com/udahar/MyRepo
+      - Monorepo subfolder:     github.com/udahar/PakMan#packages/PromptSKLib
+      - Local path:             ./my_package  or  /abs/path
     """
     # Already a URL or local path — use as-is
     if (
@@ -67,7 +71,10 @@ def _resolve_source(name: str) -> tuple[str, dict | None]:
     registry = _get_registry()
     entry = registry.get(name)
     if entry:
-        return entry["repo"], entry
+        repo = entry["repo"]
+        path = entry.get("path")
+        source = f"{repo}#{path}" if path else repo
+        return source, entry
 
     # Not in registry — pass through and let the installer try it
     return name, None

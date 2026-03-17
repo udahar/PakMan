@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pakman"
+version = "1.0.0"
+description = "AI productivity package manager — install, list, and manage AI packages"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "udahar" }]
+keywords = ["ai", "package-manager", "llm", "prompt", "alfred"]
+
+# Runtime deps — minimal so pakman installs without friction
+dependencies = []
+
+[project.scripts]
+# Entry point: the `pakman` shell command → cli.py main()
+pakman = "cli:main"
+
+[tool.setuptools]
+# Flat layout — all .py modules live at the repo root
+py-modules = ["cli", "package_manager", "security", "health", "hotload"]
+
+[project.urls]
+Homepage = "https://github.com/udahar/PakMan"
+Repository = "https://github.com/udahar/PakMan"

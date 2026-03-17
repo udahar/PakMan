@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# PakMan runtime
+pkgman_packages.db
+pkgman_security/
+
+# Installed packages — tracked separately per package
+# (don't commit installed packages to the manager repo)
+packages/*/
+
+# Exceptions: keep package stubs/READMEs so the packages/ dir isn't empty
+!packages/**/README.md
+!packages/**/__init__.py
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Editors
+.vscode/
+.idea/
+*.swp

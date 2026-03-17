@@ -32,37 +32,23 @@ class SecurityManager:
         self.packages_dir = Path(packages_dir)
         self.db_path = Path(db_path)
         self.security_dir = self.packages_dir.parent / "pkgman_security"
-        self.security_dir.mkdir(exist_ok=True)
-        
-        # Trusted sources (udahar's packages)
+        # Lazy — only created on first actual security write (backup, hash, etc.)
+
+        # Only udahar's repos are trusted. Hard-coded by design — not user-configurable.
+        # This prevents third parties from tricking end-users into installing untrusted packages.
         self.trusted_sources = [
-            "github.com/udahar/*",
+            "github.com/udahar/",
             "github.com/udahar",
         ]
-        
-        # Load additional trusted sources
-        self._load_trusted_sources()
-    
-    def _load_trusted_sources(self):
-        """Load trusted sources from config"""
-        config_file = self.security_dir / "trusted_sources.json"
-        
-        if config_file.exists():
-            try:
-                config = json.loads(config_file.read_text())
-                self.trusted_sources.extend(config.get("sources", []))
-            except:
-                pass
-    
+
+    def _ensure_security_dir(self):
+        """Create security dir only when a write operation actually needs it."""
+        self.security_dir.mkdir(exist_ok=True)
+
     def add_trusted_source(self, pattern: str):
-        """Add trusted source pattern"""
-        if pattern not in self.trusted_sources:
-            self.trusted_sources.append(pattern)
-            
-            # Save to config
-            config_file = self.security_dir / "trusted_sources.json"
-            config = {"sources": self.trusted_sources}
-            config_file.write_text(json.dumps(config, indent=2))
+        """No-op: trusted sources are hard-coded to github.com/udahar/ only.
+        This method exists for API compatibility but cannot extend trust."""
+        pass  # intentionally locked — see __init__ comment
     
     def is_trusted_source(self, source: str) -> bool:
         """Check if source is trusted"""
@@ -95,6 +81,7 @@ class SecurityManager:
     
     def save_version_hash(self, package_name: str, version: str, file_hash: str):
         """Save hash for a specific version"""
+        self._ensure_security_dir()
         hash_file = self.security_dir / f"{package_name}_hashes.json"
         
         hashes = {}
@@ -136,6 +123,7 @@ class SecurityManager:
     
     def save_changelog(self, package_name: str, version: str, changelog: str):
         """Save changelog for version"""
+        self._ensure_security_dir()
         changelog_file = self.security_dir / f"{package_name}_changelog.md"
         
         # Append to changelog
@@ -177,6 +165,7 @@ class SecurityManager:
     
     def create_backup(self, package_name: str, version: str) -> Path:
         """Create backup before update"""
+        self._ensure_security_dir()
         backup_dir = self.security_dir / "backups" / package_name / version
         backup_dir.mkdir(parents=True, exist_ok=True)
         

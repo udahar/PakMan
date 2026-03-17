@@ -7,10 +7,11 @@ Usage:
     pakman remove  <name>           # uninstall a package
     pakman update  [name]           # update one or all packages
     pakman info    <name>           # show package details
-    pakman search  <query>          # search available packages
+    pakman search  <query>          # search available and installed packages
 """
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -20,6 +21,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 from package_manager import PackageManager
 
 _pm = None
+_registry = None
+
+REGISTRY_FILE = Path(__file__).parent / "registry.json"
 
 
 def _get_pm() -> PackageManager:
@@ -27,6 +31,46 @@ def _get_pm() -> PackageManager:
     if _pm is None:
         _pm = PackageManager()
     return _pm
+
+
+def _get_registry() -> dict:
+    """Load registry.json — maps short names to GitHub repos."""
+    global _registry
+    if _registry is None:
+        if REGISTRY_FILE.exists():
+            try:
+                data = json.loads(REGISTRY_FILE.read_text(encoding="utf-8"))
+                _registry = data.get("packages", {})
+            except Exception:
+                _registry = {}
+        else:
+            _registry = {}
+    return _registry
+
+
+def _resolve_source(name: str) -> tuple[str, dict | None]:
+    """
+    Resolve a short package name to a GitHub URL via registry.json.
+    Returns (resolved_source, registry_entry | None).
+    If name is already a URL or path, pass it through unchanged.
+    """
+    # Already a URL or local path — use as-is
+    if (
+        name.startswith("github.com/")
+        or name.startswith("https://")
+        or name.startswith("./")
+        or name.startswith("/")
+        or Path(name).exists()
+    ):
+        return name, None
+
+    registry = _get_registry()
+    entry = registry.get(name)
+    if entry:
+        return entry["repo"], entry
+
+    # Not in registry — pass through and let the installer try it
+    return name, None
 
 
 # ─── commands ────────────────────────────────────────────────────────────────
@@ -41,7 +85,7 @@ def cmd_list(args):
     print("-" * 72)
     for p in packages:
         name    = p.get("name", "?")
-        version = p.get("version", "─")
+        version = p.get("version", "-")
         status  = p.get("status", "installed")
         source  = p.get("source", "local")
         print(f"{name:<28} {version:<10} {status:<12} {source}")
@@ -50,12 +94,17 @@ def cmd_list(args):
 
 def cmd_install(args):
     pm = _get_pm()
-    source = args.package
-    print(f"Installing {source} ...")
+    source, entry = _resolve_source(args.package)
+
+    if entry:
+        print(f"  {entry['description']}")
+        print(f"  Source: {source}")
+
+    print(f"Installing {args.package} ...")
     try:
         result = pm.install(source, upgrade=args.upgrade, verify=not args.no_verify)
         if result:
-            print(f"  Installed: {result.get('name', source)}")
+            print(f"  Installed: {result.get('name', args.package)}")
         else:
             print("  Already up to date.")
     except Exception as e:
@@ -89,43 +138,73 @@ def cmd_update(args):
 
 def cmd_info(args):
     pm = _get_pm()
+
+    # Check registry for metadata even if not installed
+    registry = _get_registry()
+    reg_entry = registry.get(args.package)
+
     packages = pm.list_packages()
-    match = [p for p in packages if p.get("name") == args.package]
-    if not match:
-        # Also check packages/ dir for unregistered packages
+    installed = next((p for p in packages if p.get("name") == args.package), None)
+
+    if not installed:
+        # Check packages/ dir for unregistered local presence
         pkg_dir = pm.packages_dir / args.package
-        if pkg_dir.is_dir():
-            print(f"Package: {args.package}")
-            print(f"Path:    {pkg_dir}")
-            print("Status:  present (not registered)")
-            return
-        print(f"Package '{args.package}' not found.", file=sys.stderr)
-        sys.exit(1)
-    p = match[0]
-    for k, v in p.items():
-        print(f"{k:<16} {v}")
+        local_present = pkg_dir.is_dir()
+        if not local_present and not reg_entry:
+            print(f"Package '{args.package}' not found.", file=sys.stderr)
+            sys.exit(1)
+
+    if reg_entry:
+        print(f"{'name':<16} {args.package}")
+        print(f"{'description':<16} {reg_entry.get('description', '-')}")
+        print(f"{'category':<16} {reg_entry.get('category', '-')}")
+        print(f"{'tags':<16} {', '.join(reg_entry.get('tags', []))}")
+        print(f"{'repo':<16} {reg_entry.get('repo', '-')}")
+        print(f"{'status':<16} {reg_entry.get('status', '-')}")
+
+    if installed:
+        print(f"{'installed':<16} yes (v{installed.get('version', '?')})")
+        print(f"{'local_source':<16} {installed.get('source', '-')}")
+    else:
+        print(f"{'installed':<16} no")
 
 
 def cmd_search(args):
     pm = _get_pm()
-    try:
-        results = pm.search(args.query)
-    except Exception:
-        results = []
-
-    # Also scan packages dir for unregistered packages
     q = args.query.lower()
-    registered = {r.get("name") for r in results}
-    for p in pm.packages_dir.iterdir():
-        if p.is_dir() and q in p.name.lower() and p.name not in registered:
-            results.append({"name": p.name, "source": "local (unregistered)"})
-    if not results:
+
+    # Search registry (available packages)
+    registry = _get_registry()
+    reg_matches = {
+        name: entry for name, entry in registry.items()
+        if q in name.lower()
+        or q in entry.get("description", "").lower()
+        or any(q in t for t in entry.get("tags", []))
+    }
+
+    # Search installed packages
+    try:
+        installed = {p["name"]: p for p in pm.search(args.query)}
+    except Exception:
+        installed = {}
+
+    # Union: show registry entries, annotate installed ones
+    all_names = sorted(set(reg_matches) | set(installed))
+
+    if not all_names:
         print(f"No packages matching '{args.query}'.")
         return
-    for r in results:
-        name   = r.get("name", "?")
-        source = r.get("source", "local")
-        print(f"  {name:<28} {source}")
+
+    print(f"{'Package':<28} {'Status':<14} Description")
+    print("-" * 72)
+    for name in all_names:
+        entry = reg_matches.get(name, {})
+        is_installed = name in installed
+        status = "installed" if is_installed else "available"
+        desc = entry.get("description", installed.get(name, {}).get("source", ""))
+        # Truncate description for display
+        desc = desc[:42] + "..." if len(desc) > 45 else desc
+        print(f"  {name:<26} {status:<14} {desc}")
 
 
 # ─── main ────────────────────────────────────────────────────────────────────

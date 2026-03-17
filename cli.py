@@ -38,7 +38,7 @@ def cmd_list(args):
         print("No packages installed.")
         return
     print(f"{'Package':<28} {'Version':<10} {'Status':<12} Source")
-    print("─" * 72)
+    print("-" * 72)
     for p in packages:
         name    = p.get("name", "?")
         version = p.get("version", "─")

@@ -2,7 +2,7 @@
 
 **Package manager for AI-native apps.**
 
-Install a package once. Every app that understands PakMan gains the capability automatically — no wiring, no config, no restarts required.
+Install a package once. Every app that understands PakMan gains the capability automatically — no wiring, no config. Restart the app and the new package is live.
 
 ```bash
 pip install git+https://github.com/udahar/PakMan.git
@@ -118,12 +118,14 @@ pakman install PromptSKLib
         ↓
 ~/.pakman/packages/PromptSKLib/ created
         ↓
-App starts → scans ~/.pakman/packages/ → loads PromptSKLib
+App restarts → scans ~/.pakman/packages/ → loads PromptSKLib
         ↓
-Prompting strategies now available to the app. No config touched.
+Prompting strategies now available. No config touched.
 ```
 
-The hotload system also supports **live reload** — it watches package files for changes and reloads modules without restarting the host app. Useful during development.
+**Hotload during install:** `pakman install` calls `hotload.load()` immediately after writing the package — so the PakMan process itself has the package available right away.
+
+**Live reload for development:** The hotload watcher monitors already-loaded package files for changes and reloads them without restarting the host app. Useful when developing a package locally. A newly installed package in a *running* app is picked up on next restart, not injected live.
 
 ---
 
@@ -208,20 +210,25 @@ Source: `packages/WikiPak/`
 
 PakMan is the package layer for a family of AI-native tools. Each app discovers installed packages at startup and expands its capabilities without any manual wiring.
 
-### Claw *(available now)*
+### Claw / PakClaw
 
-Claw is a thin CLI and Python client for the [Alfred](https://github.com/udahar/Alfred.py) AI platform. It was the first app built to be PakMan-aware — install a prompting package, restart Claw, and the new strategies are live.
+Claw is the first PakMan-aware AI agent — and the reference implementation of the PakClaw design: an agent with **no built-in skills**, where all capability comes from installed packages.
 
 ```bash
 pakman install Claw
+pakman install PromptSKLib
+pakman install council
+pakman install cost_optimizer
 
-# Then, with Alfred running on localhost:5001:
+# With Alfred running on localhost:5001:
 claw ask "summarize my benchmark results"
 claw models
 claw bench --suite code
 ```
 
-> **Requires Alfred running locally.** See [Alfred.py](https://github.com/udahar/Alfred.py) for setup. Without Alfred, Claw will connect but get a connection error — it won't silently fail.
+Install a package, restart Claw, the capability is there. Uninstall it, restart, it's gone. No hardcoded skill list. The packages are the product.
+
+> **Requires Alfred running locally.** See [Alfred.py](https://github.com/udahar/Alfred.py) for setup. Without Alfred, Claw will report a connection error on startup — it won't silently fail.
 
 ```python
 from Claw import ClawClient
@@ -231,29 +238,12 @@ task_id = client.submit_task("ask", {"prompt": "Hello"})
 result  = client.wait_for_result(task_id)
 ```
 
+The long-term goal is a standalone `pakclaw` that ships without Alfred as a dependency — a self-contained agent runtime where PakMan packages provide everything. The architecture is specified. The standalone runtime is not yet released.
+
 ### ZolaPress *(private — open-source release planned)*
 
 AI-native CMS built on Zola static generation + FastAPI + PostgreSQL. PakMan packages extend the editorial and automation layer.
 
-### PakClaw *(design stage)*
-
-> This section describes a planned system, not a released one. The architecture is specified. The implementation is not yet public.
-
-The natural endpoint of PakMan: a standalone AI agent that ships with **zero built-in skills** and gains all capability purely by installing packages.
-
-```bash
-pip install pakclaw
-pakman install PromptSKLib
-pakman install council
-pakman install cost_optimizer
-pakclaw start
-```
-
-At startup, PakClaw scans `~/.pakman/packages/`, loads whatever it finds, and assembles its own capability surface from the installed set. Uninstall a package, restart, the capability is gone. Install a new one, restart, it's there.
-
-The design separates the agent runtime (PakClaw) from the capability library (PakMan packages) completely. The runtime itself stays small. The packages do the work.
-
-This is the direction Claw is being developed toward.
 
 ---
 

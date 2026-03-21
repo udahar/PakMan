@@ -1,11 +1,12 @@
 $ErrorActionPreference = "Stop"
 
-$root = Split-Path -Parent $PSScriptRoot
-$python = Join-Path $root ".venv312\\Scripts\\python.exe"
-$script = Join-Path $root "scripts\\show_capabilities.py"
+$root   = Split-Path -Parent $PSScriptRoot
+$venv   = Join-Path $HOME ".pakman\venvs\ml"
+$python = Join-Path $venv "Scripts\python.exe"
+$script = Join-Path $root "scripts\show_capabilities.py"
 
 if (-not (Test-Path $python)) {
-    throw "MLStack venv not found at $python"
+    throw "ML venv not found. Run: packages\MLStack\scripts\install.ps1"
 }
 
 $env:PYTHONPATH = $root

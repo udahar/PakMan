@@ -74,7 +74,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1
 This creates:
 
 ```text
-MLStack\.venv312\
+~\.pakman\venvs\ml\
 ```
 
 Then runs a smoke test for:
@@ -92,10 +92,10 @@ Then runs a smoke test for:
 Manual install if needed:
 
 ```powershell
-py -3.12 -m venv .venv312
-.\.venv312\Scripts\python -m pip install --upgrade pip setuptools wheel
-.\.venv312\Scripts\python -m pip install -r requirements.txt
-.\.venv312\Scripts\python .\scripts\smoke_test.py
+py -3.12 -m venv "$HOME.pakmanenvsml"
+$HOME\.pakman\venvs\ml\Scripts\python -m pip install --upgrade pip setuptools wheel
+$HOME\.pakman\venvs\ml\Scripts\python -m pip install -r requirements.txt
+$HOME\.pakman\venvs\ml\Scripts\python .\scripts\smoke_test.py
 ```
 
 ## Next practical step
@@ -166,3 +166,4 @@ Run the demo with:
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\run_behavior_demo.ps1
 ```
+

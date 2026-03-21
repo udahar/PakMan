@@ -1,0 +1,2806 @@
+{
+  "_version": "1.0",
+  "_generated": "2026-03-21",
+  "_source": "benchmark_frank_tests \u2014 accidental vocabulary elicitation across 80-model test suite",
+  "_purpose": "Maps natural model vocabulary to actual Alfred/FieldBench tool names. Use to build MCP tool description aliases, semantic tool router, or Qdrant tool resolution index. Each intent cluster shows what vocabulary different model families reach for when asked to perform that operation.",
+  "_usage": "intents[intent_name][\"by_model\"][model_name][\"terms\"] = model-specific aliases. intents[intent_name][\"top_consensus_terms\"] = cross-model consensus vocabulary. intents[intent_name][\"your_name\"] = the actual Alfred/bridge tool name.",
+  "intents": {
+    "exact_structured_lookup": {
+      "your_name": "postgres:exact",
+      "frank_test": "Frank_Recall_Postgres_001_ExactTicketLookup",
+      "top_consensus_terms": [
+        "structured",
+        "retrieval",
+        "tables",
+        "transitions",
+        "reason:",
+        "historical",
+        "best retrieval source:",
+        "retrieve",
+        "management",
+        "changes",
+        "chronological",
+        "providing",
+        "records",
+        "stores",
+        "timestamps",
+        "associated",
+        "cannot",
+        "sources",
+        "figure",
+        "joined",
+        "project",
+        "ticket_history",
+        "values",
+        "including",
+        "tracking"
+      ],
+      "by_model": {
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "associated",
+            "cannot",
+            "commercial",
+            "details",
+            "external",
+            "likely",
+            "product",
+            "solution",
+            "sources",
+            "stored",
+            "structured",
+            "tables"
+          ],
+          "score": 67
+        },
+        "deepcoder:1.5b": {
+          "family": "deepcoder",
+          "terms": [
+            "certain",
+            "figure",
+            "located",
+            "probably",
+            "properties",
+            "remember",
+            "retrieve",
+            "structure",
+            "structured",
+            "tables",
+            "typically"
+          ],
+          "score": 67
+        },
+        "deepseek-v3.2:cloud": {
+          "family": "deepseek",
+          "terms": [
+            "abstraction",
+            "authoritative",
+            "best retrieval source:",
+            "database",
+            "directly",
+            "filtering",
+            "joined",
+            "management",
+            "project",
+            "reason:",
+            "retrieval",
+            "structured",
+            "ticket_history",
+            "values"
+          ],
+          "score": 67
+        },
+        "llama3.2:1b": {
+          "family": "meta",
+          "terms": [
+            "documentation",
+            "historical",
+            "including",
+            "information",
+            "looking",
+            "maintainer",
+            "numbers",
+            "possible",
+            "retrieve",
+            "section",
+            "sources",
+            "structured",
+            "suggest",
+            "tables",
+            "tracking"
+          ],
+          "score": 67
+        },
+        "reader-lm:0.5b": {
+          "family": "reader-lm",
+          "terms": [
+            "retrieval",
+            "structured",
+            "tables"
+          ],
+          "score": 67
+        },
+        "cerebras:gpt-oss-120b": {
+          "family": "cerebras",
+          "terms": [
+            "changes",
+            "chronological",
+            "column",
+            "complete",
+            "providing",
+            "records",
+            "status_history"
+          ],
+          "score": 33
+        },
+        "cerebras:qwen-3-235b-a22b-instruct-2507": {
+          "family": "cerebras",
+          "terms": [
+            "changes",
+            "historical",
+            "orders",
+            "providing",
+            "timestamped",
+            "transitions"
+          ],
+          "score": 33
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "append",
+            "best retrieval source:",
+            "giving",
+            "normalized",
+            "pm_ticket_state_history",
+            "reason:",
+            "retrieval",
+            "stores",
+            "ticket_id",
+            "timestamps",
+            "transition"
+          ],
+          "score": 33
+        },
+        "functiongemma:270m": {
+          "family": "functiongemma",
+          "terms": [
+            "analysis",
+            "analyze",
+            "apologize",
+            "assist",
+            "assisting",
+            "cannot",
+            "capabilities",
+            "current",
+            "document",
+            "documents",
+            "historical",
+            "limited",
+            "reasons",
+            "records",
+            "retrieval",
+            "retrieving",
+            "structured",
+            "summarization"
+          ],
+          "score": 33
+        },
+        "glm-4.7:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "associated",
+            "chronological",
+            "dedicated",
+            "storing",
+            "structured",
+            "ticket_history",
+            "transitions"
+          ],
+          "score": 33
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "current",
+            "granular",
+            "provides",
+            "reason:",
+            "reconstruction",
+            "required",
+            "source:"
+          ],
+          "score": 33
+        },
+        "gpt-oss:120b-cloud": {
+          "family": "openai",
+          "terms": [
+            "complete",
+            "providing",
+            "stores"
+          ],
+          "score": 33
+        },
+        "lfm2.5-thinking:latest": {
+          "family": "lfm2.5-thinking",
+          "terms": [
+            "commonly",
+            "databases",
+            "figure",
+            "management",
+            "project",
+            "retrieval",
+            "software",
+            "structured",
+            "tables",
+            "tackle"
+          ],
+          "score": 33
+        },
+        "minimax-m2.5:cloud": {
+          "family": "minimax-m2.5",
+          "terms": [
+            "delivering",
+            "stores",
+            "timestamps"
+          ],
+          "score": 33
+        },
+        "minimax-m2:cloud": {
+          "family": "minimax-m2",
+          "terms": [
+            "chronological",
+            "equivalent",
+            "provides",
+            "transitions"
+          ],
+          "score": 33
+        },
+        "ministral-3:3b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "activity",
+            "assigned",
+            "attachments",
+            "captured",
+            "case history",
+            "detailed",
+            "escalations",
+            "reason:",
+            "resolved",
+            "source:",
+            "transitions"
+          ],
+          "score": 33
+        },
+        "ministral-3:8b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "assignee",
+            "best retrieval source:",
+            "granular",
+            "historical",
+            "joined",
+            "priority",
+            "reason:",
+            "retrieval",
+            "ticket_id",
+            "ticket_id=52438",
+            "tickets_history",
+            "timestamps",
+            "tracking",
+            "transitions"
+          ],
+          "score": 33
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "canonical",
+            "contain",
+            "explicitly",
+            "including",
+            "management",
+            "primary",
+            "process",
+            "stamped",
+            "structured",
+            "tracked",
+            "transitions",
+            "values"
+          ],
+          "score": 33
+        },
+        "opencode/big-pickle": {
+          "family": "openai_family",
+          "terms": [
+            "/api/pm/canonical/ticket/:id/events",
+            "analysis",
+            "best retrieval source:",
+            "canonical",
+            "codebase",
+            "designed",
+            "events",
+            "inspection",
+            "one-line reason:",
+            "pm_tickets_core",
+            "projman",
+            "projman.ticket.events",
+            "retrieval",
+            "retrieves",
+            "specifically",
+            "structured",
+            "tables",
+            "triage",
+            "understand",
+            "worker"
+          ],
+          "score": 33
+        },
+        "qwen3-next:80b-cloud": {
+          "family": "alibaba",
+          "terms": [
+            "changes",
+            "historical",
+            "records",
+            "structured",
+            "sys_audit",
+            "tables"
+          ],
+          "score": 33
+        },
+        "smollm:135m": {
+          "family": "huggingface",
+          "terms": [
+            "combination",
+            "function",
+            "get_best_reason",
+            "get_one_line_reason",
+            "representation",
+            "retrieval",
+            "retrieve",
+            "returns",
+            "string",
+            "structured"
+          ],
+          "score": 33
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "except",
+            "get_state_history",
+            "get_state_table",
+            "get_state_table_from_path",
+            "implement",
+            "python",
+            "retrieving",
+            "state_history",
+            "state_table",
+            "state_table.state_history",
+            "state_table_id"
+          ],
+          "score": 33
+        },
+        "smollm2:135m": {
+          "family": "huggingface",
+          "terms": [
+            "retrieval",
+            "structured",
+            "tables"
+          ],
+          "score": 33
+        }
+      },
+      "model_count": 23
+    },
+    "chronological_audit_query": {
+      "your_name": "postgres:events",
+      "frank_test": "Frank_Recall_Postgres_002_RecentTransitionAudit",
+      "top_consensus_terms": [
+        "determine",
+        "ticketing",
+        "choice",
+        "activity",
+        "information",
+        "changes",
+        "including",
+        "context",
+        "provided",
+        "timestamp",
+        "cannot",
+        "records",
+        "source choice:",
+        "database",
+        "updated",
+        "filter",
+        "source:",
+        "available",
+        "because",
+        "options",
+        "perform",
+        "performed",
+        "transition",
+        "transitions",
+        "details"
+      ],
+      "by_model": {
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "database",
+            "determine",
+            "possible",
+            "solution",
+            "source_choice",
+            "ticketing",
+            "updated",
+            "user_id",
+            "username"
+          ],
+          "score": 50
+        },
+        "glm-4.7:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "activity",
+            "changes",
+            "definitive",
+            "including",
+            "itself",
+            "management",
+            "moving",
+            "project",
+            "stored",
+            "timestamp"
+          ],
+          "score": 50
+        },
+        "ministral-3:3b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "activity",
+            "atlassian\u2019s \"history\" tab",
+            "automated tracking:",
+            "changes",
+            "dashboards",
+            "exported",
+            "exported audit logs",
+            "filter",
+            "jira audit logs",
+            "jira\u2019s \"history\" tab",
+            "power bi dashboards",
+            "source:",
+            "ticketing",
+            "tracking"
+          ],
+          "score": 50
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "available",
+            "because",
+            "cannot",
+            "choice",
+            "context",
+            "determination",
+            "determine",
+            "information",
+            "options",
+            "perform",
+            "please",
+            "provided",
+            "sources",
+            "ticketing"
+          ],
+          "score": 50
+        },
+        "qwen3-next:80b-cloud": {
+          "family": "alibaba",
+          "terms": [
+            "because",
+            "cannot",
+            "context",
+            "database",
+            "determine",
+            "evaluate",
+            "integration",
+            "manual",
+            "options",
+            "possess",
+            "provided",
+            "requires",
+            "ticketing"
+          ],
+          "score": 50
+        },
+        "cerebras:gpt-oss-120b": {
+          "family": "cerebras",
+          "terms": [
+            "choice",
+            "filtering",
+            "including",
+            "performed",
+            "pinpoint",
+            "records",
+            "source choice:",
+            "timestamp",
+            "transition",
+            "transitions"
+          ],
+          "score": 25
+        },
+        "cerebras:qwen-3-235b-a22b-instruct-2507": {
+          "family": "cerebras",
+          "terms": [
+            "allowing",
+            "changes",
+            "choice",
+            "including",
+            "records",
+            "transitions",
+            "verification"
+          ],
+          "score": 25
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "activity",
+            "changelog",
+            "choice",
+            "filter",
+            "performed",
+            "records",
+            "reliably",
+            "source choice:",
+            "ticketing",
+            "timestamp",
+            "transition"
+          ],
+          "score": 25
+        },
+        "deepcoder:1.5b": {
+          "family": "deepcoder",
+          "terms": [
+            "choice",
+            "context",
+            "details",
+            "determine",
+            "figure",
+            "provided"
+          ],
+          "score": 25
+        },
+        "deepseek-v3.2:cloud": {
+          "family": "deepseek",
+          "terms": [
+            "accurate",
+            "actions",
+            "changes",
+            "choice",
+            "directly",
+            "identifiers",
+            "including",
+            "information",
+            "providing",
+            "reliable",
+            "timestamps"
+          ],
+          "score": 25
+        },
+        "functiongemma:270m": {
+          "family": "functiongemma",
+          "terms": [
+            "analysis",
+            "analyzing",
+            "cannot",
+            "capabilities",
+            "complex",
+            "current",
+            "determine",
+            "limited",
+            "perform",
+            "periods"
+          ],
+          "score": 25
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "changed",
+            "contain",
+            "determine",
+            "identify",
+            "necessary",
+            "prompt",
+            "source choice:"
+          ],
+          "score": 25
+        },
+        "gpt-oss:120b-cloud": {
+          "family": "openai",
+          "terms": [
+            "activity",
+            "identify",
+            "impossible",
+            "information",
+            "insufficient",
+            "provided",
+            "source:"
+          ],
+          "score": 25
+        },
+        "granite4:350m": {
+          "family": "ibm",
+          "terms": [
+            "language",
+            "trained"
+          ],
+          "score": 25
+        },
+        "llama3.2:1b": {
+          "family": "meta",
+          "terms": [
+            "activity",
+            "automated",
+            "closed",
+            "completed",
+            "determine",
+            "general",
+            "guidance",
+            "individual",
+            "information",
+            "systems",
+            "ticketing",
+            "typically",
+            "updated"
+          ],
+          "score": 25
+        },
+        "qwen:0.5b": {
+          "family": "alibaba",
+          "terms": [
+            "available",
+            "context",
+            "details",
+            "information",
+            "situation"
+          ],
+          "score": 25
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "arguments",
+            "determine",
+            "exists",
+            "function",
+            "get_source_choice",
+            "get_source_choices",
+            "implement",
+            "import",
+            "module",
+            "otherwise",
+            "python",
+            "returns",
+            "source_id"
+          ],
+          "score": 25
+        }
+      },
+      "model_count": 17
+    },
+    "deterministic_filter_query": {
+      "your_name": "postgres:filter",
+      "frank_test": "Frank_Recall_Postgres_003_StrictFilterQuery",
+      "top_consensus_terms": [
+        "priority",
+        "blocked",
+        "dashboard",
+        "database",
+        "retrieval",
+        "reason:",
+        "filtering",
+        "priority>=4",
+        "state=blocked",
+        "filter",
+        "preferred retrieval path:",
+        "minimizing",
+        "transfer",
+        "filters",
+        "conditions",
+        "directly",
+        "matching",
+        "parameters",
+        "payload",
+        "preferred retrieval path",
+        "priority >= 4",
+        "priority_gte",
+        "records",
+        "relevant",
+        "efficient"
+      ],
+      "by_model": {
+        "cerebras:gpt-oss-120b": {
+          "family": "cerebras",
+          "terms": [
+            "bandwidth",
+            "blocked",
+            "client",
+            "constraints",
+            "dashboard",
+            "database",
+            "directly",
+            "filtering",
+            "get /api/v1/tickets?state=blocked&priority_gte=4",
+            "matching",
+            "minimal payload",
+            "network",
+            "parameters",
+            "payload",
+            "preferred retrieval path",
+            "priority",
+            "priority >= 4",
+            "priority_gte",
+            "records",
+            "reducing",
+            "relevant",
+            "retrieval",
+            "returning",
+            "server\u2011side filtering",
+            "state = 'blocked'"
+          ],
+          "score": 50
+        },
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "blocked",
+            "example use case",
+            "preferred_retrieval_path",
+            "priority",
+            "priority>=4",
+            "sql query",
+            "state=blocked",
+            "structure"
+          ],
+          "score": 50
+        },
+        "cerebras:qwen-3-235b-a22b-instruct-2507": {
+          "family": "cerebras",
+          "terms": [
+            "blocked",
+            "dashboard",
+            "efficient",
+            "enabling",
+            "filter",
+            "filtering",
+            "integration",
+            "minimizing",
+            "parameters",
+            "priority",
+            "priority>=4",
+            "retrieval",
+            "state=blocked",
+            "ticketing",
+            "transfer"
+          ],
+          "score": 25
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "backend",
+            "because",
+            "blocked",
+            "dashboard",
+            "display",
+            "efficient",
+            "filtering",
+            "filters",
+            "latency",
+            "minimizes",
+            "optionally",
+            "payload",
+            "preferred retrieval path:",
+            "priority",
+            "priority >= 4",
+            "pushes",
+            "reason:",
+            "reliable",
+            "retrieval",
+            "returns",
+            "server",
+            "sorted",
+            "state = \"blocked\"",
+            "updated_at"
+          ],
+          "score": 25
+        },
+        "deepcoder:1.5b": {
+          "family": "deepcoder",
+          "terms": [
+            "blocked",
+            "certain",
+            "conditions",
+            "create",
+            "dashboard",
+            "display",
+            "figure",
+            "filter",
+            "preferred",
+            "priority",
+            "remember",
+            "retrieval",
+            "systems"
+          ],
+          "score": 25
+        },
+        "deepseek-coder:6.7b": {
+          "family": "deepseek",
+          "terms": [
+            "accurate",
+            "asking",
+            "database",
+            "details",
+            "example",
+            "general",
+            "interact",
+            "language",
+            "problem",
+            "programming",
+            "solution",
+            "something",
+            "struct"
+          ],
+          "score": 25
+        },
+        "glm-4.7:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "abstraction",
+            "backed",
+            "composite",
+            "dashboard",
+            "database",
+            "endpoint",
+            "ensures",
+            "filter",
+            "instantly",
+            "latency",
+            "maintains",
+            "preferred retrieval path:",
+            "priority",
+            "providing",
+            "reason:",
+            "records",
+            "required",
+            "responsive",
+            "security",
+            "subset"
+          ],
+          "score": 25
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "dashboard",
+            "database",
+            "ensuring",
+            "filtering",
+            "indexed",
+            "minimizing",
+            "overhead",
+            "priority",
+            "pushes",
+            "reason:",
+            "relevant",
+            "retrieval path:",
+            "returned",
+            "status = \"blocked\" and priority >= 4",
+            "transfer"
+          ],
+          "score": 25
+        },
+        "ministral-3:3b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "aligned",
+            "blocked",
+            "columns",
+            "concise",
+            "conditions",
+            "dashboard",
+            "filters",
+            "focusing",
+            "needed",
+            "performance:",
+            "preferred retrieval path:",
+            "priority",
+            "priority>=4",
+            "readability:",
+            "reason:",
+            "required",
+            "simplicity:",
+            "single",
+            "state=blocked",
+            "subqueries",
+            "ticket_id",
+            "unnecessary"
+          ],
+          "score": 25
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "assignee",
+            "blocked",
+            "created_at",
+            "criteria",
+            "dashboard",
+            "directly",
+            "essential",
+            "fields",
+            "filters",
+            "minimizing",
+            "needed",
+            "preferred retrieval path:",
+            "priority",
+            "priority>=4",
+            "priority_gte",
+            "processing",
+            "reason:",
+            "requests",
+            "server",
+            "state=blocked",
+            "transfer"
+          ],
+          "score": 25
+        },
+        "qwen3-next:80b-cloud": {
+          "family": "alibaba",
+          "terms": [
+            "(state, priority)",
+            "(with a composite index on",
+            "blocked",
+            "composite",
+            "conditions",
+            "created_at",
+            "database",
+            "efficiently",
+            "filter",
+            "locate",
+            "matching",
+            "preferred retrieval path",
+            "priority",
+            "retrieval",
+            "selectivity",
+            "state='blocked'",
+            "typical"
+          ],
+          "score": 25
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "filter_and_retrieve_tickets",
+            "implement",
+            "priority",
+            "python",
+            "ticket.priority",
+            "ticket.state"
+          ],
+          "score": 25
+        }
+      },
+      "model_count": 12
+    },
+    "semantic_incident_lookup": {
+      "your_name": "qdrant:similarity",
+      "frank_test": "Frank_Recall_Qdrant_001_SemanticErrorLookup",
+      "top_consensus_terms": [
+        "refresh",
+        "timeout",
+        "semantically",
+        "similar",
+        "incidents",
+        "expired",
+        "knowledge",
+        "reason:",
+        "service",
+        "source:",
+        "unable",
+        "incident",
+        "client",
+        "inactivity",
+        "prolonged",
+        "renewal",
+        "session",
+        "credentials",
+        "failed",
+        "obtain",
+        "restart",
+        "context",
+        "database",
+        "dataset",
+        "defined"
+      ],
+      "by_model": {
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "credentials",
+            "expired",
+            "failed",
+            "incidents",
+            "knowledge",
+            "obtain",
+            "reason:",
+            "refresh",
+            "restart",
+            "semantically",
+            "service",
+            "similar",
+            "source:",
+            "timeout",
+            "unable"
+          ],
+          "score": 100
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "context",
+            "database",
+            "dataset",
+            "defined",
+            "fulfill",
+            "incident",
+            "incidents",
+            "internal",
+            "knowledge",
+            "monitoring",
+            "platform",
+            "refresh",
+            "repository",
+            "request",
+            "semantically",
+            "similar",
+            "ticketing",
+            "timeout"
+          ],
+          "score": 100
+        },
+        "smollm2:135m": {
+          "family": "huggingface",
+          "terms": [
+            "observed",
+            "refresh",
+            "semantically",
+            "similar",
+            "timeout"
+          ],
+          "score": 75
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "already",
+            "attempted",
+            "causing",
+            "client",
+            "expired",
+            "inactivity",
+            "lapsed",
+            "prevented",
+            "prolonged",
+            "reason:",
+            "refresh",
+            "renewal",
+            "resumed",
+            "scheduled",
+            "session",
+            "source:",
+            "timeout",
+            "window"
+          ],
+          "score": 62
+        },
+        "cerebras:qwen-3-235b-a22b-instruct-2507": {
+          "family": "cerebras",
+          "terms": [
+            "authenticate",
+            "client",
+            "denied",
+            "endpoint",
+            "expiration",
+            "handled",
+            "inactivity",
+            "period",
+            "prolonged",
+            "properly",
+            "refresh",
+            "rejects",
+            "renewal",
+            "requests",
+            "service",
+            "session",
+            "timeout",
+            "unable"
+          ],
+          "score": 50
+        },
+        "gemma3:270m": {
+          "family": "google",
+          "terms": [
+            "refresh",
+            "timeout"
+          ],
+          "score": 50
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "find_similar_incidents",
+            "function",
+            "implement",
+            "incident",
+            "incidents",
+            "library",
+            "refresh",
+            "returns",
+            "semantic_similarity",
+            "semantically",
+            "similar",
+            "threshold",
+            "timeout"
+          ],
+          "score": 38
+        }
+      },
+      "model_count": 7
+    },
+    "semantic_pattern_search": {
+      "your_name": "qdrant:patterns",
+      "frank_test": "Frank_Recall_Qdrant_002_PatternReuseSearch",
+      "top_consensus_terms": [
+        "jitter",
+        "breaker",
+        "implementation",
+        "patterns",
+        "pattern",
+        "circuit",
+        "exponential",
+        "source:",
+        "reason:",
+        "retrieve",
+        "related",
+        "backoff",
+        "retries",
+        "prevent",
+        "resilience4j",
+        "cascading",
+        "failures",
+        "combined",
+        "configurable",
+        "github",
+        "github.com",
+        "provides",
+        "systems",
+        "thundering",
+        "policies"
+      ],
+      "by_model": {
+        "cerebras:gpt-oss-120b": {
+          "family": "cerebras",
+          "terms": [
+            "allowing",
+            "behavior",
+            "breaker",
+            "circuit",
+            "combined",
+            "configurable",
+            "defining",
+            "exponential",
+            "fluent",
+            "github",
+            "github.com",
+            "implementation",
+            "integrates",
+            "jitter",
+            "policies",
+            "robust",
+            "waitandretryasync"
+          ],
+          "score": 75
+        },
+        "deepseek-v3.2:cloud": {
+          "family": "deepseek",
+          "terms": [
+            "breaker",
+            "circuit",
+            "communication",
+            "comprehensive",
+            "configurable",
+            "designed",
+            "including",
+            "jitter",
+            "library",
+            "mechanism",
+            "modular",
+            "patterns",
+            "policies",
+            "reason:",
+            "resilience",
+            "resilience4j",
+            "source:",
+            "strategies",
+            "together",
+            "tolerance",
+            "tolerant"
+          ],
+          "score": 50
+        },
+        "gpt-oss:120b-cloud": {
+          "family": "openai",
+          "terms": [
+            "breaking",
+            "circuit",
+            "circuitbreaker",
+            "combined",
+            "configured",
+            "create",
+            "exponential",
+            "github",
+            "github.com",
+            "jitter",
+            "module",
+            "pattern",
+            "policy",
+            "provides",
+            "reason:",
+            "resilience4j",
+            "sleepdurationprovider",
+            "source:",
+            "supports"
+          ],
+          "score": 50
+        },
+        "ministral-3:3b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "builder",
+            "circuitbreaker",
+            "configuration",
+            "integration",
+            "readme",
+            "resilience4j",
+            "resilience4j (spring boot):",
+            "resilience4j.readme.io",
+            "source:"
+          ],
+          "score": 50
+        },
+        "ministral-3:8b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "automatic",
+            "breaker",
+            "circuit",
+            "concise",
+            "configurable",
+            "failure",
+            "fallback",
+            "jitter",
+            "patterns",
+            "readme",
+            "recovery",
+            "resilience4j",
+            "resilience4j.readme.io",
+            "safe retry with jitter and breaker",
+            "spring",
+            "threshold"
+          ],
+          "score": 50
+        },
+        "smollm:135m": {
+          "family": "huggingface",
+          "terms": [
+            "already",
+            "breaker",
+            "combination",
+            "function",
+            "implementation",
+            "interval",
+            "jitter",
+            "methods",
+            "patterns",
+            "related",
+            "retrieve",
+            "target"
+          ],
+          "score": 50
+        },
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "amazon",
+            "aws.amazon.com",
+            "backoff",
+            "congestion",
+            "exponential",
+            "interest",
+            "overwhelming",
+            "points",
+            "reason:",
+            "reduce",
+            "retries",
+            "safe retry with jitter and breaker patterns",
+            "server",
+            "source:"
+          ],
+          "score": 25
+        },
+        "cerebras:qwen-3-235b-a22b-instruct-2507": {
+          "family": "cerebras",
+          "terms": [
+            "backoff",
+            "breakers",
+            "cascading",
+            "circuit",
+            "combining",
+            "dependencies",
+            "downstream",
+            "exponential",
+            "failures",
+            "guidance",
+            "implementing",
+            "jitter",
+            "manage",
+            "patterns",
+            "prevent",
+            "resilient",
+            "systems"
+          ],
+          "score": 25
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "backoff",
+            "breakers",
+            "cascading",
+            "circuit",
+            "combining",
+            "covers",
+            "design",
+            "explicitly",
+            "exponential",
+            "failures",
+            "guidance",
+            "jitter",
+            "pattern",
+            "reason:",
+            "retries",
+            "source:",
+            "thundering"
+          ],
+          "score": 25
+        },
+        "deepcoder:1.5b": {
+          "family": "deepcoder",
+          "terms": [
+            "behaving",
+            "breaker",
+            "crashing",
+            "designed",
+            "erratically",
+            "errors",
+            "figure",
+            "gracefully",
+            "handle",
+            "implementation",
+            "jitter",
+            "mechanisms",
+            "operations",
+            "patterns",
+            "prevent",
+            "quickly",
+            "recover",
+            "refers",
+            "related",
+            "repeated",
+            "requests",
+            "retries",
+            "retrieve",
+            "understanding"
+          ],
+          "score": 25
+        },
+        "deepseek-coder:6.7b": {
+          "family": "deepseek",
+          "terms": [
+            "attempt",
+            "breaker",
+            "common",
+            "commonly",
+            "distributed",
+            "frameworks",
+            "generator",
+            "implementation",
+            "implemented",
+            "introduce",
+            "jitter",
+            "languages",
+            "number",
+            "patterns",
+            "programming",
+            "random",
+            "retry with jitter",
+            "systems",
+            "various"
+          ],
+          "score": 25
+        },
+        "functiongemma:270m": {
+          "family": "functiongemma",
+          "terms": [
+            "assist",
+            "assisting",
+            "cannot",
+            "capabilities",
+            "current",
+            "development",
+            "documentation",
+            "generate",
+            "implementation",
+            "information",
+            "limited",
+            "patterns",
+            "project",
+            "reasoning",
+            "related",
+            "retrieve",
+            "retrieving",
+            "software",
+            "unable"
+          ],
+          "score": 25
+        },
+        "glm-4.7:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "backoff",
+            "cascading",
+            "combination",
+            "defines",
+            "exponential",
+            "failing",
+            "failures",
+            "jitter",
+            "mitigate",
+            "pattern",
+            "prevent",
+            "problems",
+            "reason:",
+            "retries",
+            "services",
+            "source:",
+            "stopping",
+            "thundering"
+          ],
+          "score": 25
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "algorithms",
+            "detection",
+            "distributed",
+            "handle",
+            "machine",
+            "pattern",
+            "prevent",
+            "preventing",
+            "reason:",
+            "recovery",
+            "source:",
+            "storms",
+            "synchronized",
+            "systems",
+            "thundering"
+          ],
+          "score": 25
+        },
+        "granite4:350m": {
+          "family": "ibm",
+          "terms": [
+            "breaker",
+            "developers",
+            "implementation",
+            "jitter",
+            "pattern",
+            "provides",
+            "related",
+            "response",
+            "useful",
+            "working"
+          ],
+          "score": 25
+        },
+        "llama3.2:1b": {
+          "family": "meta",
+          "terms": [
+            "asyncretrywithjitterandbreaker",
+            "breaker",
+            "github",
+            "github.com",
+            "implementation",
+            "jitter",
+            "library",
+            "mechanism",
+            "package",
+            "patterns",
+            "saferetry",
+            "strategy"
+          ],
+          "score": 25
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "article",
+            "backoff",
+            "breaker",
+            "cascading",
+            "circuit",
+            "clearly",
+            "combined",
+            "documented",
+            "explains",
+            "exponential",
+            "failures",
+            "implementation",
+            "integr",
+            "jitter",
+            "pattern",
+            "prevent",
+            "production",
+            "provides",
+            "recommended",
+            "retries",
+            "tested"
+          ],
+          "score": 25
+        },
+        "qwen:0.5b": {
+          "family": "alibaba",
+          "terms": [
+            "breaker",
+            "depend",
+            "implementation",
+            "interested",
+            "jitter",
+            "patterns",
+            "project",
+            "related",
+            "requirements",
+            "retrieve"
+          ],
+          "score": 25
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "arguments",
+            "breaker",
+            "expression",
+            "findall",
+            "function",
+            "implement",
+            "implementation",
+            "import",
+            "jitter",
+            "matches",
+            "module",
+            "pattern",
+            "patterns",
+            "python",
+            "re.findall",
+            "regular",
+            "retrieve",
+            "returns",
+            "string"
+          ],
+          "score": 25
+        },
+        "smollm2:135m": {
+          "family": "huggingface",
+          "terms": [
+            "implementation",
+            "pattern",
+            "retrieve"
+          ],
+          "score": 25
+        }
+      },
+      "model_count": 20
+    },
+    "rag_pre_context_fetch": {
+      "your_name": "qdrant:rag",
+      "frank_test": "Frank_Recall_Qdrant_003_RagPreContext",
+      "top_consensus_terms": [
+        "context",
+        "snippets",
+        "similarity",
+        "gather",
+        "retrieval",
+        "previous",
+        "similar",
+        "snippet",
+        "relevant",
+        "writing",
+        "reason:",
+        "provided",
+        "retrieve",
+        "general",
+        "because",
+        "validating",
+        "current",
+        "request",
+        "codebase",
+        "asking",
+        "interactions",
+        "cannot",
+        "external",
+        "training",
+        "perform"
+      ],
+      "by_model": {
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "context",
+            "context snippet retrieval",
+            "database",
+            "descriptions",
+            "engine",
+            "gather",
+            "index a knowledge base",
+            "metadata",
+            "query the index",
+            "relevant",
+            "resolutions",
+            "similarity",
+            "snippets",
+            "timestamps",
+            "writing"
+          ],
+          "score": 50
+        },
+        "functiongemma:270m": {
+          "family": "functiongemma",
+          "terms": [
+            "context",
+            "gather",
+            "previous",
+            "review",
+            "similarity",
+            "snippets"
+          ],
+          "score": 50
+        },
+        "llama3.2:1b": {
+          "family": "meta",
+          "terms": [
+            "available",
+            "changes",
+            "common",
+            "context",
+            "follow",
+            "gather",
+            "general",
+            "identify relevant keywords and phrases",
+            "information",
+            "keywords",
+            "language",
+            "outline",
+            "phrases",
+            "possible",
+            "practices",
+            "previous",
+            "process",
+            "relevant",
+            "similarity",
+            "simulate",
+            "snippets"
+          ],
+          "score": 50
+        },
+        "ministral-3:3b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "address",
+            "aligns",
+            "because",
+            "context",
+            "defensive",
+            "defensive programming pattern",
+            "demonstrates",
+            "expected",
+            "fallback",
+            "function",
+            "handling",
+            "malformed",
+            "mechanism",
+            "parse_json",
+            "parsing",
+            "pattern",
+            "previous",
+            "programming",
+            "reason:",
+            "retrieval source:",
+            "selected",
+            "similar",
+            "snippet",
+            "validating"
+          ],
+          "score": 50
+        },
+        "cerebras:qwen-3-235b-a22b-instruct-2507": {
+          "family": "cerebras",
+          "terms": [
+            "adding",
+            "addresses",
+            "applicable",
+            "authentication",
+            "because",
+            "current",
+            "ensuring",
+            "exception",
+            "highly",
+            "likely",
+            "pointer",
+            "processing",
+            "relevant",
+            "request",
+            "robustness",
+            "similar",
+            "snippet",
+            "validating"
+          ],
+          "score": 25
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "actual",
+            "codebase",
+            "commit",
+            "environment",
+            "first retrieval source (would use):",
+            "highest",
+            "incident",
+            "internal",
+            "minimizes",
+            "patches",
+            "patterns",
+            "postmortems",
+            "previously",
+            "project",
+            "reason:",
+            "retrieval",
+            "semantic",
+            "similarity",
+            "snippet",
+            "successful",
+            "vector"
+          ],
+          "score": 25
+        },
+        "deepcoder:1.5b": {
+          "family": "deepcoder",
+          "terms": [
+            "context",
+            "figure",
+            "gather",
+            "problem",
+            "retrieval",
+            "similar",
+            "similarity",
+            "snippets",
+            "specifically",
+            "trying",
+            "writing"
+          ],
+          "score": 25
+        },
+        "deepseek-coder:6.7b": {
+          "family": "deepseek",
+          "terms": [
+            "asking",
+            "called",
+            "chunks",
+            "context",
+            "gather",
+            "general",
+            "guideline",
+            "prioritize",
+            "request",
+            "similarity",
+            "snippets",
+            "technique",
+            "unclear"
+          ],
+          "score": 25
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "codebase",
+            "context",
+            "provided",
+            "reason:",
+            "retrieve",
+            "similar",
+            "snippets",
+            "source:"
+          ],
+          "score": 25
+        },
+        "lfm2.5-thinking:latest": {
+          "family": "lfm2.5-thinking",
+          "terms": [
+            "answer",
+            "asking",
+            "context",
+            "gather",
+            "interactions",
+            "mentioned",
+            "retrieval",
+            "similarity",
+            "snippets"
+          ],
+          "score": 25
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "across",
+            "cannot",
+            "context",
+            "conversation",
+            "current",
+            "explicitly",
+            "external",
+            "generated",
+            "historical",
+            "including",
+            "interactions",
+            "memory",
+            "previous",
+            "provided",
+            "responses",
+            "retain",
+            "retrieval",
+            "retrieve",
+            "sessions",
+            "snippets",
+            "training",
+            "unless"
+          ],
+          "score": 25
+        },
+        "qwen3-next:80b-cloud": {
+          "family": "alibaba",
+          "terms": [
+            "cannot",
+            "context",
+            "databases",
+            "existing",
+            "external",
+            "knowledge",
+            "limited",
+            "perform",
+            "private",
+            "repositories",
+            "retrieval",
+            "retrieve",
+            "snippets",
+            "training"
+          ],
+          "score": 25
+        },
+        "reader-lm:0.5b": {
+          "family": "reader-lm",
+          "terms": [
+            "context",
+            "gather",
+            "retrieval",
+            "similarity",
+            "snippets",
+            "writing"
+          ],
+          "score": 25
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "context_snippets",
+            "get_first_similarity_context_snippets",
+            "implement",
+            "import",
+            "python",
+            "re.sub",
+            "similarity_snippets",
+            "snippet",
+            "snippet.strip",
+            "snippet_snippet",
+            "snippet_snippet.strip"
+          ],
+          "score": 25
+        },
+        "glm-4.7:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "context",
+            "perform",
+            "provided",
+            "repository"
+          ],
+          "score": 0
+        }
+      },
+      "model_count": 15
+    },
+    "safe_code_mutation_sequence": {
+      "your_name": "bridge.read,bridge.diff,bridge.patch",
+      "frank_test": "Frank_ToolCall_001_DiffBeforePatch",
+      "top_consensus_terms": [
+        "bridge",
+        "correct",
+        "mutation",
+        "safety",
+        "mutated",
+        "bridge.diff",
+        "bridge.patch",
+        "bridge.read",
+        "bridge.read \u2192 bridge.diff \u2192 bridge.patch",
+        "allowed",
+        "implement",
+        "import",
+        "python",
+        "safe_mutation",
+        "tool_or",
+        "tool_order",
+        "behavior",
+        "binder",
+        "binder-heap",
+        "binder-heap --bounds",
+        "binder-heap --taint",
+        "bounds",
+        "checks",
+        "compiling",
+        "developed"
+      ],
+      "by_model": {
+        "opencode/big-pickle": {
+          "family": "openai_family",
+          "terms": [
+            "bridge",
+            "bridge.diff",
+            "bridge.patch",
+            "bridge.read",
+            "bridge.read \u2192 bridge.diff \u2192 bridge.patch"
+          ],
+          "score": 100
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "allowed",
+            "implement",
+            "import",
+            "python",
+            "safe_mutation",
+            "tool_or",
+            "tool_order"
+          ],
+          "score": 100
+        },
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "behavior",
+            "binder",
+            "binder-heap",
+            "binder-heap --bounds",
+            "binder-heap --taint",
+            "bounds",
+            "checks",
+            "compiling",
+            "correct",
+            "developed",
+            "find-leaks",
+            "issues",
+            "mutation",
+            "safety",
+            "sanitizer",
+            "sanitizer-safety",
+            "taint2",
+            "undefined"
+          ],
+          "score": 33
+        },
+        "ministral-3:8b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "application",
+            "bridge",
+            "bridge tools",
+            "changes",
+            "code mutation (fuzzing/mutation testing)",
+            "controlled",
+            "correct",
+            "detect",
+            "differential",
+            "dynamic analysis (dast)",
+            "fuzzing",
+            "mutated",
+            "mutation",
+            "robustness",
+            "runtime",
+            "static analysis (sast)",
+            "testing",
+            "typically",
+            "vulnerabilities"
+          ],
+          "score": 33
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "1. read",
+            "2. write",
+            "3. read",
+            "analysis",
+            "bridge",
+            "correct",
+            "correctness",
+            "deployment",
+            "ensures",
+            "intent",
+            "modified",
+            "mutated",
+            "mutation",
+            "original",
+            "pattern",
+            "safety",
+            "sequence",
+            "structure",
+            "understand",
+            "verify"
+          ],
+          "score": 33
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "locate_symbol",
+            "replace_symbol_body",
+            "review_symbol",
+            "run_project_lint",
+            "run_project_tests",
+            "snapshot_repo",
+            "xref_symbols"
+          ],
+          "score": 0
+        }
+      },
+      "model_count": 6
+    },
+    "qa_gate_before_done": {
+      "your_name": "qa.verify_claims",
+      "frank_test": "Frank_ToolCall_002_QABeforeDone",
+      "top_consensus_terms": [
+        "approval",
+        "claims",
+        "customer",
+        "review",
+        "verification",
+        "correct",
+        "deemed",
+        "receive",
+        "required",
+        "satisfactory",
+        "subsequent"
+      ],
+      "by_model": {
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "approval",
+            "claims",
+            "customer",
+            "review"
+          ],
+          "score": 0
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "verification"
+          ],
+          "score": 0
+        },
+        "smollm2:135m": {
+          "family": "huggingface",
+          "terms": [
+            "approval",
+            "correct",
+            "deemed",
+            "receive",
+            "required",
+            "satisfactory",
+            "subsequent"
+          ],
+          "score": 0
+        }
+      },
+      "model_count": 3
+    },
+    "acceptance_criteria_gate": {
+      "your_name": "acceptance_criteria.set",
+      "frank_test": "Frank_ToolCall_003_AcceptanceBeforeReview",
+      "top_consensus_terms": [
+        "review",
+        "acceptance",
+        "criteria",
+        "action",
+        "correct",
+        "required",
+        "context",
+        "workflow",
+        "transitioning",
+        "proceeding",
+        "problem",
+        "something",
+        "language",
+        "referring",
+        "required action:",
+        "setting",
+        "achieve",
+        "define",
+        "request",
+        "requirement",
+        "requirements",
+        "requires",
+        "satisfy",
+        "missing",
+        "establish"
+      ],
+      "by_model": {
+        "deepseek-v3.2:cloud": {
+          "family": "deepseek",
+          "terms": [
+            "acceptance",
+            "criteria",
+            "review",
+            "setting"
+          ],
+          "score": 100
+        },
+        "smollm:135m": {
+          "family": "huggingface",
+          "terms": [
+            "acceptance",
+            "achieve",
+            "action",
+            "correct",
+            "define",
+            "request",
+            "required",
+            "requirement",
+            "requirements",
+            "requires",
+            "review",
+            "satisfy"
+          ],
+          "score": 100
+        },
+        "cerebras:gpt-oss-120b": {
+          "family": "cerebras",
+          "terms": [
+            "acceptance",
+            "criteria",
+            "missing",
+            "review",
+            "transitioning"
+          ],
+          "score": 67
+        },
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "acceptance",
+            "action",
+            "criteria",
+            "establish",
+            "proceeding",
+            "required",
+            "review"
+          ],
+          "score": 67
+        },
+        "deepcoder:1.5b": {
+          "family": "deepcoder",
+          "terms": [
+            "acceptance",
+            "action",
+            "correct",
+            "criteria",
+            "figure",
+            "fixing",
+            "mentioned",
+            "probably",
+            "problem",
+            "required",
+            "review",
+            "something",
+            "specified"
+          ],
+          "score": 67
+        },
+        "deepseek-coder:6.7b": {
+          "family": "deepseek",
+          "terms": [
+            "context",
+            "details",
+            "development",
+            "framework",
+            "problem",
+            "process",
+            "programming",
+            "question",
+            "related",
+            "software",
+            "something",
+            "talking",
+            "testing",
+            "tracking",
+            "trying",
+            "unclear",
+            "working"
+          ],
+          "score": 67
+        },
+        "gpt-oss:120b-cloud": {
+          "family": "openai",
+          "terms": [
+            "acceptance",
+            "criteria",
+            "moving",
+            "review"
+          ],
+          "score": 67
+        },
+        "llama3.2:1b": {
+          "family": "meta",
+          "terms": [
+            "action",
+            "context",
+            "correct",
+            "errors",
+            "inconsistencies",
+            "information",
+            "language",
+            "learning",
+            "machine",
+            "network",
+            "neural",
+            "outputs",
+            "please",
+            "referring",
+            "required",
+            "review"
+          ],
+          "score": 67
+        },
+        "ministral-3:8b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "acceptance",
+            "add acceptance criteria",
+            "criteria",
+            "required action:",
+            "review",
+            "transitioning"
+          ],
+          "score": 67
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "acceptance",
+            "action",
+            "correct",
+            "correct required action:",
+            "criteria",
+            "defined",
+            "depending",
+            "prevent",
+            "prevent the review from proceeding",
+            "proceeding",
+            "requesting",
+            "required",
+            "review",
+            "transition",
+            "workflow"
+          ],
+          "score": 67
+        },
+        "glm-4.7:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "acceptance",
+            "criteria"
+          ],
+          "score": 33
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "acceptance",
+            "criteria"
+          ],
+          "score": 33
+        },
+        "minimax-m2.5:cloud": {
+          "family": "minimax-m2.5",
+          "terms": [
+            "acceptance",
+            "criteria"
+          ],
+          "score": 33
+        },
+        "ministral-3:3b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "adherence",
+            "aligns",
+            "completeness",
+            "consistency",
+            "context",
+            "correctness",
+            "ensure",
+            "intended",
+            "logical",
+            "negatives",
+            "output",
+            "positives",
+            "relevance",
+            "required action:",
+            "review",
+            "validate",
+            "workflow"
+          ],
+          "score": 33
+        },
+        "opencode/big-pickle": {
+          "family": "openai_family",
+          "terms": [
+            "action",
+            "clarify",
+            "correct",
+            "platform",
+            "referring",
+            "review",
+            "workflow"
+          ],
+          "score": 33
+        },
+        "qwen:0.5b": {
+          "family": "alibaba",
+          "terms": [
+            "cannot",
+            "expert",
+            "guidance",
+            "language",
+            "professional",
+            "recommend",
+            "review",
+            "seeking"
+          ],
+          "score": 33
+        },
+        "qwen3-next:80b-cloud": {
+          "family": "alibaba",
+          "terms": [
+            "acceptance",
+            "criteria"
+          ],
+          "score": 33
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "check_acceptance_state",
+            "implement",
+            "python"
+          ],
+          "score": 33
+        },
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "needs_review"
+          ],
+          "score": 0
+        },
+        "smollm2:135m": {
+          "family": "huggingface",
+          "terms": [
+            "receive",
+            "review"
+          ],
+          "score": 0
+        }
+      },
+      "model_count": 20
+    },
+    "read_only_research_mode": {
+      "your_name": "read_only_mode",
+      "frank_test": "Frank_ToolCall_004_ReadOnlyResearchGate",
+      "top_consensus_terms": [
+        "research",
+        "execution",
+        "compliance",
+        "information",
+        "safe tool mode:",
+        "privacy",
+        "reason:",
+        "external",
+        "keywords",
+        "requires",
+        "harmful",
+        "prevent",
+        "sensitive",
+        "interaction",
+        "gathering",
+        "limited",
+        "restricted",
+        "retrieval",
+        "destructive",
+        "effects",
+        "mutations",
+        "network",
+        "privilege",
+        "read-only / no side effects",
+        "writes"
+      ],
+      "by_model": {
+        "codex/gpt-5.3-codex": {
+          "family": "openai",
+          "terms": [
+            "destructive",
+            "effects",
+            "keywords",
+            "mutations",
+            "network",
+            "privilege",
+            "read-only / no side effects",
+            "research",
+            "writes"
+          ],
+          "score": 100
+        },
+        "cerebras:llama3.1-8b": {
+          "family": "cerebras",
+          "terms": [
+            "read-only",
+            "research-only task protection",
+            "safe tool mode and reason"
+          ],
+          "score": 67
+        },
+        "opencode/nemotron-3-super-free": {
+          "family": "openai_family",
+          "terms": [
+            "research"
+          ],
+          "score": 67
+        },
+        "qwen3-coder-next:cloud": {
+          "family": "alibaba",
+          "terms": [
+            "accessing",
+            "alteration",
+            "analyzing",
+            "execution",
+            "existing",
+            "information",
+            "modification",
+            "requires",
+            "research"
+          ],
+          "score": 67
+        },
+        "aya-expanse:8b": {
+          "family": "cohere",
+          "terms": [
+            "agreement",
+            "anonymize",
+            "awareness",
+            "display",
+            "filters",
+            "functions",
+            "generation",
+            "harmful",
+            "inappropriate",
+            "information",
+            "material",
+            "offensive",
+            "possible",
+            "potentially",
+            "prevent",
+            "processing",
+            "safe tool mode:",
+            "sensitive"
+          ],
+          "score": 33
+        },
+        "cerebras:qwen-3-235b-a22b-instruct-2507": {
+          "family": "cerebras",
+          "terms": [
+            "compliance",
+            "interaction",
+            "privacy",
+            "protection",
+            "research"
+          ],
+          "score": 33
+        },
+        "deepcoder:1.5b": {
+          "family": "deepcoder",
+          "terms": [
+            "activates",
+            "answer",
+            "determine",
+            "ensure",
+            "figure",
+            "identify",
+            "mentioned",
+            "previous",
+            "remember",
+            "research",
+            "safest",
+            "setting",
+            "trying"
+          ],
+          "score": 33
+        },
+        "deepseek-v3.2:cloud": {
+          "family": "deepseek",
+          "terms": [
+            "research"
+          ],
+          "score": 33
+        },
+        "devstral-2:123b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "analysis",
+            "execution",
+            "gathering",
+            "reason:",
+            "safe tool mode:"
+          ],
+          "score": 33
+        },
+        "functiongemma:270m": {
+          "family": "functiongemma",
+          "terms": [
+            "apologize",
+            "assist",
+            "assistance",
+            "assisting",
+            "cannot",
+            "capabilities",
+            "current",
+            "explanations",
+            "limited",
+            "managing",
+            "related",
+            "research",
+            "retrieving",
+            "specialized"
+          ],
+          "score": 33
+        },
+        "glm-5:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "execution"
+          ],
+          "score": 33
+        },
+        "gpt-oss:120b-cloud": {
+          "family": "openai",
+          "terms": [
+            "compliance",
+            "research",
+            "restricted",
+            "safety"
+          ],
+          "score": 33
+        },
+        "granite4:350m": {
+          "family": "ibm",
+          "terms": [
+            "decision",
+            "enhance",
+            "gathering",
+            "information",
+            "insights",
+            "involves",
+            "making",
+            "processes",
+            "understanding"
+          ],
+          "score": 33
+        },
+        "kimi-k2:1t-cloud": {
+          "family": "moonshot",
+          "terms": [
+            "execution",
+            "reason:",
+            "tool mode:"
+          ],
+          "score": 33
+        },
+        "minimax-m2.5:cloud": {
+          "family": "minimax-m2.5",
+          "terms": [
+            "compliance",
+            "limited",
+            "production",
+            "research"
+          ],
+          "score": 33
+        },
+        "minimax-m2:cloud": {
+          "family": "minimax-m2",
+          "terms": [
+            "research"
+          ],
+          "score": 33
+        },
+        "ministral-3:3b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "approved",
+            "creative",
+            "emotional",
+            "external",
+            "handling",
+            "interaction",
+            "keyword",
+            "neutral",
+            "no creative/emotional responses",
+            "no direct user interaction",
+            "no external tool use",
+            "no personalization",
+            "no sensitive data handling",
+            "outputs",
+            "personalization",
+            "predefined, research-only outputs",
+            "privacy",
+            "research",
+            "responses",
+            "safe tool mode:",
+            "sensitive",
+            "speculat",
+            "structured",
+            "unless"
+          ],
+          "score": 33
+        },
+        "ministral-3:8b-cloud": {
+          "family": "mistral",
+          "terms": [
+            "accidental",
+            "actions",
+            "active",
+            "compliance with ethical guidelines",
+            "consequences",
+            "content",
+            "ethical",
+            "execution",
+            "external",
+            "generating",
+            "guidelines",
+            "harmful",
+            "impact",
+            "misinformation",
+            "misuse",
+            "no active task execution",
+            "no external actions",
+            "no risk of unintended consequences",
+            "prevents accidental misuse",
+            "privacy",
+            "reason:",
+            "research",
+            "retrieval",
+            "safe tool mode: off",
+            "unintended",
+            "violations"
+          ],
+          "score": 33
+        },
+        "nemotron-3-super:cloud": {
+          "family": "nvidia",
+          "terms": [
+            "compliance",
+            "factual",
+            "generative",
+            "hallucination",
+            "output",
+            "prevent",
+            "requested",
+            "requires",
+            "research",
+            "restricted",
+            "speculation",
+            "unsafe"
+          ],
+          "score": 33
+        },
+        "smollm:360m": {
+          "family": "huggingface",
+          "terms": [
+            "exists",
+            "function",
+            "get_tool_mode_and_reason",
+            "implement",
+            "import",
+            "matches",
+            "object",
+            "pattern",
+            "python",
+            "re.search",
+            "returns",
+            "safe_tool_mode_and_reason",
+            "searches",
+            "string",
+            "task_id",
+            "tool mode: (.*)"
+          ],
+          "score": 33
+        },
+        "smollm2:135m": {
+          "family": "huggingface",
+          "terms": [
+            "completing",
+            "keywords",
+            "research"
+          ],
+          "score": 33
+        },
+        "glm-4.7:cloud": {
+          "family": "zhipu",
+          "terms": [
+            "accuracy",
+            "checking",
+            "external",
+            "retrieval"
+          ],
+          "score": 0
+        }
+      },
+      "model_count": 22
+    }
+  }
+}

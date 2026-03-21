@@ -216,6 +216,33 @@ class PackageManager:
 
             print(f" Installed '{name}' to {install_path}")
 
+            # Build wiki after successful install
+            try:
+                wiki_dir = os.path.join(os.path.dirname(__file__), "pakman_wiki")
+                pakman_packages_dir = os.path.join(
+                    os.path.dirname(__file__), "packages"
+                )
+                # Ensure wiki directory exists
+                os.makedirs(wiki_dir, exist_ok=True)
+                subprocess.run(
+                    [
+                        sys.executable,
+                        "-m",
+                        "wikipak",
+                        "build",
+                        wiki_dir,
+                        pakman_packages_dir,
+                    ],
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                )
+                print(
+                    f"📚 Wiki built/updated at {wiki_dir}. Run 'pakman wiki' to serve it."
+                )
+            except Exception as e:
+                print(f"⚠️ Failed to build wiki after install: {e}")
+
             return name
 
         except UnicodeDecodeError as e:
@@ -265,7 +292,9 @@ class PackageManager:
                 capture_output=True,
             )
 
-    def _install_github_sparse(self, repo_url: str, subfolder: str, dest: Path, upgrade: bool):
+    def _install_github_sparse(
+        self, repo_url: str, subfolder: str, dest: Path, upgrade: bool
+    ):
         """Pull only a subfolder from a repo using git sparse-checkout.
 
         No full repo clone — downloads just the files you need.
@@ -282,15 +311,22 @@ class PackageManager:
             tmp = Path(tmp)
             # Init a bare-minimum repo, configure sparse, then fetch
             subprocess.run(["git", "init", str(tmp)], check=True, capture_output=True)
-            subprocess.run(["git", "-C", str(tmp), "remote", "add", "origin", full_url],
-                           check=True, capture_output=True)
-            subprocess.run(["git", "-C", str(tmp), "config", "core.sparseCheckout", "true"],
-                           check=True, capture_output=True)
+            subprocess.run(
+                ["git", "-C", str(tmp), "remote", "add", "origin", full_url],
+                check=True,
+                capture_output=True,
+            )
+            subprocess.run(
+                ["git", "-C", str(tmp), "config", "core.sparseCheckout", "true"],
+                check=True,
+                capture_output=True,
+            )
             sparse_file = tmp / ".git" / "info" / "sparse-checkout"
             sparse_file.write_text(subfolder + "/\n")
             subprocess.run(
                 ["git", "-C", str(tmp), "pull", "--depth=1", "origin", "HEAD"],
-                check=True, capture_output=True,
+                check=True,
+                capture_output=True,
             )
             # Move the subfolder into place
             src = tmp / subfolder

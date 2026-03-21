@@ -48,6 +48,9 @@ pakman_wiki/
 test_wiki2/
 *_wiki/
 
+# Internal planning docs — not for public consumption
+.internal/
+
 # Dev scratch files
 ModuleLibraryHealthCheck.txt
 

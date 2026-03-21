@@ -8,6 +8,7 @@ Usage:
     pakman update  [name]           # update one or all packages
     pakman info    <name>           # show package details
     pakman search  <query>          # search available and installed packages
+    pakman wiki               [--port PORT]  # build and serve unified wiki from all packages
 """
 
 import argparse
@@ -88,6 +89,39 @@ def _resolve_source(name: str) -> tuple[str, dict | None]:
 
 # ─── commands ────────────────────────────────────────────────────────────────
 
+
+def cmd_wiki(args):
+    """Build and serve unified wiki from all PakMan packages."""
+    import subprocess, os, sys
+
+    pakman_packages_dir = os.path.join(os.path.dirname(__file__), "packages")
+    wiki_dir = os.path.join(os.path.dirname(__file__), "pakman_wiki")
+    # Ensure wiki directory exists
+    os.makedirs(wiki_dir, exist_ok=True)
+    # Build wiki using wikipak
+    try:
+        subprocess.run(
+            ["wikipak", "build", wiki_dir, pakman_packages_dir],
+            check=True,
+        )
+        print(f"✅ Wiki built at {wiki_dir}")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Failed to build wiki: {e}")
+        return
+    # Serve wiki using zolapress
+    port = args.port or 1111
+    print(f"🚀 Serving wiki at http://127.0.0.1:{port} (press Ctrl+C to stop)")
+    try:
+        subprocess.run(
+            ["zolapress", "serve", wiki_dir, "--port", str(port)],
+            check=True,
+        )
+    except KeyboardInterrupt:
+        print("\n🛑 Wiki server stopped.")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Failed to serve wiki: {e}")
+
+
 def cmd_list(args):
     pm = _get_pm()
     packages = pm.list_packages()
@@ -98,10 +132,10 @@ def cmd_list(args):
     print(f"{'Package':<28} {'Version':<10} {'Status':<12} Source")
     print("-" * 72)
     for p in packages:
-        name    = p.get("name", "?")
+        name = p.get("name", "?")
         version = p.get("version", "-")
-        status  = p.get("status", "installed")
-        source  = p.get("source", "local")
+        status = p.get("status", "installed")
+        source = p.get("source", "local")
         print(f"{name:<28} {version:<10} {status:<12} {source}")
     print(f"\n{len(packages)} package(s) installed.")
     _print_update_notices(packages)
@@ -113,17 +147,21 @@ def _print_update_notices(packages: list):
         # PakMan self-update
         newer_pakman = check_pakman_update()
         if newer_pakman:
-            print(f"\n  [pakman] New version available: {PAKMAN_VERSION} -> {newer_pakman}")
-            print(  "           Run: pip install --upgrade git+https://github.com/udahar/PakMan.git")
+            print(
+                f"\n  [pakman] New version available: {PAKMAN_VERSION} -> {newer_pakman}"
+            )
+            print(
+                "           Run: pip install --upgrade git+https://github.com/udahar/PakMan.git"
+            )
 
         # Package updates (packages that exist in the remote registry)
         if packages:
             available = check_package_updates(packages)
             if available:
                 names = ", ".join(p["name"] for p in available[:5])
-                extra = f" (+{len(available)-5} more)" if len(available) > 5 else ""
+                extra = f" (+{len(available) - 5} more)" if len(available) > 5 else ""
                 print(f"\n  [packages] Updates may be available for: {names}{extra}")
-                print(  "             Run: pakman update")
+                print("             Run: pakman update")
     except Exception:
         pass  # Never let the update check crash the main command
 
@@ -140,7 +178,7 @@ def cmd_install(args):
     try:
         result = pm.install(source, upgrade=args.upgrade, verify=not args.no_verify)
         if result:
-            print(f"  Installed: {result.get('name', args.package)}")
+            print(f"  Installed: {result}")
         else:
             print("  Already up to date.")
     except Exception as e:
@@ -166,7 +204,11 @@ def cmd_update(args):
     # Determine which packages to update
     targets = [p for p in packages if not args.package or p["name"] == args.package]
     if not targets:
-        print(f"Package '{args.package}' not installed." if args.package else "No packages installed.")
+        print(
+            f"Package '{args.package}' not installed."
+            if args.package
+            else "No packages installed."
+        )
         return
 
     # Hash guard: warn about locally-modified packages before overwriting
@@ -188,7 +230,7 @@ def cmd_update(args):
     target_label = args.package or "all packages"
     print(f"Updating {target_label} ...")
     try:
-        pm.update(args.package or None, auto_confirm=True)
+        pm.update(args.package, auto_confirm=True)
         print("  Done.")
     except Exception as e:
         print(f"  Error: {e}", file=sys.stderr)
@@ -235,7 +277,8 @@ def cmd_search(args):
     # Search registry (available packages)
     registry = _get_registry()
     reg_matches = {
-        name: entry for name, entry in registry.items()
+        name: entry
+        for name, entry in registry.items()
         if q in name.lower()
         or q in entry.get("description", "").lower()
         or any(q in t for t in entry.get("tags", []))
@@ -268,6 +311,7 @@ def cmd_search(args):
 
 # ─── main ────────────────────────────────────────────────────────────────────
 
+
 def main():
     parser = argparse.ArgumentParser(
         prog="pakman",
@@ -283,8 +327,12 @@ def main():
     # install
     p_install = sub.add_parser("install", help="install a package")
     p_install.add_argument("package", help="package name, local path, or github URL")
-    p_install.add_argument("--upgrade", "-u", action="store_true", help="upgrade if already installed")
-    p_install.add_argument("--no-verify", action="store_true", help="skip hash verification")
+    p_install.add_argument(
+        "--upgrade", "-u", action="store_true", help="upgrade if already installed"
+    )
+    p_install.add_argument(
+        "--no-verify", action="store_true", help="skip hash verification"
+    )
     p_install.set_defaults(func=cmd_install)
 
     # remove
@@ -295,8 +343,12 @@ def main():
     # update
     p_update = sub.add_parser("update", help="update packages")
     p_update.add_argument("package", nargs="?", help="package name (omit for all)")
-    p_update.add_argument("--yes", "-y", action="store_true",
-                          help="skip modified-file warning (CI/automation)")
+    p_update.add_argument(
+        "--yes",
+        "-y",
+        action="store_true",
+        help="skip modified-file warning (CI/automation)",
+    )
     p_update.set_defaults(func=cmd_update)
 
     # info
@@ -308,6 +360,15 @@ def main():
     p_search = sub.add_parser("search", help="search available packages")
     p_search.add_argument("query", help="search term")
     p_search.set_defaults(func=cmd_search)
+
+    # wiki
+    p_wiki = sub.add_parser(
+        "wiki", help="build and serve unified wiki from all packages"
+    )
+    p_wiki.add_argument(
+        "--port", type=int, help="Port to serve the wiki on (default: 1111)"
+    )
+    p_wiki.set_defaults(func=cmd_wiki)
 
     args = parser.parse_args()
     args.func(args)

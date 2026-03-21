@@ -1,0 +1,10 @@
+[package]
+name = "json_fmt"
+version.workspace = true
+edition.workspace = true
+description = "Format or minify JSON"
+
+[dependencies]
+clap.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

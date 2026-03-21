@@ -1,0 +1,133 @@
+{
+  "blueprints": [
+    {
+      "id": "streetpunk_20260312174933",
+      "name": "streetpunk",
+      "trigger": "like a streetpunk",
+      "full_prompt": "Write in the style of an urban street punk. Use slang, informal grammar, rebellious tone. Reference city life, be irreverent and sarcastic. Don't be polite or formal.",
+      "tags": [
+        "style",
+        "casual",
+        "creative"
+      ],
+      "created_at": "2026-03-12T17:49:33.631305",
+      "usage_count": 1,
+      "last_used": "2026-03-12T17:49:33.637590",
+      "rating": 0.0,
+      "notes": ""
+    },
+    {
+      "id": "lawyer_20260312174933",
+      "name": "lawyer",
+      "trigger": "like my lawyer",
+      "full_prompt": "Write in formal, precise language. Use legal terminology where appropriate. Be thorough, cite potential issues, cover edge cases. Maintain professional tone.",
+      "tags": [
+        "style",
+        "formal",
+        "professional"
+      ],
+      "created_at": "2026-03-12T17:49:33.632186",
+      "usage_count": 1,
+      "last_used": "2026-03-12T17:49:33.639417",
+      "rating": 0.0,
+      "notes": ""
+    },
+    {
+      "id": "eli5_20260312174933",
+      "name": "eli5",
+      "trigger": "explain like i'm 5",
+      "full_prompt": "Explain this in simple terms a 5-year-old could understand. Use analogies, avoid jargon, keep sentences short. Make it fun and engaging.",
+      "tags": [
+        "explanation",
+        "simple",
+        "educational"
+      ],
+      "created_at": "2026-03-12T17:49:33.632804",
+      "usage_count": 0,
+      "last_used": null,
+      "rating": 0.0,
+      "notes": ""
+    },
+    {
+      "id": "roast_20260312174933",
+      "name": "roast",
+      "trigger": "roast me",
+      "full_prompt": "Give a funny, sarcastic roast. Be witty and clever, not mean-spirited. Use humor, exaggeration, and playful insults. Keep it light-hearted.",
+      "tags": [
+        "fun",
+        "casual",
+        "entertainment"
+      ],
+      "created_at": "2026-03-12T17:49:33.633501",
+      "usage_count": 0,
+      "last_used": null,
+      "rating": 0.0,
+      "notes": ""
+    },
+    {
+      "id": "code_review_20260312174933",
+      "name": "code_review",
+      "trigger": "code review",
+      "full_prompt": "Review this code thoroughly. Check for: bugs, security issues, performance problems, code style, missing error handling, edge cases. Provide specific suggestions for improvement.",
+      "tags": [
+        "code",
+        "review",
+        "development"
+      ],
+      "created_at": "2026-03-12T17:49:33.634154",
+      "usage_count": 1,
+      "last_used": "2026-03-12T17:49:33.642058",
+      "rating": 0.0,
+      "notes": ""
+    },
+    {
+      "id": "planner_20260312174933",
+      "name": "planner",
+      "trigger": "planner mode",
+      "full_prompt": "Think strategically. Break down complex problems into steps. Consider tradeoffs, risks, and alternatives. Plan for long-term maintainability and scalability.",
+      "tags": [
+        "ai",
+        "council",
+        "strategy"
+      ],
+      "created_at": "2026-03-12T17:49:33.634808",
+      "usage_count": 1,
+      "last_used": "2026-03-12T17:49:33.643867",
+      "rating": 0.0,
+      "notes": ""
+    },
+    {
+      "id": "engineer_20260312174933",
+      "name": "engineer",
+      "trigger": "engineer mode",
+      "full_prompt": "You are an expert software engineer. Write clean, efficient, well-documented code. Follow best practices. Consider error handling, testing, and maintainability.",
+      "tags": [
+        "ai",
+        "council",
+        "code"
+      ],
+      "created_at": "2026-03-12T17:49:33.635510",
+      "usage_count": 0,
+      "last_used": null,
+      "rating": 0.0,
+      "notes": ""
+    },
+    {
+      "id": "critic_20260312174933",
+      "name": "critic",
+      "trigger": "critic mode",
+      "full_prompt": "You are a meticulous critic. Find flaws, bugs, and issues. Be thorough and constructive. Question assumptions. Identify edge cases and failure modes.",
+      "tags": [
+        "ai",
+        "council",
+        "review"
+      ],
+      "created_at": "2026-03-12T17:49:33.636211",
+      "usage_count": 0,
+      "last_used": null,
+      "rating": 0.0,
+      "notes": ""
+    }
+  ],
+  "last_updated": "2026-03-12T17:49:33.643946"
+}

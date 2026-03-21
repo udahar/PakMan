@@ -1,0 +1,20 @@
+{
+  "name": "MLStack",
+  "version": "0.1.0",
+  "python_packages": [
+    "torch",
+    "tensorflow",
+    "onnx",
+    "onnxruntime",
+    "peft",
+    "datasets",
+    "accelerate",
+    "safetensors",
+    "dspy-ai"
+  ],
+  "notes": [
+    "pickle is built into Python",
+    "compose with PakMan/packages/LoRA for adapter training work",
+    "compose with PakMan/packages/PromptOS for evaluation and distillation work"
+  ]
+}

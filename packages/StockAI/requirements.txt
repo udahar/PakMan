@@ -1,0 +1,20 @@
+# Core
+pandas>=2.0
+numpy>=1.24
+
+# Database
+sqlalchemy>=2.0
+psycopg2-binary>=2.9
+
+# Vector store
+qdrant-client>=1.0
+
+# Config
+python-dotenv>=1.0
+
+# Dashboard
+streamlit>=1.28
+plotly>=5.0
+
+# yfinance is optional - uses local package if not installed
+# Install with: pip install yfinance

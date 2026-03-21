@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zolapress"
+version = "0.1.0"
+description = "Documentation and site generation utilities for ZolaPress"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Richard", email = "richard@example.com"}
+]
+keywords = ["zola", "static-site", "documentation", "cms"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+# Dependencies
+dependencies = [
+    "toml>=0.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "black>=21.0.0",
+    "flake8>=3.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/richard/zolapress"
+"Documentation" = "https://github.com/richard/zolapress#readme"
+"Repository" = "https://github.com/richard/zolapress.git"
+
+[tool.setuptools.packages]
+find = {}
+
+[tool.setuptools.package-data]
+zolapress = [
+    "content/**/*.md",
+]
+
+[project.scripts]
+zolapress = "zolapress.cli:main"

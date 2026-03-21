@@ -1,0 +1,80 @@
+{
+  "id": "demo_code_review",
+  "name": "Code Review Flow",
+  "description": "Automated code review using LLM analysis",
+  "version": "1.0.0",
+  "created_at": "2026-03-12T00:00:00",
+  "updated_at": "2026-03-12T00:00:00",
+  "nodes": [
+    {
+      "id": "input_code",
+      "type": "input",
+      "name": "Code Input",
+      "category": "input",
+      "parameters": {
+        "default": "def hello():\n    print('Hello World')"
+      },
+      "inputs": [],
+      "outputs": ["output"]
+    },
+    {
+      "id": "review_llm",
+      "type": "llm",
+      "name": "Code Reviewer",
+      "category": "llm",
+      "parameters": {
+        "model": "qwen2.5:7b",
+        "system_prompt": "You are an expert code reviewer. Find bugs, security issues, and suggest improvements."
+      },
+      "inputs": ["prompt"],
+      "outputs": ["response"]
+    },
+    {
+      "id": "filter_issues",
+      "type": "filter",
+      "name": "Filter Critical Issues",
+      "category": "logic",
+      "parameters": {
+        "condition": "len(data) > 10",
+        "filter_type": "python"
+      },
+      "inputs": ["data"],
+      "outputs": ["filtered", "passed"]
+    },
+    {
+      "id": "output_review",
+      "type": "output",
+      "name": "Review Output",
+      "category": "output",
+      "parameters": {
+        "format": "text"
+      },
+      "inputs": ["input"],
+      "outputs": ["output", "formatted"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "source": "input_code",
+      "target": "review_llm",
+      "source_output": "output",
+      "target_input": "prompt"
+    },
+    {
+      "id": "edge_2",
+      "source": "review_llm",
+      "target": "filter_issues",
+      "source_output": "response",
+      "target_input": "data"
+    },
+    {
+      "id": "edge_3",
+      "source": "filter_issues",
+      "target": "output_review",
+      "source_output": "filtered",
+      "target_input": "input"
+    }
+  ],
+  "variables": {}
+}

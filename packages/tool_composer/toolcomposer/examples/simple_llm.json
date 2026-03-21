@@ -1,0 +1,62 @@
+{
+  "id": "demo_simple_llm",
+  "name": "Simple LLM Query",
+  "description": "Basic LLM interaction pipeline",
+  "version": "1.0.0",
+  "created_at": "2026-03-12T00:00:00",
+  "updated_at": "2026-03-12T00:00:00",
+  "nodes": [
+    {
+      "id": "user_input",
+      "type": "input",
+      "name": "User Question",
+      "category": "input",
+      "parameters": {
+        "default": "What is Python?"
+      },
+      "inputs": [],
+      "outputs": ["output"]
+    },
+    {
+      "id": "llm_response",
+      "type": "llm",
+      "name": "LLM Answer",
+      "category": "llm",
+      "parameters": {
+        "model": "qwen2.5:7b",
+        "temperature": 0.7
+      },
+      "inputs": ["prompt"],
+      "outputs": ["response"]
+    },
+    {
+      "id": "formatted_output",
+      "type": "output",
+      "name": "Final Output",
+      "category": "output",
+      "parameters": {
+        "format": "text",
+        "prefix": "Answer: "
+      },
+      "inputs": ["input"],
+      "outputs": ["output", "formatted"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "source": "user_input",
+      "target": "llm_response",
+      "source_output": "output",
+      "target_input": "prompt"
+    },
+    {
+      "id": "edge_2",
+      "source": "llm_response",
+      "target": "formatted_output",
+      "source_output": "response",
+      "target_input": "input"
+    }
+  ],
+  "variables": {}
+}

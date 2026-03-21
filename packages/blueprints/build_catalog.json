@@ -1,0 +1,58 @@
+{
+  "records": [
+    {
+      "id": "build_20260312_175332",
+      "what_built": "Python API client",
+      "initial_prompt": "Create Python client for REST API",
+      "ai_approach": "I'll use requests library with proper error handling...",
+      "successful_prompts": [],
+      "failed_prompts": [],
+      "tags": [
+        "python",
+        "api",
+        "build"
+      ],
+      "created_at": "2026-03-12T17:53:32.949230",
+      "build_quality": 0.85,
+      "reuse_count": 0
+    }
+  ],
+  "patterns": {
+    "rust": {
+      "tag": "rust",
+      "common_approaches": [],
+      "successful_prompts": [],
+      "avg_quality": 0.9,
+      "build_count": 1
+    },
+    "cli": {
+      "tag": "cli",
+      "common_approaches": [],
+      "successful_prompts": [],
+      "avg_quality": 0.9,
+      "build_count": 1
+    },
+    "build": {
+      "tag": "build",
+      "common_approaches": [],
+      "successful_prompts": [],
+      "avg_quality": 0.875,
+      "build_count": 2
+    },
+    "python": {
+      "tag": "python",
+      "common_approaches": [],
+      "successful_prompts": [],
+      "avg_quality": 0.85,
+      "build_count": 1
+    },
+    "api": {
+      "tag": "api",
+      "common_approaches": [],
+      "successful_prompts": [],
+      "avg_quality": 0.85,
+      "build_count": 1
+    }
+  },
+  "last_updated": "2026-03-12T17:53:32.949280"
+}

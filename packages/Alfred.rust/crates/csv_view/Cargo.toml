@@ -1,0 +1,9 @@
+[package]
+name = "csv_view"
+version.workspace = true
+edition.workspace = true
+description = "View CSV files as formatted tables"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true

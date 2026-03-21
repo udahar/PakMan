@@ -1,0 +1,10 @@
+[package]
+name = "epoch"
+version.workspace = true
+edition.workspace = true
+description = "Unix timestamp converter"
+
+[dependencies]
+clap.workspace = true
+chrono.workspace = true
+anyhow.workspace = true

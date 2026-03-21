@@ -1,0 +1,21 @@
+The RomAI Module (Token & Vendor Orchestrator)
+This module acts as the "Thalamus" of the system—routing signals and managing resources before they hit the main brain.
+
+OAuth & Secret Vault: A centralized, encrypted store for your OpenAI OAuth tokens (via NadirClaw), Anthropic keys, and local Ollama endpoints.
+
+The "Spend-Sentry": A middleware layer that wraps every outgoing LLM call. It logs the token count and the associated cost per vendor in a local SQLite or Postgres DB.
+
+The "99% Hard Cap":
+
+90% Threshold: Once a vendor hits 90% of your daily/monthly budget, RomAI triggers a THROTTLE state. It could inject a "be concise" system instruction to save tokens or increase the delay between calls.
+
+99% Threshold: At 99%, it kills the connection to that vendor and auto-routes all traffic to a local model (like your Qwen2.5:7b instance) to ensure Alfred stays "alive" without costing money.
+
+429 Intelligence: If it hits a Rate Limit (429), the module updates its internal "Vendor Health" map, marking that vendor as "Cooling Down" and switching to a secondary provider for a set duration.
+
+Strategic Benefits
+Resume Value: On a resume, this isn't just "calling an API." This is "Building a Distributed Resource Management Layer with Automated Circuit-Breaking and Cost-Optimization." That language is gold for DevOps or Backend Engineering roles.
+
+Modular Independence: By keeping Guardian focused only on system health (CPU, RAM, WSL stability) and RomAI focused on vendor/financial health, you avoid a "God Object" where one script does everything.
+
+Privacy/Stealing: If you don't want to open-source the whole "Mind," you can still showcase the architecture. You can talk about the interface between these 20 standalone apps without giving away the proprietary "secret sauce" of Alfred’s internal logic.

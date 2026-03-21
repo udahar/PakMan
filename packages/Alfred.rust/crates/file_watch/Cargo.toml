@@ -1,0 +1,13 @@
+[package]
+name = "file_watch"
+version.workspace = true
+edition.workspace = true
+description = "Watch files/directories for changes"
+
+[dependencies]
+clap.workspace = true
+notify.workspace = true
+anyhow.workspace = true
+ctrlc.workspace = true
+std::sync::atomic = "1.0"
+std::sync = "1.0"

@@ -1,0 +1,10 @@
+torch>=2.2.0
+tensorflow>=2.16.0
+onnx>=1.16.0
+onnxruntime>=1.18.0
+onnxscript>=0.5.0
+peft>=0.10.0
+datasets>=2.18.0
+accelerate>=0.29.0
+safetensors>=0.4.3
+dspy-ai>=2.5.0

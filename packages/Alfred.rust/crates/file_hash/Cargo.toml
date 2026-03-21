@@ -1,0 +1,13 @@
+[package]
+name = "file_hash"
+version.workspace = true
+edition.workspace = true
+description = "Generate hashes (MD5, SHA256) for files"
+
+[dependencies]
+clap.workspace = true
+sha2.workspace = true
+md5.workspace = true
+walkdir.workspace = true
+hex = "0.4"
+anyhow.workspace = true

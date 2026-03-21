@@ -1,0 +1,28 @@
+{
+  "id": "analyze_repository",
+  "name": "analyze_repository",
+  "description": "Analyze a code repository and summarize its architecture",
+  "pipeline": {
+    "steps": [
+      {
+        "tool": "repo_index",
+        "args": [],
+        "parameters": {"hash": true, "json": true}
+      },
+      {
+        "tool": "json_fmt",
+        "args": ["--minify"],
+        "parameters": {}
+      },
+      {
+        "tool": "prompt_fmt",
+        "args": [],
+        "parameters": {"format": "ollama", "model": "llama3.2"}
+      }
+    ]
+  },
+  "tags": ["analysis", "repository", "code", "architecture"],
+  "category": "analysis",
+  "version": "1.0.0",
+  "created_at": "2026-03-12T00:00:00Z"
+}

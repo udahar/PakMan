@@ -402,6 +402,177 @@
       ],
       "status": "alpha",
       "path": "packages/blueprints"
+    },
+    "Claw": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Thin CLI wrapper for Alfred AI platform.",
+      "category": "tools",
+      "tags": [
+        "cli",
+        "alfred",
+        "tools"
+      ],
+      "status": "beta",
+      "path": "packages/Claw"
+    },
+    "LinkedIn_Export": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "LinkedIn_Export package",
+      "category": "knowledge",
+      "tags": [
+        "knowledge"
+      ],
+      "status": "beta",
+      "path": "packages/LinkedIn_Export"
+    },
+    "LoRA": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "LoRA package",
+      "category": "ml",
+      "tags": [
+        "ml"
+      ],
+      "status": "beta",
+      "path": "packages/LoRA"
+    },
+    "MLStack": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "MLStack package",
+      "category": "ml",
+      "tags": [
+        "ml"
+      ],
+      "status": "beta",
+      "path": "packages/MLStack"
+    },
+    "PakHealth": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "PakHealth package",
+      "category": "infrastructure",
+      "tags": [
+        "infrastructure"
+      ],
+      "status": "beta",
+      "path": "packages/PakHealth"
+    },
+    "ProjMan": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ProjMan package",
+      "category": "productivity",
+      "tags": [
+        "productivity"
+      ],
+      "status": "beta",
+      "path": "packages/ProjMan"
+    },
+    "PromptRouter": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "PromptRouter package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/PromptRouter"
+    },
+    "RomAI": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Token and vendor orchestrator: budget enforcement, circuit breaking, and cost optimization.",
+      "category": "infrastructure",
+      "tags": [
+        "vendors",
+        "cost",
+        "circuit-breaker",
+        "infrastructure"
+      ],
+      "status": "beta",
+      "path": "packages/RomAI"
+    },
+    "StockAI": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "StockAI package",
+      "category": "finance",
+      "tags": [
+        "finance"
+      ],
+      "status": "beta",
+      "path": "packages/StockAI"
+    },
+    "SupDoc": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "SupDoc package",
+      "category": "productivity",
+      "tags": [
+        "productivity"
+      ],
+      "status": "beta",
+      "path": "packages/SupDoc"
+    },
+    "WikiPak": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "WikiPak package",
+      "category": "knowledge",
+      "tags": [
+        "knowledge"
+      ],
+      "status": "beta",
+      "path": "packages/WikiPak"
+    },
+    "ZolaPress": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ZolaPress package",
+      "category": "cms",
+      "tags": [
+        "cms"
+      ],
+      "status": "beta",
+      "path": "packages/ZolaPress"
+    },
+    "context_manager": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "context_manager package",
+      "category": "context",
+      "tags": [
+        "context"
+      ],
+      "status": "beta",
+      "path": "packages/context_manager"
+    },
+    "skill_composer": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "skill_composer package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/skill_composer"
+    },
+    "skill_evolver": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "skill_evolver package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/skill_evolver"
+    },
+    "Guardian": {
+      "repo": "github.com/udahar/Guardian",
+      "description": "Continuous Windows + WSL system health monitor with auto-heal, disk cleanup, crash analysis, and Telegram alerts.",
+      "category": "infrastructure",
+      "tags": [
+        "monitoring",
+        "health",
+        "windows",
+        "wsl",
+        "alerts",
+        "telegram"
+      ],
+      "status": "stable",
+      "path": ".",
+      "external": true
     }
   }
 }

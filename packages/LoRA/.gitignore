@@ -1,0 +1,14 @@
+# Large model files
+base_models/
+*.bin
+*.pt
+*.pth
+
+# Training outputs
+logs/
+lora_modules/*/adapter_model.bin  # Keep config, ignore weights for repo size
+# Note: In practice, you'd version the adapters but exclude from this plan
+
+# OS-specific
+.DS_Store
+Thumbs.db

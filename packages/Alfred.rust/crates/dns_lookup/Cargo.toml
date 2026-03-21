@@ -1,0 +1,11 @@
+[package]
+name = "dns_lookup"
+version.workspace = true
+edition.workspace = true
+description = "DNS lookup utility"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

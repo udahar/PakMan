@@ -1,0 +1,11 @@
+[package]
+name = "reg_query"
+version.workspace = true
+edition.workspace = true
+description = "Query Windows Registry"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

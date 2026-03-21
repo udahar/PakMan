@@ -1,0 +1,19 @@
+{
+  "category": "engineering",
+  "description": "Reusable implementation patterns and code structures",
+  "skills": [
+    "retry_backoff",
+    "circuit_breaker",
+    "csv_parser_quotes",
+    "safe_sql_builder",
+    "regex_email_validator",
+    "dockerize_fastapi"
+  ],
+  "characteristics": {
+    "reusable": true,
+    "testable": true,
+    "language_specific": true,
+    "pattern_based": true
+  },
+  "usage_pattern": "Import and use directly in code, or reference in prompts for code generation tasks"
+}

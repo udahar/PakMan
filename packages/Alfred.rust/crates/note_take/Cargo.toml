@@ -1,0 +1,10 @@
+[package]
+name = "note_take"
+version.workspace = true
+edition.workspace = true
+description = "Quick note taking utility"
+
+[dependencies]
+clap.workspace = true
+chrono.workspace = true
+anyhow.workspace = true

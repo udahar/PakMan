@@ -1,0 +1,12 @@
+[package]
+name = "cache_ctrl"
+version.workspace = true
+edition.workspace = true
+description = "Cache management utility"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+chrono.workspace = true

@@ -1,0 +1,11 @@
+[package]
+name = "event_log"
+version.workspace = true
+edition.workspace = true
+description = "Query Windows Event Log"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

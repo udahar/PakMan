@@ -1,0 +1,11 @@
+[package]
+name = "memory_client"
+version.workspace = true
+edition.workspace = true
+description = "Memory client for Postgres and Qdrant"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+chrono.workspace = true

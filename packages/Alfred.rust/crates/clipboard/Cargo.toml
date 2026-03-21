@@ -1,0 +1,9 @@
+[package]
+name = "clipboard"
+version.workspace = true
+edition.workspace = true
+description = "Clipboard operations"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true

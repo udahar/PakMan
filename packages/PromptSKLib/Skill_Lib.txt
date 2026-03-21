@@ -1,0 +1,402 @@
+Alright. Let’s slow this down and draw the **actual architecture**, not buzzwords. You’re right that you probably already have pieces of it. The goal is just to **formalize the “Skill Library” as a first-class subsystem** so Alfred can reuse solutions instead of rediscovering them.
+
+Think of it as **Alfred’s engineering memory**.
+
+---
+
+## 1. Core Idea
+
+A *skill* is a reusable solved capability.
+
+Not raw chat. Not full projects. Just distilled engineering knowledge.
+
+Examples:
+
+```
+retry_http_request_with_backoff
+parse_csv_with_quotes
+safe_sql_query_builder
+regex_email_validator
+fix_off_by_one_loop_bug
+dockerize_fastapi_app
+```
+
+Each one is **testable, reusable, and searchable**.
+
+---
+
+# 2. High Level Architecture
+
+```
+                 ┌─────────────────────┐
+                 │      Task Input     │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                   ┌─────────────────┐
+                   │   Task Parser   │
+                   │ category/intent │
+                   └────────┬────────┘
+                            │
+                            ▼
+                   ┌─────────────────┐
+                   │ Skill Retrieval │
+                   │  (Qdrant / DB)  │
+                   └────────┬────────┘
+                            │
+            similar skills  │
+                            ▼
+                ┌─────────────────────┐
+                │ Prompt Composer     │
+                │ + strategy builder  │
+                └──────────┬──────────┘
+                           │
+                           ▼
+                ┌─────────────────────┐
+                │ Model Router        │
+                │ best model selected │
+                └──────────┬──────────┘
+                           │
+                           ▼
+                ┌─────────────────────┐
+                │ Solution Generator  │
+                └──────────┬──────────┘
+                           │
+                           ▼
+                ┌─────────────────────┐
+                │ Test / Evaluation   │
+                │ (FieldBench)        │
+                └──────────┬──────────┘
+                           │
+           pass/fail       │
+                           ▼
+                ┌─────────────────────┐
+                │ Skill Extractor     │
+                │ create/update skill │
+                └──────────┬──────────┘
+                           │
+                           ▼
+                ┌─────────────────────┐
+                │ Skill Library       │
+                │ (vector + metadata) │
+                └─────────────────────┘
+```
+
+Everything loops back into the library.
+
+---
+
+# 3. Skill Object Structure
+
+Every skill should be a **structured record**, not just text.
+
+Example schema:
+
+```
+skill_id
+name
+category
+description
+primitive_tags
+prompt_strategy
+model_used
+solution_summary
+code_snippet
+tests_passed
+benchmark_score
+failure_modes
+created_from_task
+embedding_vector
+timestamp
+```
+
+Example entry:
+
+```
+name: retry_http_request_with_backoff
+
+category: networking
+
+primitive_tags:
+- http_call
+- retry_loop
+- exponential_backoff
+- timeout
+
+prompt_strategy:
+ReAct
+
+model_used:
+qwen2.5:3b
+
+tests_passed:
+true
+
+benchmark_score:
+94.3
+```
+
+---
+
+# 4. Skill Types
+
+You actually want **multiple skill classes**.
+
+### Engineering Skills
+
+Reusable implementation patterns.
+
+```
+retry loops
+caching layers
+data parsing
+API wrappers
+file loaders
+```
+
+---
+
+### Prompt Skills
+
+Prompt strategies that work.
+
+```
+tree_of_thought
+react_reasoning
+chunking_prompt
+structured_output_prompt
+```
+
+---
+
+### Tool Skills
+
+Executable tools Alfred can call.
+
+```
+csv_parser_tool
+sql_runner
+log_analyzer
+docker_builder
+```
+
+These become your **tooling library**.
+
+---
+
+### Repair Skills
+
+Common bug fixes.
+
+```
+off_by_one_fix
+null_pointer_guard
+async_timeout_fix
+missing_import_fix
+```
+
+Extremely valuable.
+
+---
+
+# 5. Skill Retrieval
+
+When a task comes in:
+
+```
+"build a retryable API client"
+```
+
+Pipeline:
+
+```
+embed task text
+↓
+vector search skill library
+↓
+return top 5 skills
+```
+
+Example retrieved skills:
+
+```
+retry_http_request_with_backoff
+async_http_timeout_fix
+api_rate_limit_handler
+```
+
+Those are injected into the prompt.
+
+---
+
+# 6. Prompt Augmentation
+
+Prompt becomes:
+
+```
+Task:
+Build retryable API client.
+
+Relevant skills:
+1. retry_http_request_with_backoff
+2. async_http_timeout_fix
+3. api_rate_limit_handler
+
+Use these techniques.
+```
+
+Now the model is **guided by proven patterns**.
+
+---
+
+# 7. Skill Creation Loop
+
+After a successful task:
+
+```
+task solved
+↓
+tests passed
+↓
+solution summarized
+↓
+primitives extracted
+↓
+skill created
+↓
+stored in Qdrant
+```
+
+Over time Alfred builds a huge internal playbook.
+
+---
+
+# 8. Skill Evolution
+
+Skills can improve.
+
+```
+skill_v1
+↓
+better solution discovered
+↓
+skill_v2
+↓
+score comparison
+```
+
+Keep best version.
+
+---
+
+# 9. Tool Library Layer
+
+A special skill type: **tools**.
+
+Structure:
+
+```
+tool_name
+description
+input_schema
+output_schema
+language
+execution_method
+```
+
+Example:
+
+```
+tool: csv_parser
+
+input:
+file_path
+
+output:
+json rows
+```
+
+Now Alfred can call tools instead of generating code.
+
+---
+
+# 10. Storage Layer
+
+You want **two stores**.
+
+### Vector DB (Qdrant)
+
+Semantic retrieval.
+
+```
+skill embeddings
+```
+
+### SQL / Postgres
+
+Structured metadata.
+
+```
+scores
+versions
+categories
+performance stats
+```
+
+---
+
+# 11. Feedback Loop
+
+FieldBench becomes the **skill validator**.
+
+```
+new skill
+↓
+run benchmarks
+↓
+score
+↓
+promote / demote
+```
+
+Only good skills stay.
+
+---
+
+# 12. Why This Works
+
+You stop relying on model weights.
+
+Instead intelligence comes from:
+
+```
+experience database
+```
+
+This matches your philosophy:
+
+```
+LLM = reasoning engine
+Database = memory
+Benchmark = truth
+```
+
+---
+
+# 13. Final Mental Model
+
+Alfred becomes less like ChatGPT and more like:
+
+```
+AI engineer
++
+memory of every solved problem
++
+automated testing lab
+```
+
+That’s the real power of a skill library.
+
+---
+
+If you want, I can also show you something extremely important for this architecture: **how to automatically extract primitives from code so the skill library builds itself without manual tagging.** That piece turns the system from “clever tool” into **self-growing intelligence**.

@@ -1,0 +1,13 @@
+[package]
+name = "skill_registry"
+version.workspace = true
+edition.workspace = true
+description = "Skill registry and tool genome tracking"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+rusqlite = { version = "0.29", features = ["bundled"] }

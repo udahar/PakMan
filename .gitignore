@@ -11,18 +11,45 @@ build/
 pkgman_packages.db
 pkgman_security/
 
-# Installed packages — tracked separately per package
-# (don't commit installed packages to the manager repo)
-packages/*/
+# Database files inside packages
+packages/**/*.db
+packages/**/*.sqlite
+packages/**/*.sqlite3
 
-# Exceptions: keep package stubs/READMEs so the packages/ dir isn't empty
-!packages/**/README.md
-!packages/**/__init__.py
+# Bundled third-party source trees (should be declared as dependencies, not vendored)
+packages/StockAI/yfinance-main/
+
+# Virtual environments inside packages
+packages/**/.venv*/
+packages/**/venv/
+packages/**/.venv/
+packages/**/env/
+
+# Package runtime data / logs
+packages/safety_sentry/logs/
+packages/StockAI/data/
+
+# packages/ is the SOURCE registry — commit it fully.
+# Install location is ~/.pakman/ on user machines, NOT this directory.
+# Only exclude build artifacts within package dirs.
+packages/**/__pycache__/
+packages/**/*.py[cod]
+packages/**/*.egg-info/
+packages/**/dist/
+packages/**/build/
 
 # Env
 .env
 .env.*
 !.env.example
+
+# Generated wiki outputs
+pakman_wiki/
+test_wiki2/
+*_wiki/
+
+# Dev scratch files
+ModuleLibraryHealthCheck.txt
 
 # Editors
 .vscode/

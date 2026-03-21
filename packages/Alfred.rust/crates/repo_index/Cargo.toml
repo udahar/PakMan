@@ -1,0 +1,16 @@
+[package]
+name = "repo_index"
+version.workspace = true
+edition.workspace = true
+description = "Index repository files for AI embeddings"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+walkdir.workspace = true
+sha2.workspace = true
+hex = "0.4"
+chrono.workspace = true
+anyhow.workspace = true
+common = { path = "../common" }

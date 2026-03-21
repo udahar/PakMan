@@ -1,0 +1,27 @@
+{
+  "category": "inquiry",
+  "description": "Skills for gathering information, admitting uncertainty, and researching topics",
+  "skills": [
+    "humble_inquiry",
+    "web_research",
+    "source_verification",
+    "knowledge_gap_analysis"
+  ],
+  "workflow": {
+    "trigger": "unknown_topic_or_question",
+    "steps": [
+      "admit_uncertainty",
+      "search_qdrant",
+      "search_postgres",
+      "search_web_if_needed",
+      "synthesize_findings",
+      "cite_sources"
+    ]
+  },
+  "tools_required": [
+    "web_search",
+    "web_fetch",
+    "qdrant_client",
+    "postgres_connection"
+  ]
+}

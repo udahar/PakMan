@@ -1,0 +1,9 @@
+[package]
+name = "sleep"
+version.workspace = true
+edition.workspace = true
+description = "Cross-platform sleep command"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true

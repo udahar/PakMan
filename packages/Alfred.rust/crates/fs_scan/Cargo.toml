@@ -1,0 +1,13 @@
+[package]
+name = "fs_scan"
+version.workspace = true
+edition.workspace = true
+description = "Scan filesystem and output JSON structure"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+walkdir.workspace = true
+chrono.workspace = true
+anyhow.workspace = true

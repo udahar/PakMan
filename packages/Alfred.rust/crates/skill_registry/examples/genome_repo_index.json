@@ -1,0 +1,11 @@
+{
+  "tool_id": "repo_index",
+  "version": "1.0.0",
+  "parent": "fs_scan",
+  "capability": "filesystem.scan",
+  "category": "filesystem",
+  "created_by": "human",
+  "created_at": "2026-03-12T00:00:00Z",
+  "fitness_score": 0.92,
+  "mutation_type": "specialized_for_repos"
+}

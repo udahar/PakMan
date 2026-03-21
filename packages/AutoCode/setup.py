@@ -1,0 +1,48 @@
+from setuptools import setup, find_packages
+import pathlib
+
+HERE = pathlib.Path(__file__).parent
+README = (
+    (HERE / "README.md").read_text()
+    if (HERE / "README.md").exists()
+    else "AutoCode – AI-powered code generation assistant"
+)
+
+setup(
+    name="autocode",
+    version="0.1.0",
+    description="AI-powered code generation assistant",
+    long_description=README,
+    long_description_content_type="text/markdown",
+    author="Richard",
+    author_email="richard@example.com",
+    url="https://github.com/richard/autocode",
+    license="MIT",
+    packages=find_packages(),
+    python_requires=">=3.8",
+    install_requires=[
+        # Add dependencies if any
+    ],
+    extras_require={
+        "dev": [
+            "pytest>=6.0.0",
+            "black>=21.0.0",
+            "flake8>=3.0.0",
+        ],
+    },
+    package_data={
+        "autocode": [
+            "content/**/*.md",
+        ],
+    },
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+    ],
+)

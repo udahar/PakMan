@@ -1,0 +1,23 @@
+[package]
+name = "rustutils"
+version.workspace = true
+edition.workspace = true
+description = "Main entry point for Rust utilities (git/docker/kubectl style)"
+
+[[bin]]
+name = "rustutils"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+tokio.workspace = true
+common = { path = "../common" }
+schema_gen = { path = "../schema_gen" }
+skill_registry = { path = "../skill_registry" }
+memory_client = { path = "../memory_client" }
+subsystem_registry = { path = "../subsystem_registry" }
+governor = { path = "../governor" }
+observatory = { path = "../observatory" }

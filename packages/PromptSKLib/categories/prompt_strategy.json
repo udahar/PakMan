@@ -1,0 +1,26 @@
+{
+  "category": "prompt_strategy",
+  "description": "Prompt strategies and reasoning patterns for complex tasks",
+  "skills": [
+    "chain_of_thought",
+    "self_consistent_cot",
+    "react_reasoning",
+    "tree_of_thought",
+    "reflexion",
+    "meta_prompting",
+    "role_persona",
+    "debate_multi_agent",
+    "contrastive_prompting",
+    "rag",
+    "program_of_thought",
+    "decomposition"
+  ],
+  "characteristics": {
+    "reasoning_pattern": true,
+    "multi_step": true,
+    "model_guidance": true,
+    "cognitive_strategy": true,
+    "dual_purpose": "Can be used as prompt template OR executed as reasoning mode"
+  },
+  "usage_pattern": "Inject into system prompt to guide model reasoning process, or call Python implementation for structured execution"
+}

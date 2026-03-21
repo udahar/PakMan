@@ -1,0 +1,28 @@
+{
+  "id": "security_scan",
+  "name": "security_scan",
+  "description": "Scan repository for security issues and vulnerabilities",
+  "pipeline": {
+    "steps": [
+      {
+        "tool": "repo_index",
+        "args": [],
+        "parameters": {"json": true}
+      },
+      {
+        "tool": "grep_lite",
+        "args": ["password|secret|api_key|token"],
+        "parameters": {"recursive": true, "ignore_case": true}
+      },
+      {
+        "tool": "json_fmt",
+        "args": [],
+        "parameters": {"format": "ollama"}
+      }
+    ]
+  },
+  "tags": ["security", "scan", "vulnerability", "audit"],
+  "category": "security",
+  "version": "1.0.0",
+  "created_at": "2026-03-12T00:00:00Z"
+}

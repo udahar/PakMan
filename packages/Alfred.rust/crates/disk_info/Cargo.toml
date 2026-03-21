@@ -1,0 +1,11 @@
+[package]
+name = "disk_info"
+version.workspace = true
+edition.workspace = true
+description = "Disk information utility"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

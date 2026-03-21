@@ -1,0 +1,22 @@
+Alfred as an AIOS kernel raises a design question.
+
+Is Alfred:
+
+1️⃣ Event Driven
+event → handler → agent
+
+(like NodeJS)
+
+or
+
+2️⃣ Scheduler Driven
+tasks → queue → workers
+
+(like Kubernetes / Airflow)
+
+or
+
+3️⃣ Conversational Core
+reasoning loop → tools → memory
+
+(like an AGI-style loop)a

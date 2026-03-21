@@ -1,0 +1,12 @@
+[package]
+name = "hash_gen"
+version.workspace = true
+edition.workspace = true
+description = "Generate various hashes"
+
+[dependencies]
+clap.workspace = true
+sha2.workspace = true
+md5.workspace = true
+hex = "0.4"
+anyhow.workspace = true

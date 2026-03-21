@@ -1,0 +1,11 @@
+[package]
+name = "grep_lite"
+version.workspace = true
+edition.workspace = true
+description = "Simple grep alternative"
+
+[dependencies]
+clap.workspace = true
+regex.workspace = true
+walkdir.workspace = true
+anyhow.workspace = true

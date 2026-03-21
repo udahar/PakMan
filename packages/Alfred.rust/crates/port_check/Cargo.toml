@@ -1,0 +1,10 @@
+[package]
+name = "port_check"
+version.workspace = true
+edition.workspace = true
+description = "Check if ports are open"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true
+std::net = "1.0"

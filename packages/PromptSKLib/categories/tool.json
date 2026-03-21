@@ -1,0 +1,19 @@
+{
+  "category": "tool",
+  "description": "Executable tools that AI agents can call to interact with external systems",
+  "skills": [
+    "web_search_tool",
+    "web_fetch_tool"
+  ],
+  "characteristics": {
+    "executable": true,
+    "external_integration": true,
+    "io_operation": true,
+    "async_capable": true
+  },
+  "tools_required": {
+    "web_search_tool": ["tavily_client", "google_search_api", "or bing_search_api"],
+    "web_fetch_tool": ["aiohttp", "beautifulsoup4"]
+  },
+  "usage_pattern": "Call as functions with structured input, receive structured output"
+}

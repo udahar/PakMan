@@ -1,0 +1,11 @@
+[package]
+name = "password_check"
+version.workspace = true
+edition.workspace = true
+description = "Check password strength"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

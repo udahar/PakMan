@@ -1,0 +1,9 @@
+[package]
+name = "uuid_gen"
+version.workspace = true
+edition.workspace = true
+description = "Generate UUIDs"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true

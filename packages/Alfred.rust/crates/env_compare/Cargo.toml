@@ -1,0 +1,12 @@
+[package]
+name = "env_compare"
+version.workspace = true
+edition.workspace = true
+description = "Compare environment configurations"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+std::collections = "1.0"

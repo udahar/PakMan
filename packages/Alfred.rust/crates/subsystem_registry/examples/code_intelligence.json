@@ -1,0 +1,37 @@
+{
+  "id": "code_intelligence",
+  "name": "Code Intelligence System",
+  "purpose": "Analyze and index source code repositories",
+  "description": "Provides comprehensive code analysis, indexing, and AI-ready context generation",
+  "components": [
+    "repo_index",
+    "context_pack",
+    "embedding_prep",
+    "qdrant_insert",
+    "prompt_fmt"
+  ],
+  "pipelines": [
+    {
+      "id": "index_for_search",
+      "name": "Index Repository for Search",
+      "description": "Index code for semantic search",
+      "steps": [
+        {"tool": "repo_index", "args": ["--json", "--hash"]},
+        {"tool": "embedding_prep", "args": []},
+        {"tool": "qdrant_insert", "args": []}
+      ]
+    },
+    {
+      "id": "analyze_architecture",
+      "name": "Analyze Architecture",
+      "description": "Generate architecture summary",
+      "steps": [
+        {"tool": "repo_index", "args": ["--json"]},
+        {"tool": "context_pack", "args": ["--max-tokens", "4096"]},
+        {"tool": "prompt_fmt", "args": ["--format", "ollama"]}
+      ]
+    }
+  ],
+  "category": "analysis",
+  "version": "1.0.0"
+}

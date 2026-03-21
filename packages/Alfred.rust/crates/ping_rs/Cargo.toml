@@ -1,0 +1,9 @@
+[package]
+name = "ping_rs"
+version.workspace = true
+edition.workspace = true
+description = "Simple ping utility"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true

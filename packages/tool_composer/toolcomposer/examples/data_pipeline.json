@@ -1,0 +1,84 @@
+{
+  "id": "demo_data_pipeline",
+  "name": "Data Processing Pipeline",
+  "description": "Fetch data, transform, and save results",
+  "version": "1.0.0",
+  "created_at": "2026-03-12T00:00:00",
+  "updated_at": "2026-03-12T00:00:00",
+  "nodes": [
+    {
+      "id": "fetch_data",
+      "type": "http",
+      "name": "Fetch API Data",
+      "category": "tool",
+      "parameters": {
+        "method": "GET",
+        "timeout": 30
+      },
+      "inputs": ["url", "method"],
+      "outputs": ["response", "status_code", "headers"]
+    },
+    {
+      "id": "transform_json",
+      "type": "transform",
+      "name": "Transform Response",
+      "category": "logic",
+      "parameters": {
+        "transform": "json.loads(data)",
+        "format": "json"
+      },
+      "inputs": ["data"],
+      "outputs": ["result"]
+    },
+    {
+      "id": "filter_valid",
+      "type": "filter",
+      "name": "Filter Valid Records",
+      "category": "logic",
+      "parameters": {
+        "condition": "len(data) > 0",
+        "filter_type": "python"
+      },
+      "inputs": ["data"],
+      "outputs": ["filtered", "passed"]
+    },
+    {
+      "id": "save_results",
+      "type": "file_write",
+      "name": "Save Results",
+      "category": "tool",
+      "parameters": {
+        "base_dir": "./output",
+        "encoding": "utf-8"
+      },
+      "inputs": ["path", "content"],
+      "outputs": ["success", "path", "bytes"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "source": "fetch_data",
+      "target": "transform_json",
+      "source_output": "response",
+      "target_input": "data"
+    },
+    {
+      "id": "edge_2",
+      "source": "transform_json",
+      "target": "filter_valid",
+      "source_output": "result",
+      "target_input": "data"
+    },
+    {
+      "id": "edge_3",
+      "source": "filter_valid",
+      "target": "save_results",
+      "source_output": "filtered",
+      "target_input": "content"
+    }
+  ],
+  "variables": {
+    "url": "https://api.example.com/data"
+  }
+}

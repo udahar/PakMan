@@ -1,0 +1,15 @@
+{
+  "category": "repair",
+  "description": "Common bug fixes and error prevention patterns",
+  "skills": [
+    "off_by_one_fix",
+    "null_pointer_guard"
+  ],
+  "characteristics": {
+    "bug_pattern": true,
+    "defensive_coding": true,
+    "error_prevention": true,
+    "fix_template": true
+  },
+  "usage_pattern": "Reference when debugging or reviewing code for common errors"
+}

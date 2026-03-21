@@ -1,0 +1,11 @@
+{
+  "tool_id": "fs_scan",
+  "version": "1.0.0",
+  "parent": null,
+  "capability": "filesystem.scan",
+  "category": "filesystem",
+  "created_by": "human",
+  "created_at": "2026-03-12T00:00:00Z",
+  "fitness_score": 0.95,
+  "mutation_type": null
+}

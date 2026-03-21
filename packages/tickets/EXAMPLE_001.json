@@ -1,0 +1,16 @@
+{
+  "ticket_id": "EXAMPLE_001",
+  "title": "Example Ticket - Research Topic",
+  "description": "This is an example ticket showing the structure. Replace with real task.",
+  "status": "pending",
+  "created_at": "2026-03-08T12:00:00Z",
+  "updated_at": "2026-03-08T12:00:00Z",
+  "assigned_skills": ["humble_inquiry", "web_research"],
+  "strategy": "chain_of_thought",
+  "assigned_model": null,
+  "result": null,
+  "error": null,
+  "execution_log": [],
+  "shared_context_key": "ticket_EXAMPLE_001",
+  "contributing_models": []
+}

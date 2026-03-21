@@ -1,0 +1,9 @@
+[package]
+name = "random_gen"
+version.workspace = true
+edition.workspace = true
+description = "Generate random data"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true

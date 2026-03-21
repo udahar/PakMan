@@ -1,0 +1,19 @@
+[package]
+name = "observatory"
+version.workspace = true
+edition.workspace = true
+description = "Observatory dashboard - real-time system monitoring"
+
+[[bin]]
+name = "observatory"
+path = "src/main.rs"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+skill_registry = { path = "../skill_registry" }
+subsystem_registry = { path = "../subsystem_registry" }
+governor = { path = "../governor" }

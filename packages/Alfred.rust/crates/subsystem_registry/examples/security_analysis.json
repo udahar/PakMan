@@ -1,0 +1,33 @@
+{
+  "id": "security_analysis",
+  "name": "Security Analysis System",
+  "purpose": "Scan codebases for security vulnerabilities",
+  "description": "Comprehensive security scanning and vulnerability detection",
+  "components": [
+    "repo_index",
+    "grep_lite",
+    "file_hash",
+    "log_parse"
+  ],
+  "pipelines": [
+    {
+      "id": "vulnerability_scan",
+      "name": "Vulnerability Scan",
+      "description": "Scan for common vulnerabilities",
+      "steps": [
+        {"tool": "repo_index", "args": ["--json"]},
+        {"tool": "grep_lite", "args": ["password|secret|api_key|token", "--ignore-case", "--recursive"]}
+      ]
+    },
+    {
+      "id": "audit_trail",
+      "name": "Audit Trail Analysis",
+      "description": "Analyze security logs",
+      "steps": [
+        {"tool": "log_parse", "args": ["--stats", "--level", "Error"]}
+      ]
+    }
+  ],
+  "category": "security",
+  "version": "1.0.0"
+}

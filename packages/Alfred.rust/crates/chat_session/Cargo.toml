@@ -1,0 +1,11 @@
+[package]
+name = "chat_session"
+version.workspace = true
+edition.workspace = true
+description = "Chat session with Ollama"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

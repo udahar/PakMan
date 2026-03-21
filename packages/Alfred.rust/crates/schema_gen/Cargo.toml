@@ -1,0 +1,11 @@
+[package]
+name = "schema_gen"
+version.workspace = true
+edition.workspace = true
+description = "Generate JSON schemas for Rust utilities"
+
+[dependencies]
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true

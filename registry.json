@@ -417,9 +417,12 @@
     },
     "LinkedIn_Export": {
       "repo": "github.com/udahar/PakMan",
-      "description": "LinkedIn_Export package",
+      "description": "Import your LinkedIn connections into Qdrant for intelligent network search and relationship mapping.",
       "category": "knowledge",
       "tags": [
+        "linkedin",
+        "networking",
+        "qdrant",
         "knowledge"
       ],
       "status": "beta",
@@ -427,39 +430,55 @@
     },
     "LoRA": {
       "repo": "github.com/udahar/PakMan",
-      "description": "LoRA package",
+      "description": "LoRA fine-tuning modules for Alfred platform models. Training scripts, datasets, and adapter management for local Ollama models.",
       "category": "ml",
       "tags": [
-        "ml"
+        "lora",
+        "fine-tuning",
+        "ml",
+        "ollama",
+        "training"
       ],
       "status": "beta",
       "path": "packages/LoRA"
     },
     "MLStack": {
       "repo": "github.com/udahar/PakMan",
-      "description": "MLStack package",
+      "description": "Shared ML environment: PyTorch, TensorFlow, ONNX, PEFT, DSPy, and accelerate. Installs to ~/.pakman/venvs/ml \u2014 shared across FieldBench and other consumers.",
       "category": "ml",
       "tags": [
-        "ml"
+        "ml",
+        "pytorch",
+        "tensorflow",
+        "onnx",
+        "dspy",
+        "peft"
       ],
       "status": "beta",
       "path": "packages/MLStack"
     },
     "PakHealth": {
       "repo": "github.com/udahar/PakMan",
-      "description": "PakHealth package",
+      "description": "System wellness dashboard for PakMan. Monitors package health, import status, and dependency integrity across your installed set.",
       "category": "infrastructure",
       "tags": [
-        "infrastructure"
+        "health",
+        "monitoring",
+        "infrastructure",
+        "packages"
       ],
       "status": "beta",
       "path": "packages/PakHealth"
     },
     "ProjMan": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ProjMan package",
+      "description": "CLI tools for Alfred ProjectManager integration. Create and query projects, epics, stories, and tickets from the command line.",
       "category": "productivity",
       "tags": [
+        "projects",
+        "tickets",
+        "cli",
+        "alfred",
         "productivity"
       ],
       "status": "beta",
@@ -467,10 +486,13 @@
     },
     "PromptRouter": {
       "repo": "github.com/udahar/PakMan",
-      "description": "PromptRouter package",
+      "description": "Experimental prompt routing layer. Selects the optimal prompt strategy and target model based on task type and available capacity.",
       "category": "prompting",
       "tags": [
-        "prompting"
+        "routing",
+        "prompting",
+        "model-selection",
+        "experimental"
       ],
       "status": "beta",
       "path": "packages/PromptRouter"
@@ -490,19 +512,26 @@
     },
     "StockAI": {
       "repo": "github.com/udahar/PakMan",
-      "description": "StockAI package",
+      "description": "AI-powered stock analysis. Loads historical price data via yfinance, identifies patterns, and generates LLM-assisted investment recommendations.",
       "category": "finance",
       "tags": [
-        "finance"
+        "stocks",
+        "finance",
+        "yfinance",
+        "analysis",
+        "recommendations"
       ],
       "status": "beta",
       "path": "packages/StockAI"
     },
     "SupDoc": {
       "repo": "github.com/udahar/PakMan",
-      "description": "SupDoc package",
+      "description": "Runtime documentation engine for the Alfred ecosystem. Self-documents installed capabilities and generates live API references.",
       "category": "productivity",
       "tags": [
+        "documentation",
+        "runtime",
+        "alfred",
         "productivity"
       ],
       "status": "beta",
@@ -510,9 +539,12 @@
     },
     "WikiPak": {
       "repo": "github.com/udahar/PakMan",
-      "description": "WikiPak package",
+      "description": "Unified documentation generator. Reads every installed package README and builds a searchable Zola static site. Powers `pakman wiki`.",
       "category": "knowledge",
       "tags": [
+        "wiki",
+        "documentation",
+        "zola",
         "knowledge"
       ],
       "status": "beta",
@@ -520,29 +552,37 @@
     },
     "ZolaPress": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ZolaPress package",
+      "description": "Documentation and site generation utilities for ZolaPress static sites. Bridges PakMan package content into the ZolaPress CMS.",
       "category": "cms",
       "tags": [
-        "cms"
+        "zola",
+        "cms",
+        "documentation",
+        "static-site"
       ],
       "status": "beta",
       "path": "packages/ZolaPress"
     },
     "context_manager": {
       "repo": "github.com/udahar/PakMan",
-      "description": "context_manager package",
+      "description": "Smart context window manager. Automatically tracks, trims, and prioritises what the AI carries between turns.",
       "category": "context",
       "tags": [
-        "context"
+        "context",
+        "memory",
+        "window-management"
       ],
       "status": "beta",
       "path": "packages/context_manager"
     },
     "skill_composer": {
       "repo": "github.com/udahar/PakMan",
-      "description": "skill_composer package",
+      "description": "Chain multiple skills into composite mega-skills. Define pipelines of capability that run as a single named skill.",
       "category": "prompting",
       "tags": [
+        "skills",
+        "composition",
+        "pipeline",
         "prompting"
       ],
       "status": "beta",
@@ -550,9 +590,12 @@
     },
     "skill_evolver": {
       "repo": "github.com/udahar/PakMan",
-      "description": "skill_evolver package",
+      "description": "Self-improving skills. Tracks usage outcomes and iteratively refines skill prompts based on what works.",
       "category": "prompting",
       "tags": [
+        "skills",
+        "evolution",
+        "self-improving",
         "prompting"
       ],
       "status": "beta",

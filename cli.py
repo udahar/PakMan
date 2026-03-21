@@ -91,35 +91,63 @@ def _resolve_source(name: str) -> tuple[str, dict | None]:
 
 
 def cmd_wiki(args):
-    """Build and serve unified wiki from all PakMan packages."""
-    import subprocess, os, sys
+    """Build and serve unified wiki from all PakMan packages.
+
+    Requires: Zola static site generator (https://www.getzola.org/documentation/getting-started/installation/)
+    Install: winget install getzola.zola  (Windows)
+             brew install zola            (macOS)
+             snap install zola --edge     (Linux)
+    """
+    import subprocess, os, shutil
+
+    # Check Zola is available before doing any work
+    if not shutil.which("zola"):
+        print(
+            "  Error: Zola is not installed or not on PATH.\n"
+            "  pakman wiki requires Zola to render the documentation site.\n\n"
+            "  Install Zola:\n"
+            "    Windows : winget install getzola.zola\n"
+            "    macOS   : brew install zola\n"
+            "    Linux   : snap install zola --edge\n"
+            "              or see https://www.getzola.org/documentation/getting-started/installation/",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
     pakman_packages_dir = os.path.join(os.path.dirname(__file__), "packages")
     wiki_dir = os.path.join(os.path.dirname(__file__), "pakman_wiki")
-    # Ensure wiki directory exists
     os.makedirs(wiki_dir, exist_ok=True)
+
     # Build wiki using wikipak
     try:
         subprocess.run(
             ["wikipak", "build", wiki_dir, pakman_packages_dir],
             check=True,
         )
-        print(f"✅ Wiki built at {wiki_dir}")
+        print(f"  Wiki built at {wiki_dir}")
     except subprocess.CalledProcessError as e:
-        print(f"❌ Failed to build wiki: {e}")
+        print(f"  Error building wiki: {e}", file=sys.stderr)
         return
-    # Serve wiki using zolapress
+    except FileNotFoundError:
+        print(
+            "  Error: wikipak command not found.\n"
+            "  Run: pakman install WikiPak",
+            file=sys.stderr,
+        )
+        return
+
+    # Serve
     port = args.port or 1111
-    print(f"🚀 Serving wiki at http://127.0.0.1:{port} (press Ctrl+C to stop)")
+    print(f"  Serving wiki at http://127.0.0.1:{port}  (Ctrl+C to stop)")
     try:
         subprocess.run(
             ["zolapress", "serve", wiki_dir, "--port", str(port)],
             check=True,
         )
     except KeyboardInterrupt:
-        print("\n🛑 Wiki server stopped.")
+        print("\n  Wiki server stopped.")
     except subprocess.CalledProcessError as e:
-        print(f"❌ Failed to serve wiki: {e}")
+        print(f"  Error: {e}", file=sys.stderr)
 
 
 def cmd_list(args):
@@ -169,6 +197,28 @@ def _print_update_notices(packages: list):
 def cmd_install(args):
     pm = _get_pm()
     source, entry = _resolve_source(args.package)
+    community = getattr(args, "community", False)
+
+    # Community install: explicit opt-in required for non-udahar sources
+    if source.startswith("github.com") and not source.startswith("github.com/udahar"):
+        if not community:
+            print(
+                f"  Error: '{source}' is not an official PakMan package.\n"
+                "  Community packages require explicit opt-in:\n"
+                f"    pakman install --community {args.package}\n"
+                "  Only install community packages from authors you trust.",
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        # Community warning — must confirm
+        print("  *** COMMUNITY PACKAGE ***")
+        print(f"  Source : {source}")
+        print("  This package is NOT maintained by udahar.")
+        print("  Only continue if you trust this source.")
+        answer = input("  Install anyway? [y/N] ").strip().lower()
+        if answer != "y":
+            print("  Aborted.")
+            return
 
     if entry:
         print(f"  {entry['description']}")
@@ -176,7 +226,12 @@ def cmd_install(args):
 
     print(f"Installing {args.package} ...")
     try:
-        result = pm.install(source, upgrade=args.upgrade, verify=not args.no_verify)
+        result = pm.install(
+            source,
+            upgrade=args.upgrade,
+            verify=not args.no_verify,
+            allow_untrusted=community,
+        )
         if result:
             print(f"  Installed: {result}")
         else:
@@ -332,6 +387,11 @@ def main():
     )
     p_install.add_argument(
         "--no-verify", action="store_true", help="skip hash verification"
+    )
+    p_install.add_argument(
+        "--community",
+        action="store_true",
+        help="allow installing from non-udahar GitHub sources (shows warning, requires confirmation)",
     )
     p_install.set_defaults(func=cmd_install)
 

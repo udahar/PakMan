@@ -58,6 +58,9 @@ pakman install ./my_package
 # Install from any udahar repo
 pakman install github.com/udahar/Guardian
 
+# Install a community package (non-udahar — shows warning, requires confirmation)
+pakman install --community github.com/someone/their_package
+
 # See what's installed
 pakman list
 
@@ -77,6 +80,7 @@ pakman update PromptSKLib  # one package
 pakman remove PromptSKLib
 
 # Build and serve a unified wiki from all installed packages
+# Requires: Zola (https://www.getzola.org) + pakman install WikiPak
 pakman wiki
 pakman wiki --port 8080
 ```
@@ -129,11 +133,23 @@ Prompting strategies now available. No config touched.
 
 ---
 
-## Security
+## Security and trust
 
-- Only packages from `github.com/udahar/` are trusted. This is hard-coded in `security.py` and is not user-configurable. It prevents supply-chain attacks through forked registries.
-- Every install computes and stores a SHA256 hash. Integrity is verified on load.
-- Local installs (`./my_package`) bypass the trusted-source check and are flagged as local.
+Official packages (everything in `registry.json`) come from `github.com/udahar/` only. That trust boundary is hard-coded in `security.py` — not user-configurable. It prevents supply-chain attacks where a forked registry points users at malicious packages.
+
+Every install computes and stores a SHA256 hash. Integrity is verified on load. Local installs (`./my_package`) are flagged as local and bypass the remote trust check.
+
+### Community packages
+
+Community packages from other GitHub users are supported, but require an explicit opt-in flag:
+
+```bash
+pakman install --community github.com/someone/their_package
+```
+
+The `--community` flag triggers a warning and requires typing `y` before anything is downloaded. PakMan still computes and stores a hash after install. There is no silent community install — the friction is intentional.
+
+Community packages can be listed in `community-registry.json` (in this repo) to make them discoverable via `pakman search`. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to submit one.
 
 ---
 

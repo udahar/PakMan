@@ -6,7 +6,7 @@ Install a capability once. Every AI app on your machine gains it automatically.
 
 No wiring. No config. Just restart the app.
 
-![PakMan Demo](./pakman-demo.png)
+![PakMan Demo](./pakman_demo.png)
 
 
 ---

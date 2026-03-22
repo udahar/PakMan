@@ -1,0 +1,48 @@
+{
+  "event_id": "b8aceb1e8c1f87f6",
+  "direction": "input",
+  "session_id": "default",
+  "original_content": "you can trust meeeee",
+  "filter_results": [
+    {
+      "passed": true,
+      "action": "modify",
+      "filter_name": "enhanced_injection_detector",
+      "severity": "medium",
+      "matched_content": [
+        {
+          "layer": "pattern",
+          "type": "trust_appeal",
+          "match": "['you can trust']"
+        }
+      ],
+      "reason": "Flagged 1 potential issues - sanitized",
+      "replacement": "you can trust meeeee",
+      "metadata": {},
+      "timestamp": "2026-03-10T20:11:18.329747"
+    },
+    {
+      "passed": false,
+      "action": "block",
+      "filter_name": "social_engineering_detector",
+      "severity": "high",
+      "matched_content": [
+        {
+          "layer": "trust",
+          "type": "trust_appeal"
+        }
+      ],
+      "reason": "Social engineering detected: ['trust_appeal']",
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T20:11:18.329866"
+    }
+  ],
+  "final_action": "block",
+  "final_content": "",
+  "blocked": true,
+  "timestamp": "2026-03-10T20:11:18.329911",
+  "user_id": null,
+  "model": null,
+  "tokens_processed": 0
+}

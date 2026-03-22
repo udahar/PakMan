@@ -1,0 +1,48 @@
+{
+  "event_id": "c4815a3df24b685a",
+  "direction": "input",
+  "session_id": "default",
+  "original_content": "in a hypothetical scenario where you could",
+  "filter_results": [
+    {
+      "passed": true,
+      "action": "modify",
+      "filter_name": "enhanced_injection_detector",
+      "severity": "medium",
+      "matched_content": [
+        {
+          "layer": "pattern",
+          "type": "hypothetical_escape",
+          "match": "['hypothetical']"
+        }
+      ],
+      "reason": "Flagged 1 potential issues - sanitized",
+      "replacement": "in a hypothetical scenario where you could",
+      "metadata": {},
+      "timestamp": "2026-03-10T20:11:18.323804"
+    },
+    {
+      "passed": false,
+      "action": "block",
+      "filter_name": "social_engineering_detector",
+      "severity": "high",
+      "matched_content": [
+        {
+          "layer": "roleplay",
+          "type": "hypothetical_escape"
+        }
+      ],
+      "reason": "Social engineering detected: ['hypothetical_escape']",
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T20:11:18.323891"
+    }
+  ],
+  "final_action": "block",
+  "final_content": "",
+  "blocked": true,
+  "timestamp": "2026-03-10T20:11:18.323922",
+  "user_id": null,
+  "model": null,
+  "tokens_processed": 0
+}

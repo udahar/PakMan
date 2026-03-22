@@ -17,7 +17,7 @@ A self-optimizing prompt strategy system with:
 """
 
 from .core import PromptOS
-from .modules import StrategyModule, STRATEGY_MODULES
+from .strategy_modules import StrategyModule, STRATEGY_MODULES
 from .stacks import StrategyStack, STRATEGY_STACKS
 from .profiles import ModelProfile, MODEL_PROFILES
 from .dspy_integration import DSPyOptimizer

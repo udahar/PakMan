@@ -471,7 +471,7 @@ Rationale: [explanation]"""
     
     def _estimate_tokens(self, strategy: List[str], prompt: str) -> int:
         """Estimate token cost."""
-        from .modules import STRATEGY_MODULES
+        from .strategy_modules import STRATEGY_MODULES
         
         prompt_tokens = len(prompt) // 4
         module_tokens = sum(

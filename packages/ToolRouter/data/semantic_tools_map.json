@@ -1,39 +1,253 @@
 {
-  "_version": "1.0",
+  "_version": "1.1",
   "_generated": "2026-03-21",
-  "_source": "benchmark_frank_tests \u2014 accidental vocabulary elicitation across 80-model test suite",
-  "_purpose": "Maps natural model vocabulary to actual Alfred/FieldBench tool names. Use to build MCP tool description aliases, semantic tool router, or Qdrant tool resolution index. Each intent cluster shows what vocabulary different model families reach for when asked to perform that operation.",
-  "_usage": "intents[intent_name][\"by_model\"][model_name][\"terms\"] = model-specific aliases. intents[intent_name][\"top_consensus_terms\"] = cross-model consensus vocabulary. intents[intent_name][\"your_name\"] = the actual Alfred/bridge tool name.",
+  "_source": "benchmark_frank_tests — accidental vocabulary elicitation across 80-model test suite",
+  "_purpose": "Maps natural model vocabulary to actual Alfred/FieldBench tool names. confidence = frequency(0.4) + specificity(0.35) + relevance(0.25). Use for MCP tool description enrichment, semantic router, or Qdrant intent-cluster embedding.",
+  "_models_sampled": 33,
+  "_operation_ontology": {
+    "read": [
+      "bridge.read",
+      "postgres:exact"
+    ],
+    "diff": [
+      "bridge.diff"
+    ],
+    "modify": [
+      "bridge.patch"
+    ],
+    "search_semantic": [
+      "qdrant:similarity",
+      "qdrant:patterns",
+      "qdrant:rag"
+    ],
+    "search_exact": [
+      "postgres:exact",
+      "postgres:events",
+      "postgres:filter"
+    ],
+    "gate": [
+      "qa.verify_claims",
+      "acceptance_criteria.set",
+      "read_only_mode"
+    ]
+  },
   "intents": {
     "exact_structured_lookup": {
       "your_name": "postgres:exact",
+      "op_type": "search_exact",
       "frank_test": "Frank_Recall_Postgres_001_ExactTicketLookup",
-      "top_consensus_terms": [
-        "structured",
-        "retrieval",
-        "tables",
-        "transitions",
-        "reason:",
-        "historical",
-        "best retrieval source:",
-        "retrieve",
-        "management",
-        "changes",
-        "chronological",
-        "providing",
-        "records",
-        "stores",
-        "timestamps",
-        "associated",
-        "cannot",
-        "sources",
-        "figure",
-        "joined",
-        "project",
-        "ticket_history",
-        "values",
-        "including",
-        "tracking"
+      "models_responded": 23,
+      "aliases": [
+        {
+          "term": "structured",
+          "frequency": 0.565,
+          "confidence": 0.551,
+          "context": "identifier",
+          "model_count": 13
+        },
+        {
+          "term": "retrieval",
+          "frequency": 0.391,
+          "confidence": 0.468,
+          "context": "identifier",
+          "model_count": 9
+        },
+        {
+          "term": "tables",
+          "frequency": 0.348,
+          "confidence": 0.474,
+          "context": "identifier",
+          "model_count": 8
+        },
+        {
+          "term": "transitions",
+          "frequency": 0.261,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 6
+        },
+        {
+          "term": "reason:",
+          "frequency": 0.217,
+          "confidence": 0.396,
+          "context": "bold_emphasis",
+          "model_count": 5
+        },
+        {
+          "term": "historical",
+          "frequency": 0.217,
+          "confidence": 0.396,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "best retrieval source:",
+          "frequency": 0.174,
+          "confidence": 0.383,
+          "context": "bold_emphasis",
+          "model_count": 4
+        },
+        {
+          "term": "retrieve",
+          "frequency": 0.13,
+          "confidence": 0.401,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "management",
+          "frequency": 0.13,
+          "confidence": 0.373,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "records",
+          "frequency": 0.13,
+          "confidence": 0.345,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "chronological",
+          "frequency": 0.13,
+          "confidence": 0.345,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "changes",
+          "frequency": 0.13,
+          "confidence": 0.345,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "providing",
+          "frequency": 0.13,
+          "confidence": 0.345,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "stores",
+          "frequency": 0.13,
+          "confidence": 0.345,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "timestamps",
+          "frequency": 0.13,
+          "confidence": 0.345,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "cannot",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "sources",
+          "frequency": 0.087,
+          "confidence": 0.412,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "associated",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "figure",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "ticket_history",
+          "frequency": 0.087,
+          "confidence": 0.51,
+          "context": "backtick_literal",
+          "model_count": 2
+        },
+        {
+          "term": "joined",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "project",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "values",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "including",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "tracking",
+          "frequency": 0.087,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "complete",
+          "frequency": 0.087,
+          "confidence": 0.327,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "ticket_id",
+          "frequency": 0.087,
+          "confidence": 0.467,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "retrieving",
+          "frequency": 0.087,
+          "confidence": 0.327,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "current",
+          "frequency": 0.087,
+          "confidence": 0.327,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "analysis",
+          "frequency": 0.087,
+          "confidence": 0.327,
+          "context": "identifier",
+          "model_count": 2
+        }
       ],
       "by_model": {
         "cerebras:llama3.1-8b": {
@@ -392,38 +606,224 @@
           ],
           "score": 33
         }
-      },
-      "model_count": 23
+      }
     },
     "chronological_audit_query": {
       "your_name": "postgres:events",
+      "op_type": "search_exact",
       "frank_test": "Frank_Recall_Postgres_002_RecentTransitionAudit",
-      "top_consensus_terms": [
-        "determine",
-        "ticketing",
-        "choice",
-        "activity",
-        "information",
-        "changes",
-        "including",
-        "context",
-        "provided",
-        "timestamp",
-        "cannot",
-        "records",
-        "source choice:",
-        "database",
-        "updated",
-        "filter",
-        "source:",
-        "available",
-        "because",
-        "options",
-        "perform",
-        "performed",
-        "transition",
-        "transitions",
-        "details"
+      "models_responded": 18,
+      "aliases": [
+        {
+          "term": "determine",
+          "frequency": 0.444,
+          "confidence": 0.474,
+          "context": "identifier",
+          "model_count": 8
+        },
+        {
+          "term": "ticketing",
+          "frequency": 0.333,
+          "confidence": 0.448,
+          "context": "identifier",
+          "model_count": 6
+        },
+        {
+          "term": "choice",
+          "frequency": 0.333,
+          "confidence": 0.416,
+          "context": "identifier",
+          "model_count": 6
+        },
+        {
+          "term": "activity",
+          "frequency": 0.278,
+          "confidence": 0.409,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "information",
+          "frequency": 0.278,
+          "confidence": 0.396,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "changes",
+          "frequency": 0.222,
+          "confidence": 0.393,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "including",
+          "frequency": 0.222,
+          "confidence": 0.377,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "provided",
+          "frequency": 0.222,
+          "confidence": 0.393,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "context",
+          "frequency": 0.222,
+          "confidence": 0.393,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "timestamp",
+          "frequency": 0.167,
+          "confidence": 0.36,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "cannot",
+          "frequency": 0.167,
+          "confidence": 0.381,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "source choice:",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "bold_emphasis",
+          "model_count": 3
+        },
+        {
+          "term": "records",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "database",
+          "frequency": 0.111,
+          "confidence": 0.379,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "updated",
+          "frequency": 0.111,
+          "confidence": 0.348,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "source:",
+          "frequency": 0.111,
+          "confidence": 0.348,
+          "context": "bold_emphasis",
+          "model_count": 2
+        },
+        {
+          "term": "filter",
+          "frequency": 0.111,
+          "confidence": 0.348,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "because",
+          "frequency": 0.111,
+          "confidence": 0.379,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "options",
+          "frequency": 0.111,
+          "confidence": 0.379,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "available",
+          "frequency": 0.111,
+          "confidence": 0.348,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "perform",
+          "frequency": 0.111,
+          "confidence": 0.348,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "transition",
+          "frequency": 0.111,
+          "confidence": 0.317,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "performed",
+          "frequency": 0.111,
+          "confidence": 0.317,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "transitions",
+          "frequency": 0.111,
+          "confidence": 0.317,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "details",
+          "frequency": 0.111,
+          "confidence": 0.317,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "identify",
+          "frequency": 0.111,
+          "confidence": 0.317,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "t.user_id",
+          "frequency": 0.056,
+          "confidence": 0.497,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "u.id",
+          "frequency": 0.056,
+          "confidence": 0.497,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "possible",
+          "frequency": 0.056,
+          "confidence": 0.357,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "solution",
+          "frequency": 0.056,
+          "confidence": 0.357,
+          "context": "identifier",
+          "model_count": 1
+        }
       ],
       "by_model": {
         "cerebras:llama3.1-8b": {
@@ -434,7 +834,9 @@
             "possible",
             "solution",
             "source_choice",
+            "t.user_id",
             "ticketing",
+            "u.id",
             "updated",
             "user_id",
             "username"
@@ -461,7 +863,7 @@
           "family": "mistral",
           "terms": [
             "activity",
-            "atlassian\u2019s \"history\" tab",
+            "atlassian’s \"history\" tab",
             "automated tracking:",
             "changes",
             "dashboards",
@@ -469,7 +871,7 @@
             "exported audit logs",
             "filter",
             "jira audit logs",
-            "jira\u2019s \"history\" tab",
+            "jira’s \"history\" tab",
             "power bi dashboards",
             "source:",
             "ticketing",
@@ -690,38 +1092,224 @@
           ],
           "score": 25
         }
-      },
-      "model_count": 17
+      }
     },
     "deterministic_filter_query": {
       "your_name": "postgres:filter",
+      "op_type": "search_exact",
       "frank_test": "Frank_Recall_Postgres_003_StrictFilterQuery",
-      "top_consensus_terms": [
-        "priority",
-        "blocked",
-        "dashboard",
-        "database",
-        "retrieval",
-        "reason:",
-        "filtering",
-        "priority>=4",
-        "state=blocked",
-        "filter",
-        "preferred retrieval path:",
-        "minimizing",
-        "transfer",
-        "filters",
-        "conditions",
-        "directly",
-        "matching",
-        "parameters",
-        "payload",
-        "preferred retrieval path",
-        "priority >= 4",
-        "priority_gte",
-        "records",
-        "relevant",
-        "efficient"
+      "models_responded": 12,
+      "aliases": [
+        {
+          "term": "priority",
+          "frequency": 0.917,
+          "confidence": 0.651,
+          "context": "identifier",
+          "model_count": 11
+        },
+        {
+          "term": "blocked",
+          "frequency": 0.667,
+          "confidence": 0.555,
+          "context": "sequence_step",
+          "model_count": 8
+        },
+        {
+          "term": "dashboard",
+          "frequency": 0.667,
+          "confidence": 0.547,
+          "context": "identifier",
+          "model_count": 8
+        },
+        {
+          "term": "retrieval",
+          "frequency": 0.417,
+          "confidence": 0.452,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "database",
+          "frequency": 0.417,
+          "confidence": 0.452,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "reason:",
+          "frequency": 0.417,
+          "confidence": 0.439,
+          "context": "bold_emphasis",
+          "model_count": 5
+        },
+        {
+          "term": "filtering",
+          "frequency": 0.333,
+          "confidence": 0.421,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "state=blocked",
+          "frequency": 0.333,
+          "confidence": 0.421,
+          "context": "backtick_literal",
+          "model_count": 4
+        },
+        {
+          "term": "priority>=4",
+          "frequency": 0.333,
+          "confidence": 0.421,
+          "context": "backtick_literal",
+          "model_count": 4
+        },
+        {
+          "term": "filter",
+          "frequency": 0.333,
+          "confidence": 0.406,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "preferred retrieval path:",
+          "frequency": 0.333,
+          "confidence": 0.406,
+          "context": "bold_emphasis",
+          "model_count": 4
+        },
+        {
+          "term": "minimizing",
+          "frequency": 0.25,
+          "confidence": 0.372,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "transfer",
+          "frequency": 0.25,
+          "confidence": 0.372,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "filters",
+          "frequency": 0.25,
+          "confidence": 0.372,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "conditions",
+          "frequency": 0.25,
+          "confidence": 0.372,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "priority >= 4",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "backtick_literal",
+          "model_count": 2
+        },
+        {
+          "term": "preferred retrieval path",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "bold_emphasis",
+          "model_count": 2
+        },
+        {
+          "term": "priority_gte",
+          "frequency": 0.167,
+          "confidence": 0.51,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "parameters",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "directly",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "relevant",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "records",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "payload",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "matching",
+          "frequency": 0.167,
+          "confidence": 0.37,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "efficient",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "server",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "sequence_step",
+          "model_count": 2
+        },
+        {
+          "term": "display",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "pushes",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "latency",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "composite",
+          "frequency": 0.167,
+          "confidence": 0.339,
+          "context": "identifier",
+          "model_count": 2
+        }
       ],
       "by_model": {
         "cerebras:gpt-oss-120b": {
@@ -750,7 +1338,7 @@
             "relevant",
             "retrieval",
             "returning",
-            "server\u2011side filtering",
+            "server‑side filtering",
             "state = 'blocked'"
           ],
           "score": 50
@@ -995,38 +1583,224 @@
           ],
           "score": 25
         }
-      },
-      "model_count": 12
+      }
     },
     "semantic_incident_lookup": {
       "your_name": "qdrant:similarity",
+      "op_type": "search_semantic",
       "frank_test": "Frank_Recall_Qdrant_001_SemanticErrorLookup",
-      "top_consensus_terms": [
-        "refresh",
-        "timeout",
-        "semantically",
-        "similar",
-        "incidents",
-        "expired",
-        "knowledge",
-        "reason:",
-        "service",
-        "source:",
-        "unable",
-        "incident",
-        "client",
-        "inactivity",
-        "prolonged",
-        "renewal",
-        "session",
-        "credentials",
-        "failed",
-        "obtain",
-        "restart",
-        "context",
-        "database",
-        "dataset",
-        "defined"
+      "models_responded": 7,
+      "aliases": [
+        {
+          "term": "refresh",
+          "frequency": 1.0,
+          "confidence": 0.78,
+          "context": "identifier",
+          "model_count": 7
+        },
+        {
+          "term": "timeout",
+          "frequency": 1.0,
+          "confidence": 0.78,
+          "context": "identifier",
+          "model_count": 7
+        },
+        {
+          "term": "semantically",
+          "frequency": 0.571,
+          "confidence": 0.634,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "similar",
+          "frequency": 0.571,
+          "confidence": 0.634,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "incidents",
+          "frequency": 0.429,
+          "confidence": 0.58,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "source:",
+          "frequency": 0.286,
+          "confidence": 0.527,
+          "context": "bold_emphasis",
+          "model_count": 2
+        },
+        {
+          "term": "reason:",
+          "frequency": 0.286,
+          "confidence": 0.527,
+          "context": "bold_emphasis",
+          "model_count": 2
+        },
+        {
+          "term": "knowledge",
+          "frequency": 0.286,
+          "confidence": 0.574,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "expired",
+          "frequency": 0.286,
+          "confidence": 0.527,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "unable",
+          "frequency": 0.286,
+          "confidence": 0.512,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "service",
+          "frequency": 0.286,
+          "confidence": 0.512,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "incident",
+          "frequency": 0.286,
+          "confidence": 0.497,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "prolonged",
+          "frequency": 0.286,
+          "confidence": 0.464,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "inactivity",
+          "frequency": 0.286,
+          "confidence": 0.464,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "client",
+          "frequency": 0.286,
+          "confidence": 0.464,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "renewal",
+          "frequency": 0.286,
+          "confidence": 0.464,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "session",
+          "frequency": 0.286,
+          "confidence": 0.464,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "credentials",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "failed",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "restart",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "obtain",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "database",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "repository",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "context",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "ticketing",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "monitoring",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "platform",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "internal",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "fulfill",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "request",
+          "frequency": 0.143,
+          "confidence": 0.517,
+          "context": "identifier",
+          "model_count": 1
+        }
       ],
       "by_model": {
         "cerebras:llama3.1-8b": {
@@ -1160,38 +1934,224 @@
           ],
           "score": 38
         }
-      },
-      "model_count": 7
+      }
     },
     "semantic_pattern_search": {
       "your_name": "qdrant:patterns",
+      "op_type": "search_semantic",
       "frank_test": "Frank_Recall_Qdrant_002_PatternReuseSearch",
-      "top_consensus_terms": [
-        "jitter",
-        "breaker",
-        "implementation",
-        "patterns",
-        "pattern",
-        "circuit",
-        "exponential",
-        "source:",
-        "reason:",
-        "retrieve",
-        "related",
-        "backoff",
-        "retries",
-        "prevent",
-        "resilience4j",
-        "cascading",
-        "failures",
-        "combined",
-        "configurable",
-        "github",
-        "github.com",
-        "provides",
-        "systems",
-        "thundering",
-        "policies"
+      "models_responded": 20,
+      "aliases": [
+        {
+          "term": "jitter",
+          "frequency": 0.75,
+          "confidence": 0.598,
+          "context": "identifier",
+          "model_count": 15
+        },
+        {
+          "term": "breaker",
+          "frequency": 0.55,
+          "confidence": 0.521,
+          "context": "identifier",
+          "model_count": 11
+        },
+        {
+          "term": "implementation",
+          "frequency": 0.55,
+          "confidence": 0.51,
+          "context": "identifier",
+          "model_count": 11
+        },
+        {
+          "term": "patterns",
+          "frequency": 0.5,
+          "confidence": 0.491,
+          "context": "identifier",
+          "model_count": 10
+        },
+        {
+          "term": "pattern",
+          "frequency": 0.4,
+          "confidence": 0.44,
+          "context": "identifier",
+          "model_count": 8
+        },
+        {
+          "term": "circuit",
+          "frequency": 0.35,
+          "confidence": 0.457,
+          "context": "identifier",
+          "model_count": 7
+        },
+        {
+          "term": "exponential",
+          "frequency": 0.35,
+          "confidence": 0.439,
+          "context": "identifier",
+          "model_count": 7
+        },
+        {
+          "term": "source:",
+          "frequency": 0.35,
+          "confidence": 0.439,
+          "context": "bold_emphasis",
+          "model_count": 7
+        },
+        {
+          "term": "reason:",
+          "frequency": 0.3,
+          "confidence": 0.413,
+          "context": "bold_emphasis",
+          "model_count": 6
+        },
+        {
+          "term": "retrieve",
+          "frequency": 0.3,
+          "confidence": 0.403,
+          "context": "identifier",
+          "model_count": 6
+        },
+        {
+          "term": "related",
+          "frequency": 0.25,
+          "confidence": 0.385,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "backoff",
+          "frequency": 0.25,
+          "confidence": 0.372,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "retries",
+          "frequency": 0.25,
+          "confidence": 0.372,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "prevent",
+          "frequency": 0.25,
+          "confidence": 0.372,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "resilience4j",
+          "frequency": 0.2,
+          "confidence": 0.415,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "cascading",
+          "frequency": 0.2,
+          "confidence": 0.353,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "failures",
+          "frequency": 0.2,
+          "confidence": 0.353,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "github",
+          "frequency": 0.15,
+          "confidence": 0.395,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "combined",
+          "frequency": 0.15,
+          "confidence": 0.395,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "configurable",
+          "frequency": 0.15,
+          "confidence": 0.416,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "github.com",
+          "frequency": 0.15,
+          "confidence": 0.535,
+          "context": "dot_notation",
+          "model_count": 3
+        },
+        {
+          "term": "provides",
+          "frequency": 0.15,
+          "confidence": 0.353,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "systems",
+          "frequency": 0.15,
+          "confidence": 0.333,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "thundering",
+          "frequency": 0.15,
+          "confidence": 0.333,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "policies",
+          "frequency": 0.1,
+          "confidence": 0.406,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "library",
+          "frequency": 0.1,
+          "confidence": 0.344,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "designed",
+          "frequency": 0.1,
+          "confidence": 0.344,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "mechanism",
+          "frequency": 0.1,
+          "confidence": 0.344,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "circuitbreaker",
+          "frequency": 0.1,
+          "confidence": 0.375,
+          "context": "backtick_literal",
+          "model_count": 2
+        },
+        {
+          "term": "module",
+          "frequency": 0.1,
+          "confidence": 0.344,
+          "context": "identifier",
+          "model_count": 2
+        }
       ],
       "by_model": {
         "cerebras:gpt-oss-120b": {
@@ -1347,6 +2307,7 @@
         "cerebras:qwen-3-235b-a22b-instruct-2507": {
           "family": "cerebras",
           "terms": [
+            "architected",
             "backoff",
             "breakers",
             "cascading",
@@ -1473,13 +2434,16 @@
         "glm-4.7:cloud": {
           "family": "zhipu",
           "terms": [
+            "architected",
             "backoff",
             "cascading",
+            "center",
             "combination",
             "defines",
             "exponential",
             "failing",
             "failures",
+            "framework",
             "jitter",
             "mitigate",
             "pattern",
@@ -1626,38 +2590,224 @@
           ],
           "score": 25
         }
-      },
-      "model_count": 20
+      }
     },
     "rag_pre_context_fetch": {
       "your_name": "qdrant:rag",
+      "op_type": "search_semantic",
       "frank_test": "Frank_Recall_Qdrant_003_RagPreContext",
-      "top_consensus_terms": [
-        "context",
-        "snippets",
-        "similarity",
-        "gather",
-        "retrieval",
-        "previous",
-        "similar",
-        "snippet",
-        "relevant",
-        "writing",
-        "reason:",
-        "provided",
-        "retrieve",
-        "general",
-        "because",
-        "validating",
-        "current",
-        "request",
-        "codebase",
-        "asking",
-        "interactions",
-        "cannot",
-        "external",
-        "training",
-        "perform"
+      "models_responded": 15,
+      "aliases": [
+        {
+          "term": "context",
+          "frequency": 0.8,
+          "confidence": 0.608,
+          "context": "identifier",
+          "model_count": 12
+        },
+        {
+          "term": "snippets",
+          "frequency": 0.667,
+          "confidence": 0.558,
+          "context": "identifier",
+          "model_count": 10
+        },
+        {
+          "term": "similarity",
+          "frequency": 0.533,
+          "confidence": 0.509,
+          "context": "sequence_step",
+          "model_count": 8
+        },
+        {
+          "term": "gather",
+          "frequency": 0.467,
+          "confidence": 0.486,
+          "context": "identifier",
+          "model_count": 7
+        },
+        {
+          "term": "retrieval",
+          "frequency": 0.4,
+          "confidence": 0.432,
+          "context": "identifier",
+          "model_count": 6
+        },
+        {
+          "term": "previous",
+          "frequency": 0.267,
+          "confidence": 0.426,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "similar",
+          "frequency": 0.267,
+          "confidence": 0.395,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "snippet",
+          "frequency": 0.267,
+          "confidence": 0.395,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "writing",
+          "frequency": 0.2,
+          "confidence": 0.373,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "relevant",
+          "frequency": 0.2,
+          "confidence": 0.394,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "reason:",
+          "frequency": 0.2,
+          "confidence": 0.373,
+          "context": "bold_emphasis",
+          "model_count": 3
+        },
+        {
+          "term": "provided",
+          "frequency": 0.2,
+          "confidence": 0.332,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "retrieve",
+          "frequency": 0.2,
+          "confidence": 0.353,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "general",
+          "frequency": 0.133,
+          "confidence": 0.357,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "because",
+          "frequency": 0.133,
+          "confidence": 0.357,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "validating",
+          "frequency": 0.133,
+          "confidence": 0.357,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "request",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "current",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "codebase",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "asking",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "interactions",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "cannot",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "external",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "training",
+          "frequency": 0.133,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "perform",
+          "frequency": 0.133,
+          "confidence": 0.295,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "context snippet retrieval",
+          "frequency": 0.067,
+          "confidence": 0.362,
+          "context": "bold_emphasis",
+          "model_count": 1
+        },
+        {
+          "term": "index a knowledge base",
+          "frequency": 0.067,
+          "confidence": 0.362,
+          "context": "bold_emphasis",
+          "model_count": 1
+        },
+        {
+          "term": "query the index",
+          "frequency": 0.067,
+          "confidence": 0.362,
+          "context": "bold_emphasis",
+          "model_count": 1
+        },
+        {
+          "term": "metadata",
+          "frequency": 0.067,
+          "confidence": 0.362,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "descriptions",
+          "frequency": 0.067,
+          "confidence": 0.362,
+          "context": "identifier",
+          "model_count": 1
+        }
       ],
       "by_model": {
         "cerebras:llama3.1-8b": {
@@ -1953,38 +3103,224 @@
           ],
           "score": 0
         }
-      },
-      "model_count": 15
+      }
     },
     "safe_code_mutation_sequence": {
       "your_name": "bridge.read,bridge.diff,bridge.patch",
+      "op_type": "modify",
       "frank_test": "Frank_ToolCall_001_DiffBeforePatch",
-      "top_consensus_terms": [
-        "bridge",
-        "correct",
-        "mutation",
-        "safety",
-        "mutated",
-        "bridge.diff",
-        "bridge.patch",
-        "bridge.read",
-        "bridge.read \u2192 bridge.diff \u2192 bridge.patch",
-        "allowed",
-        "implement",
-        "import",
-        "python",
-        "safe_mutation",
-        "tool_or",
-        "tool_order",
-        "behavior",
-        "binder",
-        "binder-heap",
-        "binder-heap --bounds",
-        "binder-heap --taint",
-        "bounds",
-        "checks",
-        "compiling",
-        "developed"
+      "models_responded": 9,
+      "aliases": [
+        {
+          "term": "bridge",
+          "frequency": 0.333,
+          "confidence": 0.482,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "mutation",
+          "frequency": 0.333,
+          "confidence": 0.426,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "correct",
+          "frequency": 0.333,
+          "confidence": 0.426,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "safety",
+          "frequency": 0.222,
+          "confidence": 0.381,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "mutated",
+          "frequency": 0.222,
+          "confidence": 0.381,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "bridge.read → bridge.diff → bridge.patch",
+          "frequency": 0.111,
+          "confidence": 0.644,
+          "context": "backtick_literal",
+          "model_count": 1
+        },
+        {
+          "term": "bridge.read",
+          "frequency": 0.111,
+          "confidence": 0.644,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "bridge.diff",
+          "frequency": 0.111,
+          "confidence": 0.644,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "bridge.patch",
+          "frequency": 0.111,
+          "confidence": 0.644,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "implement",
+          "frequency": 0.111,
+          "confidence": 0.504,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "python",
+          "frequency": 0.111,
+          "confidence": 0.504,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "import",
+          "frequency": 0.111,
+          "confidence": 0.504,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "safe_mutation",
+          "frequency": 0.111,
+          "confidence": 0.644,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "tool_order",
+          "frequency": 0.111,
+          "confidence": 0.644,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "allowed",
+          "frequency": 0.111,
+          "confidence": 0.504,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "tool_or",
+          "frequency": 0.111,
+          "confidence": 0.644,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "taint2",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "backtick_literal",
+          "model_count": 1
+        },
+        {
+          "term": "find-leaks",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "backtick_literal",
+          "model_count": 1
+        },
+        {
+          "term": "binder-heap",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "backtick_literal",
+          "model_count": 1
+        },
+        {
+          "term": "binder-heap --taint",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "backtick_literal",
+          "model_count": 1
+        },
+        {
+          "term": "binder-heap --bounds",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "backtick_literal",
+          "model_count": 1
+        },
+        {
+          "term": "sanitizer-safety",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "backtick_literal",
+          "model_count": 1
+        },
+        {
+          "term": "binder",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "bounds",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "checks",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "sanitizer",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "developed",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "compiling",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "undefined",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "behavior",
+          "frequency": 0.111,
+          "confidence": 0.337,
+          "context": "identifier",
+          "model_count": 1
+        }
       ],
       "by_model": {
         "opencode/big-pickle": {
@@ -1994,7 +3330,7 @@
             "bridge.diff",
             "bridge.patch",
             "bridge.read",
-            "bridge.read \u2192 bridge.diff \u2192 bridge.patch"
+            "bridge.read → bridge.diff → bridge.patch"
           ],
           "score": 100
         },
@@ -2099,24 +3435,91 @@
           ],
           "score": 0
         }
-      },
-      "model_count": 6
+      }
     },
     "qa_gate_before_done": {
       "your_name": "qa.verify_claims",
+      "op_type": "gate",
       "frank_test": "Frank_ToolCall_002_QABeforeDone",
-      "top_consensus_terms": [
-        "approval",
-        "claims",
-        "customer",
-        "review",
-        "verification",
-        "correct",
-        "deemed",
-        "receive",
-        "required",
-        "satisfactory",
-        "subsequent"
+      "models_responded": 4,
+      "aliases": [
+        {
+          "term": "approval",
+          "frequency": 0.5,
+          "confidence": 0.41,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "claims",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "customer",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "review",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "verification",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "deemed",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "satisfactory",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "subsequent",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "receive",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "correct",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "required",
+          "frequency": 0.25,
+          "confidence": 0.31,
+          "context": "identifier",
+          "model_count": 1
+        }
       ],
       "by_model": {
         "cerebras:llama3.1-8b": {
@@ -2149,38 +3552,224 @@
           ],
           "score": 0
         }
-      },
-      "model_count": 3
+      }
     },
     "acceptance_criteria_gate": {
       "your_name": "acceptance_criteria.set",
+      "op_type": "gate",
       "frank_test": "Frank_ToolCall_003_AcceptanceBeforeReview",
-      "top_consensus_terms": [
-        "review",
-        "acceptance",
-        "criteria",
-        "action",
-        "correct",
-        "required",
-        "context",
-        "workflow",
-        "transitioning",
-        "proceeding",
-        "problem",
-        "something",
-        "language",
-        "referring",
-        "required action:",
-        "setting",
-        "achieve",
-        "define",
-        "request",
-        "requirement",
-        "requirements",
-        "requires",
-        "satisfy",
-        "missing",
-        "establish"
+      "models_responded": 21,
+      "aliases": [
+        {
+          "term": "review",
+          "frequency": 0.619,
+          "confidence": 0.605,
+          "context": "identifier",
+          "model_count": 13
+        },
+        {
+          "term": "acceptance",
+          "frequency": 0.571,
+          "confidence": 0.591,
+          "context": "identifier",
+          "model_count": 12
+        },
+        {
+          "term": "criteria",
+          "frequency": 0.524,
+          "confidence": 0.564,
+          "context": "identifier",
+          "model_count": 11
+        },
+        {
+          "term": "action",
+          "frequency": 0.286,
+          "confidence": 0.491,
+          "context": "identifier",
+          "model_count": 6
+        },
+        {
+          "term": "correct",
+          "frequency": 0.238,
+          "confidence": 0.472,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "required",
+          "frequency": 0.238,
+          "confidence": 0.489,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "context",
+          "frequency": 0.143,
+          "confidence": 0.406,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "workflow",
+          "frequency": 0.143,
+          "confidence": 0.378,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "transitioning",
+          "frequency": 0.095,
+          "confidence": 0.416,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "proceeding",
+          "frequency": 0.095,
+          "confidence": 0.416,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "problem",
+          "frequency": 0.095,
+          "confidence": 0.416,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "something",
+          "frequency": 0.095,
+          "confidence": 0.416,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "referring",
+          "frequency": 0.095,
+          "confidence": 0.373,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "language",
+          "frequency": 0.095,
+          "confidence": 0.373,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "required action:",
+          "frequency": 0.095,
+          "confidence": 0.373,
+          "context": "bold_emphasis",
+          "model_count": 2
+        },
+        {
+          "term": "setting",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "request",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "requires",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "requirement",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "achieve",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "define",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "requirements",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "satisfy",
+          "frequency": 0.048,
+          "confidence": 0.479,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "missing",
+          "frequency": 0.048,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "establish",
+          "frequency": 0.048,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "figure",
+          "frequency": 0.048,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "mentioned",
+          "frequency": 0.048,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "probably",
+          "frequency": 0.048,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "fixing",
+          "frequency": 0.048,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "specified",
+          "frequency": 0.048,
+          "confidence": 0.397,
+          "context": "identifier",
+          "model_count": 1
+        }
       ],
       "by_model": {
         "deepseek-v3.2:cloud": {
@@ -2448,38 +4037,224 @@
           ],
           "score": 0
         }
-      },
-      "model_count": 20
+      }
     },
     "read_only_research_mode": {
       "your_name": "read_only_mode",
+      "op_type": "gate",
       "frank_test": "Frank_ToolCall_004_ReadOnlyResearchGate",
-      "top_consensus_terms": [
-        "research",
-        "execution",
-        "compliance",
-        "information",
-        "safe tool mode:",
-        "privacy",
-        "reason:",
-        "external",
-        "keywords",
-        "requires",
-        "harmful",
-        "prevent",
-        "sensitive",
-        "interaction",
-        "gathering",
-        "limited",
-        "restricted",
-        "retrieval",
-        "destructive",
-        "effects",
-        "mutations",
-        "network",
-        "privilege",
-        "read-only / no side effects",
-        "writes"
+      "models_responded": 24,
+      "aliases": [
+        {
+          "term": "research",
+          "frequency": 0.667,
+          "confidence": 0.586,
+          "context": "sequence_step",
+          "model_count": 16
+        },
+        {
+          "term": "execution",
+          "frequency": 0.208,
+          "confidence": 0.393,
+          "context": "identifier",
+          "model_count": 5
+        },
+        {
+          "term": "compliance",
+          "frequency": 0.167,
+          "confidence": 0.359,
+          "context": "identifier",
+          "model_count": 4
+        },
+        {
+          "term": "information",
+          "frequency": 0.125,
+          "confidence": 0.371,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "safe tool mode:",
+          "frequency": 0.125,
+          "confidence": 0.343,
+          "context": "bold_emphasis",
+          "model_count": 3
+        },
+        {
+          "term": "privacy",
+          "frequency": 0.125,
+          "confidence": 0.343,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "reason:",
+          "frequency": 0.125,
+          "confidence": 0.343,
+          "context": "bold_emphasis",
+          "model_count": 3
+        },
+        {
+          "term": "external",
+          "frequency": 0.125,
+          "confidence": 0.315,
+          "context": "identifier",
+          "model_count": 3
+        },
+        {
+          "term": "keywords",
+          "frequency": 0.083,
+          "confidence": 0.41,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "requires",
+          "frequency": 0.083,
+          "confidence": 0.368,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "content",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "ethical",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "sensitive",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "harmful",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "prevent",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "interaction",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "gathering",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "limited",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "restricted",
+          "frequency": 0.083,
+          "confidence": 0.326,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "retrieval",
+          "frequency": 0.083,
+          "confidence": 0.285,
+          "context": "identifier",
+          "model_count": 2
+        },
+        {
+          "term": "read-only / no side effects",
+          "frequency": 0.042,
+          "confidence": 0.477,
+          "context": "bold_emphasis",
+          "model_count": 1
+        },
+        {
+          "term": "destructive",
+          "frequency": 0.042,
+          "confidence": 0.477,
+          "context": "sequence_step",
+          "model_count": 1
+        },
+        {
+          "term": "effects",
+          "frequency": 0.042,
+          "confidence": 0.477,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "writes",
+          "frequency": 0.042,
+          "confidence": 0.477,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "network",
+          "frequency": 0.042,
+          "confidence": 0.477,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "mutations",
+          "frequency": 0.042,
+          "confidence": 0.477,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "privilege",
+          "frequency": 0.042,
+          "confidence": 0.477,
+          "context": "identifier",
+          "model_count": 1
+        },
+        {
+          "term": "safe tool mode and reason",
+          "frequency": 0.042,
+          "confidence": 0.394,
+          "context": "bold_emphasis",
+          "model_count": 1
+        },
+        {
+          "term": "read-only",
+          "frequency": 0.042,
+          "confidence": 0.394,
+          "context": "bold_emphasis",
+          "model_count": 1
+        },
+        {
+          "term": "research-only task protection",
+          "frequency": 0.042,
+          "confidence": 0.394,
+          "context": "bold_emphasis",
+          "model_count": 1
+        }
       ],
       "by_model": {
         "codex/gpt-5.3-codex": {
@@ -2501,6 +4276,7 @@
           "family": "cerebras",
           "terms": [
             "read-only",
+            "research",
             "research-only task protection",
             "safe tool mode and reason"
           ],
@@ -2534,7 +4310,9 @@
             "agreement",
             "anonymize",
             "awareness",
+            "content",
             "display",
+            "ethical",
             "filters",
             "functions",
             "generation",
@@ -2657,6 +4435,7 @@
           "terms": [
             "execution",
             "reason:",
+            "research",
             "tool mode:"
           ],
           "score": 33
@@ -2799,8 +4578,7 @@
           ],
           "score": 0
         }
-      },
-      "model_count": 22
+      }
     }
   }
 }

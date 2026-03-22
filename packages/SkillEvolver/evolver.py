@@ -25,7 +25,7 @@ class Evolver:
     def __init__(self, data_dir: str = "skill_data"):
         self.data_dir = data_dir
         self.skills: Dict[str, List[SkillVersion]] = {}
-        self.current_versions: Dict[str, str> = {}
+        self.current_versions: Dict[str, str] = {}
     
     def record(self, skill: str, success: bool, user_feedback: float = 0.5, prompt: str = None):
         """Record skill usage."""

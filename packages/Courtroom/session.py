@@ -7,10 +7,10 @@ Orchestrates the full courtroom loop.
 from dataclasses import dataclass
 from typing import Optional
 
-from courtroom.scribe import Scribe, ScribeOutput
-from courtroom.critic import Critic, Criticism
-from courtroom.judge import Judge, JudgeDecision, JudgeVerdict
-from courtroom.harness import Harness, HarnessResult, HarnessVerdict
+from .scribe import Scribe, ScribeOutput
+from .critic import Critic, Criticism
+from .judge import Judge, JudgeDecision, JudgeVerdict
+from .harness import Harness, HarnessResult, HarnessVerdict
 
 
 @dataclass

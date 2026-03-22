@@ -238,7 +238,7 @@ Be creative! Try combinations that haven't been tried before."""
             return False
         
         # Rule 2: All modules must exist
-        from .modules import STRATEGY_MODULES
+        from .strategy_modules import STRATEGY_MODULES
         for module in strategy:
             if module not in STRATEGY_MODULES:
                 return False
@@ -338,7 +338,7 @@ Be creative! Try combinations that haven't been tried before."""
     
     def _estimate_tokens(self, strategy: List[str], prompt: str) -> int:
         """Estimate token cost for a strategy."""
-        from .modules import STRATEGY_MODULES
+        from .strategy_modules import STRATEGY_MODULES
         
         prompt_tokens = len(prompt) // 4
         module_tokens = sum(

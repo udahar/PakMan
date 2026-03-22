@@ -26,7 +26,7 @@ from dataclasses import dataclass, field
 import random
 import math
 
-from .modules import STRATEGY_MODULES, StrategyModule
+from .strategy_modules import STRATEGY_MODULES, StrategyModule
 
 
 @dataclass

@@ -8,7 +8,7 @@ import json
 from typing import Any, Optional
 from datetime import datetime
 
-from council.roles import (
+from .roles import (
     RoleContext,
     Planner,
     Engineer,
@@ -16,7 +16,7 @@ from council.roles import (
     Governor,
     Archivist,
 )
-from council.decision import CouncilDecision, DecisionStatus
+from .decision import CouncilDecision, DecisionStatus
 
 
 class CouncilSession:

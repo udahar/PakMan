@@ -15,7 +15,7 @@ from typing import Dict, List, Optional, Any, Tuple, Callable, Union
 from datetime import datetime
 from pathlib import Path
 
-from .modules import STRATEGY_MODULES, ROLE_DESCRIPTIONS, FEW_SHOT_EXAMPLES
+from .strategy_modules import STRATEGY_MODULES, ROLE_DESCRIPTIONS, FEW_SHOT_EXAMPLES
 from .stacks import STRATEGY_STACKS
 from .profiles import MODEL_PROFILES
 from .dspy_integration import DSPyOptimizer

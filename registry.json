@@ -42,81 +42,6 @@
       "status": "beta",
       "path": "packages/PromptOS"
     },
-    "context_distiller": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Passage-based summarization for long documents. Reduces context without losing signal.",
-      "category": "context",
-      "tags": [
-        "context",
-        "summarization",
-        "compression",
-        "passages"
-      ],
-      "status": "stable",
-      "path": "packages/context_distiller"
-    },
-    "recursive_context": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Recursive context compression \u00e2\u20ac\u201d iteratively distills long context to fit model windows.",
-      "category": "context",
-      "tags": [
-        "context",
-        "compression",
-        "recursive"
-      ],
-      "status": "beta",
-      "path": "packages/recursive_context"
-    },
-    "context_cache": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Persistent context cache across sessions. Avoids re-processing identical inputs.",
-      "category": "context",
-      "tags": [
-        "context",
-        "cache",
-        "performance"
-      ],
-      "status": "beta",
-      "path": "packages/context_cache"
-    },
-    "cost_optimizer": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Model routing by price/quality tradeoff. Tracks token spend and routes cheap tasks to cheap models.",
-      "category": "routing",
-      "tags": [
-        "routing",
-        "cost",
-        "tokens",
-        "optimization"
-      ],
-      "status": "stable",
-      "path": "packages/cost_optimizer"
-    },
-    "model_router": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Task-type to model strategy selection. Routes by capability, not just cost.",
-      "category": "routing",
-      "tags": [
-        "routing",
-        "models",
-        "strategy",
-        "selection"
-      ],
-      "status": "stable",
-      "path": "packages/model_router"
-    },
-    "multi_model_orchestrator": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Run multiple models in parallel and synthesize their outputs.",
-      "category": "routing",
-      "tags": [
-        "orchestration",
-        "parallel",
-        "multi-model"
-      ],
-      "status": "beta",
-      "path": "packages/multi_model_orchestrator"
-    },
     "GapMan": {
       "repo": "github.com/udahar/PakMan",
       "description": "Gap analysis engine. Finds what your model can't do yet and generates targeted hard tests.",
@@ -129,110 +54,6 @@
       ],
       "status": "beta",
       "path": "packages/GapMan"
-    },
-    "eval_framework": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Evaluation harness for model outputs. Pluggable validators, difficulty weights, scoring.",
-      "category": "evaluation",
-      "tags": [
-        "evaluation",
-        "scoring",
-        "validators",
-        "harness"
-      ],
-      "status": "stable",
-      "path": "packages/eval_framework"
-    },
-    "benchmark_arena": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Head-to-head model benchmarking arena with leaderboards and rankings.",
-      "category": "evaluation",
-      "tags": [
-        "benchmark",
-        "arena",
-        "leaderboard",
-        "ranking"
-      ],
-      "status": "beta",
-      "path": "packages/benchmark_arena"
-    },
-    "memory_graph": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Graph-based persistent memory for AI agents. Nodes, edges, semantic search.",
-      "category": "memory",
-      "tags": [
-        "memory",
-        "graph",
-        "persistence",
-        "semantic"
-      ],
-      "status": "beta",
-      "path": "packages/memory_graph"
-    },
-    "browser_memory": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Semantic browser memory \u00e2\u20ac\u201d saves and searches web pages by meaning, not just URL.",
-      "category": "memory",
-      "tags": [
-        "memory",
-        "browser",
-        "semantic",
-        "search"
-      ],
-      "status": "beta",
-      "path": "packages/browser_memory"
-    },
-    "safety_sentry": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "LLM output safety guard. Reviews generated code and content before use.",
-      "category": "safety",
-      "tags": [
-        "safety",
-        "review",
-        "guard",
-        "validation"
-      ],
-      "status": "beta",
-      "path": "packages/safety_sentry"
-    },
-    "council": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Multi-agent debate council. Multiple models argue a question, synthesize a decision.",
-      "category": "agents",
-      "tags": [
-        "agents",
-        "debate",
-        "council",
-        "synthesis"
-      ],
-      "status": "beta",
-      "path": "packages/council"
-    },
-    "courtroom": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Adversarial agent framework. Prosecution, defence, and judge roles for rigorous reasoning.",
-      "category": "agents",
-      "tags": [
-        "agents",
-        "adversarial",
-        "reasoning",
-        "courtroom"
-      ],
-      "status": "alpha",
-      "path": "packages/courtroom"
-    },
-    "scheduler": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Cron-style job scheduler for AI tasks. Supports async jobs, retries, and priority queues.",
-      "category": "infrastructure",
-      "tags": [
-        "scheduler",
-        "cron",
-        "async",
-        "jobs"
-      ],
-      "status": "stable",
-      "path": "packages/scheduler"
     },
     "tickets": {
       "repo": "github.com/udahar/PakMan",
@@ -247,19 +68,6 @@
       "status": "beta",
       "path": "packages/tickets"
     },
-    "prompt_library": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Versioned prompt library. Store, tag, search, and reuse prompts across projects.",
-      "category": "prompting",
-      "tags": [
-        "prompts",
-        "library",
-        "versioning",
-        "reuse"
-      ],
-      "status": "beta",
-      "path": "packages/prompt_library"
-    },
     "prompt_version_control": {
       "repo": "github.com/udahar/PakMan",
       "description": "Git-style version control for prompts. Diff, branch, and roll back prompts.",
@@ -272,58 +80,6 @@
       ],
       "status": "alpha",
       "path": "packages/prompt_version_control"
-    },
-    "prompt_evolution": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Evolutionary prompt optimization. Mutate, crossover, and select best-performing prompts.",
-      "category": "prompting",
-      "tags": [
-        "prompts",
-        "evolution",
-        "optimization",
-        "genetic"
-      ],
-      "status": "alpha",
-      "path": "packages/prompt_evolution"
-    },
-    "skills_framework": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Core framework for building and loading AI skills. The engine behind PromptSKLib.",
-      "category": "prompting",
-      "tags": [
-        "skills",
-        "framework",
-        "core",
-        "loading"
-      ],
-      "status": "stable",
-      "path": "packages/skills_framework"
-    },
-    "skills_registry": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Registry of available skills with search, tagging, and match scoring.",
-      "category": "prompting",
-      "tags": [
-        "skills",
-        "registry",
-        "search",
-        "matching"
-      ],
-      "status": "stable",
-      "path": "packages/skills_registry"
-    },
-    "tool_builder": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Build LLM tool definitions from Python functions. Auto-generates JSON Schema.",
-      "category": "tools",
-      "tags": [
-        "tools",
-        "functions",
-        "schema",
-        "llm"
-      ],
-      "status": "beta",
-      "path": "packages/tool_builder"
     },
     "tool_composer": {
       "repo": "github.com/udahar/PakMan",
@@ -563,44 +319,6 @@
       "status": "beta",
       "path": "packages/ZolaPress"
     },
-    "context_manager": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Smart context window manager. Automatically tracks, trims, and prioritises what the AI carries between turns.",
-      "category": "context",
-      "tags": [
-        "context",
-        "memory",
-        "window-management"
-      ],
-      "status": "beta",
-      "path": "packages/context_manager"
-    },
-    "skill_composer": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Chain multiple skills into composite mega-skills. Define pipelines of capability that run as a single named skill.",
-      "category": "prompting",
-      "tags": [
-        "skills",
-        "composition",
-        "pipeline",
-        "prompting"
-      ],
-      "status": "beta",
-      "path": "packages/skill_composer"
-    },
-    "skill_evolver": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Self-improving skills. Tracks usage outcomes and iteratively refines skill prompts based on what works.",
-      "category": "prompting",
-      "tags": [
-        "skills",
-        "evolution",
-        "self-improving",
-        "prompting"
-      ],
-      "status": "beta",
-      "path": "packages/skill_evolver"
-    },
     "Guardian": {
       "repo": "github.com/udahar/Guardian",
       "description": "Continuous Windows + WSL system health monitor with auto-heal, disk cleanup, crash analysis, and Telegram alerts.",
@@ -616,6 +334,239 @@
       "status": "stable",
       "path": ".",
       "external": true
+    },
+    "BenchmarkArena": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "BenchmarkArena package",
+      "category": "evaluation",
+      "tags": [
+        "evaluation"
+      ],
+      "status": "beta",
+      "path": "packages/BenchmarkArena"
+    },
+    "BrowserMemory": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "BrowserMemory package",
+      "category": "memory",
+      "tags": [
+        "memory"
+      ],
+      "status": "beta",
+      "path": "packages/BrowserMemory"
+    },
+    "ContextCache": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ContextCache package",
+      "category": "context",
+      "tags": [
+        "context"
+      ],
+      "status": "beta",
+      "path": "packages/ContextCache"
+    },
+    "ContextDistiller": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ContextDistiller package",
+      "category": "context",
+      "tags": [
+        "context"
+      ],
+      "status": "beta",
+      "path": "packages/ContextDistiller"
+    },
+    "ContextManager": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ContextManager package",
+      "category": "context",
+      "tags": [
+        "context"
+      ],
+      "status": "beta",
+      "path": "packages/ContextManager"
+    },
+    "CostOptimizer": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "CostOptimizer package",
+      "category": "routing",
+      "tags": [
+        "routing"
+      ],
+      "status": "beta",
+      "path": "packages/CostOptimizer"
+    },
+    "Council": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Council package",
+      "category": "agents",
+      "tags": [
+        "agents"
+      ],
+      "status": "beta",
+      "path": "packages/Council"
+    },
+    "Courtroom": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Courtroom package",
+      "category": "agents",
+      "tags": [
+        "agents"
+      ],
+      "status": "beta",
+      "path": "packages/Courtroom"
+    },
+    "EvalFramework": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "EvalFramework package",
+      "category": "evaluation",
+      "tags": [
+        "evaluation"
+      ],
+      "status": "beta",
+      "path": "packages/EvalFramework"
+    },
+    "MemoryGraph": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "MemoryGraph package",
+      "category": "memory",
+      "tags": [
+        "memory"
+      ],
+      "status": "beta",
+      "path": "packages/MemoryGraph"
+    },
+    "ModelRouter": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ModelRouter package",
+      "category": "routing",
+      "tags": [
+        "routing"
+      ],
+      "status": "beta",
+      "path": "packages/ModelRouter"
+    },
+    "MultiModelOrchestrator": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "MultiModelOrchestrator package",
+      "category": "routing",
+      "tags": [
+        "routing"
+      ],
+      "status": "beta",
+      "path": "packages/MultiModelOrchestrator"
+    },
+    "PromptEvolution": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "PromptEvolution package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/PromptEvolution"
+    },
+    "PromptLibrary": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "PromptLibrary package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/PromptLibrary"
+    },
+    "RecursiveContext": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "RecursiveContext package",
+      "category": "context",
+      "tags": [
+        "context"
+      ],
+      "status": "beta",
+      "path": "packages/RecursiveContext"
+    },
+    "Scheduler": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Scheduler package",
+      "category": "infrastructure",
+      "tags": [
+        "infrastructure"
+      ],
+      "status": "beta",
+      "path": "packages/Scheduler"
+    },
+    "SkillComposer": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "SkillComposer package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/SkillComposer"
+    },
+    "SkillEvolver": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "SkillEvolver package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/SkillEvolver"
+    },
+    "SkillsFramework": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "SkillsFramework package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/SkillsFramework"
+    },
+    "SkillsRegistry": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "SkillsRegistry package",
+      "category": "prompting",
+      "tags": [
+        "prompting"
+      ],
+      "status": "beta",
+      "path": "packages/SkillsRegistry"
+    },
+    "ToolBuilder": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ToolBuilder package",
+      "category": "tools",
+      "tags": [
+        "tools"
+      ],
+      "status": "beta",
+      "path": "packages/ToolBuilder"
+    },
+    "ToolRouter": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "ToolRouter package",
+      "category": "routing",
+      "tags": [
+        "routing"
+      ],
+      "status": "beta",
+      "path": "packages/ToolRouter"
+    },
+    "SafetySentry": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "LLM output safety guard. Reviews generated code and content before use.",
+      "category": "safety",
+      "tags": [
+        "safety",
+        "review",
+        "guard",
+        "validation"
+      ],
+      "status": "beta",
+      "path": "packages/SafetySentry"
     }
   }
 }

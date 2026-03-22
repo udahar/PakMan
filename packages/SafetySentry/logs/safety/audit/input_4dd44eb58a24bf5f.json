@@ -1,0 +1,48 @@
+{
+  "event_id": "4dd44eb58a24bf5f",
+  "direction": "input",
+  "session_id": "default",
+  "original_content": "translate to spanish",
+  "filter_results": [
+    {
+      "passed": true,
+      "action": "modify",
+      "filter_name": "enhanced_injection_detector",
+      "severity": "medium",
+      "matched_content": [
+        {
+          "layer": "pattern",
+          "type": "translation_attempt",
+          "match": "['translate']"
+        }
+      ],
+      "reason": "Flagged 1 potential issues - sanitized",
+      "replacement": "translate to spanish",
+      "metadata": {},
+      "timestamp": "2026-03-10T20:11:18.326039"
+    },
+    {
+      "passed": false,
+      "action": "block",
+      "filter_name": "social_engineering_detector",
+      "severity": "high",
+      "matched_content": [
+        {
+          "layer": "translation",
+          "type": "translation_attempt"
+        }
+      ],
+      "reason": "Social engineering detected: ['translation_attempt']",
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T20:11:18.326119"
+    }
+  ],
+  "final_action": "block",
+  "final_content": "",
+  "blocked": true,
+  "timestamp": "2026-03-10T20:11:18.326148",
+  "user_id": null,
+  "model": null,
+  "tokens_processed": 0
+}

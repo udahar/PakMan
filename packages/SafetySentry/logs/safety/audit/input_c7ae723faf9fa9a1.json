@@ -1,0 +1,52 @@
+{
+  "event_id": "c7ae723faf9fa9a1",
+  "direction": "input",
+  "session_id": "default",
+  "original_content": "you are so great and smart and helpful",
+  "filter_results": [
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "enhanced_injection_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": "you are so great and smart and helpful",
+      "metadata": {
+        "sanitized": true
+      },
+      "timestamp": "2026-03-10T20:07:21.850879"
+    },
+    {
+      "passed": false,
+      "action": "block",
+      "filter_name": "social_engineering_detector",
+      "severity": "high",
+      "matched_content": [
+        {
+          "layer": "compliment",
+          "type": "compliment_bomb"
+        },
+        {
+          "layer": "compliment",
+          "type": "compliment_bomb"
+        },
+        {
+          "layer": "compliment",
+          "type": "compliment_bomb"
+        }
+      ],
+      "reason": "Social engineering detected: ['compliment_bomb', 'compliment_bomb', 'compliment_bomb']",
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T20:07:21.850987"
+    }
+  ],
+  "final_action": "block",
+  "final_content": "",
+  "blocked": true,
+  "timestamp": "2026-03-10T20:07:21.851076",
+  "user_id": null,
+  "model": null,
+  "tokens_processed": 0
+}

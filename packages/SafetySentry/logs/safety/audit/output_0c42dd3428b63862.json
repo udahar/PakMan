@@ -1,0 +1,86 @@
+{
+  "event_id": "0c42dd3428b63862",
+  "direction": "output",
+  "session_id": "default",
+  "original_content": "Here's my API key: sk-abcdefghijk123456789",
+  "filter_results": [
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "pii_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:51:58.883182"
+    },
+    {
+      "passed": true,
+      "action": "modify",
+      "filter_name": "secrets_detector",
+      "severity": "critical",
+      "matched_content": [
+        {
+          "type": "OPENAI_KEY",
+          "masked": "sk-a***************6789"
+        }
+      ],
+      "reason": "Found 1 secrets - redacted",
+      "replacement": "Here's my API key: [OPENAI_KEY_REDACTED]",
+      "metadata": {},
+      "timestamp": "2026-03-10T19:51:58.883218"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "harmful_content_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:51:58.883235"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "profanity_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:51:58.883269"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "format_validator",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:51:58.883279"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "output_injection_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:51:58.883298"
+    }
+  ],
+  "final_action": "pass",
+  "final_content": "",
+  "blocked": false,
+  "timestamp": "2026-03-10T19:51:58.883320",
+  "user_id": null,
+  "model": null,
+  "tokens_processed": 0
+}

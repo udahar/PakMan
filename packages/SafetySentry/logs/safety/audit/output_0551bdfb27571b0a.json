@@ -1,0 +1,91 @@
+{
+  "event_id": "0551bdfb27571b0a",
+  "direction": "output",
+  "session_id": "default",
+  "original_content": "My email is john@example.com and password is secret123",
+  "filter_results": [
+    {
+      "passed": true,
+      "action": "modify",
+      "filter_name": "pii_detector",
+      "severity": "high",
+      "matched_content": [
+        {
+          "type": "EMAIL",
+          "value": "john****"
+        }
+      ],
+      "reason": "Found 1 PII items - redacted",
+      "replacement": "My email is [EMAIL_REDACTED] and password is secret123",
+      "metadata": {},
+      "timestamp": "2026-03-10T19:45:24.585794"
+    },
+    {
+      "passed": true,
+      "action": "modify",
+      "filter_name": "secrets_detector",
+      "severity": "critical",
+      "matched_content": [
+        {
+          "type": "PASSWORD",
+          "masked": "****"
+        }
+      ],
+      "reason": "Found 1 secrets - redacted",
+      "replacement": "My email is john@example.com and [PASSWORD_REDACTED] secret123",
+      "metadata": {},
+      "timestamp": "2026-03-10T19:45:24.586918"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "harmful_content_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:45:24.586942"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "profanity_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:45:24.587494"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "format_validator",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:45:24.587549"
+    },
+    {
+      "passed": true,
+      "action": "pass",
+      "filter_name": "output_injection_detector",
+      "severity": "low",
+      "matched_content": [],
+      "reason": null,
+      "replacement": null,
+      "metadata": {},
+      "timestamp": "2026-03-10T19:45:24.588205"
+    }
+  ],
+  "final_action": "pass",
+  "final_content": "",
+  "blocked": false,
+  "timestamp": "2026-03-10T19:45:24.588236",
+  "user_id": null,
+  "model": null,
+  "tokens_processed": 0
+}

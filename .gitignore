@@ -25,9 +25,12 @@ packages/**/venv/
 packages/**/.venv/
 packages/**/env/
 
-# Package runtime data / logs
-packages/safety_sentry/logs/
-packages/StockAI/data/
+# Package runtime data / logs — generated at runtime, never committed
+packages/**/logs/
+packages/**/log/
+packages/**/*.log
+packages/**/data/
+packages/**/StockAI/data/
 
 # packages/ is the SOURCE registry — commit it fully.
 # Install location is ~/.pakman/ on user machines, NOT this directory.

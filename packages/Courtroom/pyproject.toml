@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-courtroom"
+version = "0.1.0"
+description = "Code review loop. Iterates generated code through a judge-model until quality gates pass."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "agents"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["Courtroom*"]

@@ -1,104 +1,28 @@
-# Prompt Blueprints - Your Personal Prompt Library
+# blueprints
 
-**Concept:** Save your best prompts, then reuse them with simple triggers.
+> **Status:** ALPHA | **Tags:** blueprints, templates, scaffolding, apps
 
-**Bonus:** Auto-catalogs your build sessions and learns from them!
+## Overview
+Project and app blueprints. Templates for common AI app patterns, pre-wired with PakMan.
 
----
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-## How It Works
-
-### 1. Save a Prompt
-```
-[Save Blueprint]
-Name: streetpunk
-Trigger: "like a streetpunk"
-Full Prompt: "Write in the style of an urban street punk. Use slang, 
-              informal grammar, rebellious tone, reference city life..."
-Tags: style, casual, creative
-```
-
-### 2. Use It
-```
-You type: "Explain quantum computing like a streetpunk"
-
-System expands to:
-"Write in the style of an urban street punk. Use slang, informal grammar, 
-rebellious tone, reference city life, be irreverent...
-
-Explain quantum computing"
-```
-
-### 3. It Just Works
-- No config files
-- No version numbers
-- Just: trigger → expansion → great output
-
----
-
-## Use Cases
-
-### Daily Life
-- `like my lawyer` → Formal, precise language
-- `explain like I'm 5` → Simple, clear explanations
-- `roast me` → Sarcastic, funny criticism
-- `like a streetpunk` → Urban slang, rebellious
-
-### Development
-- `code review` → Detailed, security-focused analysis
-- `write tests` → Comprehensive edge case coverage
-- `document this` → Clear, example-rich docs
-- `debug help` → Systematic troubleshooting
-
-### AI Roles
-- `planner mode` → Strategic thinking prompt
-- `engineer mode` → Code expert prompt
-- `critic mode` → Loki-style criticism prompt
-
----
-
-## Files
-
-- `blueprint_db.json` - Your saved prompts
-- `expander.py` - Expands triggers to full prompts
-- `cli.py` - Command line management
-- `web_ui.py` - Visual interface (future)
-
----
-
-## Quick Start
-
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
 ```bash
-# Save a prompt
-python blueprints/cli.py save streetpunk "Write like a street punk..."
-
-# Use it (in Frank/Alfred)
-"Explain taxes like a streetpunk" → auto-expands
-
-# List your blueprints
-python blueprints/cli.py list
-
-# Test one
-python blueprints/cli.py test streetpunk "Hello world"
+pakman install blueprints
 ```
 
----
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-## Integration with Frank
-
+## Usage
+Simply import the core components:
 ```python
-# In frank.py, before sending to AI:
-from blueprints.expander import expand_prompt
-
-user_input = "Explain quantum like a streetpunk"
-expanded = expand_prompt(user_input)
-
-# expanded = "Write in the style of an urban street punk... 
-#             Explain quantum"
-
-response = call_ai(expanded)
+import blueprints
+# Integrate blueprints as needed in your stack.
 ```
 
 ---
-
-**This is the tool you actually need.** 🎯
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

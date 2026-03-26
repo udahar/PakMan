@@ -1,5 +1,5 @@
 """
-Evolution Engine Orchestrator (inside GapMan)
+Evolution Engine Orchestrator
 
 Ties all 6 components together.
 """
@@ -7,12 +7,41 @@ Ties all 6 components together.
 from typing import List, Dict
 from datetime import datetime
 
-from .frank import mine_patterns, categorize_fragments
-from .mutation import mutate_fragments, rank_candidates
-from .sanity import sanity_filter, get_top_candidates
-from .spec import generate_build_spec, create_projman_ticket
-from .autocoder import generate_code
-from .bench import evaluate_package, get_survivors
+try:
+    from PatternMiner import mine_patterns, categorize_fragments
+except ImportError:
+    mine_patterns = None
+    categorize_fragments = None
+
+try:
+    from Mutation import mutate_fragments, rank_candidates
+except ImportError:
+    mutate_fragments = None
+    rank_candidates = None
+
+try:
+    from SanityFilter import sanity_filter, get_top_candidates
+except ImportError:
+    sanity_filter = None
+    get_top_candidates = None
+
+try:
+    from SpecGenerator import generate_build_spec, create_projman_ticket
+except ImportError:
+    generate_build_spec = None
+    create_projman_ticket = None
+
+try:
+    from Autocoder import generate_code
+except ImportError:
+    generate_code = None
+
+try:
+    from Bench import evaluate_package
+    get_survivors = None  # May not exist in all versions
+except ImportError:
+    evaluate_package = None
+    get_survivors = None
 
 
 class EvolutionEngine:

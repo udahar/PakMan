@@ -1,19 +1,22 @@
-# Updated-On: 2026-03-08
-# Updated-By: Codex
-# PM-Ticket: UNTRACKED
-
 """
-Frank Context Cache Module
-Save and restore conversation contexts
+ContextCache - In-memory cache for conversation contexts.
+
+A high-performance caching system for storing and retrieving conversation
+contexts with TTL expiration, LRU eviction, and content search.
+
+Usage:
+    from context_cache import ContextCache
+    
+    cache = ContextCache()
+    entry_id = cache.store([{"role": "user", "content": "Hello"}])
+    messages = cache.get(entry_id)
 """
 
-from .cache import ContextCache, CacheEntry, create_context_cache
-from .storage import ContextStorage, create_context_storage
+__version__ = "0.1.0"
+
+from .cache import ContextCache, CacheEntry
 
 __all__ = [
     "ContextCache",
     "CacheEntry",
-    "create_context_cache",
-    "ContextStorage",
-    "create_context_storage",
 ]

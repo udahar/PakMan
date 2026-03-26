@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-specgenerator"
+version = "0.1.0"
+description = "Build spec generator. Creates project specifications from candidates."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "evolution"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SpecGenerator*"]

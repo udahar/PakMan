@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-autodistiller"
+version = "0.1.0"
+description = "Mine AI experiment history → fine-tuning datasets (ChatML, Alpaca, ShareGPT, Ollama)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "fine-tuning", "dataset", "llm", "antigrav"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["AutoDistiller*"]

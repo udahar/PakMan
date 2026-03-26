@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-learningtypes"
+version = "0.1.0"
+description = "Type definitions and schemas for machine learning data pipelines."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["LearningTypes*"]

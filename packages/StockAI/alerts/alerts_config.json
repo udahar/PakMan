@@ -1,0 +1,42 @@
+{
+  "desktop": {
+    "enabled": true,
+    "app_name": "StockAI"
+  },
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "use_tls": true,
+    "username": "your_email@gmail.com",
+    "password": "your_app_password",
+    "from_addr": "your_email@gmail.com",
+    "to_addrs": [
+      "recipient@example.com"
+    ],
+    "priority_only": true
+  },
+  "telegram": {
+    "enabled": false,
+    "bot_token": "YOUR_BOT_TOKEN",
+    "chat_id": "YOUR_CHAT_ID",
+    "priority_only": true
+  },
+  "alert_levels": {
+    "desktop": [
+      "temporary_dive",
+      "critical_dive",
+      "flash_crash",
+      "recovering",
+      "recovered"
+    ],
+    "email": [
+      "critical_dive",
+      "flash_crash"
+    ],
+    "telegram": [
+      "critical_dive",
+      "flash_crash"
+    ]
+  }
+}

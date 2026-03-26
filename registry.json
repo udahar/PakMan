@@ -1,5 +1,5 @@
 {
-  "_comment": "Official PakMan package registry. All packages are hosted at github.com/udahar/. Only udahar repos are trusted by the security layer \u00e2\u20ac\u201d this is not user-configurable.",
+  "_comment": "Official PakMan package registry. All packages are hosted at github.com/udahar/. Only udahar repos are trusted by the security layer â€” this is not user-configurable.",
   "_registry_url": "https://raw.githubusercontent.com/udahar/PakMan/master/registry.json",
   "_pakman_version": "1.0.0",
   "packages": {
@@ -109,7 +109,7 @@
     },
     "AutoCode": {
       "repo": "github.com/udahar/PakMan",
-      "description": "Automated code generation pipeline. Task \u00e2\u2020\u2019 brief \u00e2\u2020\u2019 code \u00e2\u2020\u2019 validate \u00e2\u2020\u2019 commit.",
+      "description": "Automated code generation pipeline. Task â†’ brief â†’ code â†’ validate â†’ commit.",
       "category": "coding",
       "tags": [
         "coding",
@@ -122,7 +122,7 @@
     },
     "AiOSKernel": {
       "repo": "github.com/udahar/PakMan",
-      "description": "Core kernel for AI operating system primitives \u00e2\u20ac\u201d process model, memory model, I/O model.",
+      "description": "Core kernel for AI operating system primitives â€” process model, memory model, I/O model.",
       "category": "infrastructure",
       "tags": [
         "kernel",
@@ -200,7 +200,7 @@
     },
     "MLStack": {
       "repo": "github.com/udahar/PakMan",
-      "description": "Shared ML environment: PyTorch, TensorFlow, ONNX, PEFT, DSPy, and accelerate. Installs to ~/.pakman/venvs/ml \u2014 shared across FieldBench and other consumers.",
+      "description": "Shared ML environment: PyTorch, TensorFlow, ONNX, PEFT, DSPy, and accelerate. Installs to ~/.pakman/venvs/ml — shared across FieldBench and other consumers.",
       "category": "ml",
       "tags": [
         "ml",
@@ -319,238 +319,275 @@
       "status": "beta",
       "path": "packages/ZolaPress"
     },
-    "Guardian": {
-      "repo": "github.com/udahar/Guardian",
-      "description": "Continuous Windows + WSL system health monitor with auto-heal, disk cleanup, crash analysis, and Telegram alerts.",
-      "category": "infrastructure",
-      "tags": [
-        "monitoring",
-        "health",
-        "windows",
-        "wsl",
-        "alerts",
-        "telegram"
-      ],
-      "status": "stable",
-      "path": ".",
-      "external": true
-    },
     "BenchmarkArena": {
       "repo": "github.com/udahar/PakMan",
-      "description": "BenchmarkArena package",
+      "description": "Benchmark arena for head-to-head model evaluation. Run, score, and compare model performance.",
       "category": "evaluation",
       "tags": [
-        "evaluation"
+        "evaluation",
+        "benchmarking",
+        "arena",
+        "models"
       ],
       "status": "beta",
       "path": "packages/BenchmarkArena"
     },
     "BrowserMemory": {
       "repo": "github.com/udahar/PakMan",
-      "description": "BrowserMemory package",
+      "description": "Browser-based persistent memory. Stores and retrieves context across sessions using IndexedDB.",
       "category": "memory",
       "tags": [
-        "memory"
+        "memory",
+        "browser",
+        "indexeddb",
+        "persistence"
       ],
       "status": "beta",
       "path": "packages/BrowserMemory"
     },
     "ContextCache": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ContextCache package",
+      "description": "Lightweight caching layer for LLM context. Avoids redundant re-computation of expensive context windows.",
       "category": "context",
       "tags": [
-        "context"
+        "context",
+        "cache",
+        "performance",
+        "llm"
       ],
       "status": "beta",
       "path": "packages/ContextCache"
     },
     "ContextDistiller": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ContextDistiller package",
+      "description": "Context distillation engine. Compresses long context windows into dense, relevant summaries.",
       "category": "context",
       "tags": [
-        "context"
+        "context",
+        "distillation",
+        "compression",
+        "summarization"
       ],
       "status": "beta",
       "path": "packages/ContextDistiller"
     },
     "ContextManager": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ContextManager package",
+      "description": "Smart context window manager. Tracks token budgets and prioritizes content for optimal LLM performance.",
       "category": "context",
       "tags": [
-        "context"
+        "context",
+        "tokens",
+        "budget",
+        "llm"
       ],
       "status": "beta",
       "path": "packages/ContextManager"
     },
     "CostOptimizer": {
       "repo": "github.com/udahar/PakMan",
-      "description": "CostOptimizer package",
-      "category": "routing",
+      "description": "Token cost optimizer. Routes tasks to cheapest capable model and enforces per-task spend limits.",
+      "category": "cost",
       "tags": [
-        "routing"
+        "cost",
+        "routing",
+        "budget",
+        "optimization"
       ],
       "status": "beta",
       "path": "packages/CostOptimizer"
     },
     "Council": {
       "repo": "github.com/udahar/PakMan",
-      "description": "Council package",
+      "description": "Multi-agent debate council. Routes a question through multiple models and synthesizes a consensus answer.",
       "category": "agents",
       "tags": [
-        "agents"
+        "agents",
+        "debate",
+        "consensus",
+        "multi-model"
       ],
       "status": "beta",
       "path": "packages/Council"
     },
     "Courtroom": {
       "repo": "github.com/udahar/PakMan",
-      "description": "Courtroom package",
+      "description": "Code review loop. Iterates generated code through a judge-model until quality gates pass.",
       "category": "agents",
       "tags": [
-        "agents"
+        "agents",
+        "code-review",
+        "quality",
+        "iteration"
       ],
       "status": "beta",
       "path": "packages/Courtroom"
     },
     "EvalFramework": {
       "repo": "github.com/udahar/PakMan",
-      "description": "EvalFramework package",
+      "description": "Evaluation framework. Define metrics, run benchmarks, and compare model outputs systematically.",
       "category": "evaluation",
       "tags": [
-        "evaluation"
+        "evaluation",
+        "benchmarks",
+        "metrics",
+        "comparison"
       ],
       "status": "beta",
       "path": "packages/EvalFramework"
     },
-    "MemoryGraph": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "MemoryGraph package",
-      "category": "memory",
-      "tags": [
-        "memory"
-      ],
-      "status": "beta",
-      "path": "packages/MemoryGraph"
-    },
     "ModelRouter": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ModelRouter package",
+      "description": "Intelligent model router. Selects the best model for each task based on capability, cost, and latency.",
       "category": "routing",
       "tags": [
-        "routing"
+        "routing",
+        "model-selection",
+        "cost",
+        "latency"
       ],
       "status": "beta",
       "path": "packages/ModelRouter"
     },
     "MultiModelOrchestrator": {
       "repo": "github.com/udahar/PakMan",
-      "description": "MultiModelOrchestrator package",
-      "category": "routing",
+      "description": "Multi-model orchestrator. Fans out tasks across multiple models and merges results.",
+      "category": "agents",
       "tags": [
-        "routing"
+        "agents",
+        "orchestration",
+        "multi-model",
+        "fanout"
       ],
       "status": "beta",
       "path": "packages/MultiModelOrchestrator"
     },
     "PromptEvolution": {
       "repo": "github.com/udahar/PakMan",
-      "description": "PromptEvolution package",
+      "description": "Prompt evolution engine. Generates prompt variants, benchmarks them, and promotes winners.",
       "category": "prompting",
       "tags": [
-        "prompting"
+        "prompting",
+        "evolution",
+        "ab-test",
+        "benchmarking"
       ],
       "status": "beta",
       "path": "packages/PromptEvolution"
     },
     "PromptLibrary": {
       "repo": "github.com/udahar/PakMan",
-      "description": "PromptLibrary package",
+      "description": "Searchable prompt library. Tag, version, and retrieve prompts by task type or keyword.",
       "category": "prompting",
       "tags": [
-        "prompting"
+        "prompting",
+        "library",
+        "search",
+        "versioning"
       ],
       "status": "beta",
       "path": "packages/PromptLibrary"
     },
     "RecursiveContext": {
       "repo": "github.com/udahar/PakMan",
-      "description": "RecursiveContext package",
+      "description": "Recursive context builder. Assembles context from nested documents with depth control.",
       "category": "context",
       "tags": [
-        "context"
+        "context",
+        "recursive",
+        "documents",
+        "depth"
       ],
       "status": "beta",
       "path": "packages/RecursiveContext"
     },
     "Scheduler": {
       "repo": "github.com/udahar/PakMan",
-      "description": "Scheduler package",
+      "description": "Task scheduler for AI workflows. Cron-like scheduling with dependency tracking and retries.",
       "category": "infrastructure",
       "tags": [
-        "infrastructure"
+        "scheduler",
+        "cron",
+        "dependencies",
+        "retries"
       ],
       "status": "beta",
       "path": "packages/Scheduler"
     },
     "SkillComposer": {
       "repo": "github.com/udahar/PakMan",
-      "description": "SkillComposer package",
-      "category": "prompting",
+      "description": "Skill composer. Chain multiple skills into DAG pipelines with branching and fallback.",
+      "category": "tools",
       "tags": [
-        "prompting"
+        "skills",
+        "dag",
+        "pipeline",
+        "composition"
       ],
       "status": "beta",
       "path": "packages/SkillComposer"
     },
     "SkillEvolver": {
       "repo": "github.com/udahar/PakMan",
-      "description": "SkillEvolver package",
-      "category": "prompting",
+      "description": "Skill evolver. Tests skills against benchmarks and auto-generates improved variants.",
+      "category": "tools",
       "tags": [
-        "prompting"
+        "skills",
+        "evolution",
+        "benchmarking",
+        "improvement"
       ],
       "status": "beta",
       "path": "packages/SkillEvolver"
     },
     "SkillsFramework": {
       "repo": "github.com/udahar/PakMan",
-      "description": "SkillsFramework package",
-      "category": "prompting",
+      "description": "Core skills framework. Discover, load, and execute skills with a standardized interface.",
+      "category": "tools",
       "tags": [
-        "prompting"
+        "skills",
+        "framework",
+        "discovery",
+        "execution"
       ],
       "status": "beta",
       "path": "packages/SkillsFramework"
     },
     "SkillsRegistry": {
       "repo": "github.com/udahar/PakMan",
-      "description": "SkillsRegistry package",
-      "category": "prompting",
+      "description": "Skill registry. Central catalog of available skills with metadata and capability declarations.",
+      "category": "tools",
       "tags": [
-        "prompting"
+        "skills",
+        "registry",
+        "catalog",
+        "capabilities"
       ],
       "status": "beta",
       "path": "packages/SkillsRegistry"
     },
     "ToolBuilder": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ToolBuilder package",
+      "description": "Tool builder. Scaffold new PakMan tools from spec, with type hints and tests.",
       "category": "tools",
       "tags": [
-        "tools"
+        "tools",
+        "scaffolding",
+        "codegen",
+        "spec"
       ],
       "status": "beta",
       "path": "packages/ToolBuilder"
     },
     "ToolRouter": {
       "repo": "github.com/udahar/PakMan",
-      "description": "ToolRouter package",
-      "category": "routing",
+      "description": "Tool router. Selects the right tool for a given intent using semantic matching.",
+      "category": "tools",
       "tags": [
-        "routing"
+        "tools",
+        "routing",
+        "semantic",
+        "intent"
       ],
       "status": "beta",
       "path": "packages/ToolRouter"
@@ -567,6 +604,529 @@
       ],
       "status": "beta",
       "path": "packages/SafetySentry"
+    },
+    "costs": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Cost tracking and reporting. Logs per-request token costs and generates spend reports across vendors.",
+      "category": "cost",
+      "tags": [
+        "cost",
+        "tracking",
+        "tokens",
+        "reporting"
+      ],
+      "status": "stable",
+      "path": "packages/costs"
+    },
+    "email": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Email intake integration. Auto-ingest inbound email into projects, epics, and tickets.",
+      "category": "integration",
+      "tags": [
+        "email",
+        "intake",
+        "integration",
+        "automation"
+      ],
+      "status": "stable",
+      "path": "packages/email"
+    },
+    "telegram": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Telegram bot integration. Scout pool, chat pool, and report delivery via the Alfred Telegram bot.",
+      "category": "integration",
+      "tags": [
+        "telegram",
+        "bot",
+        "integration",
+        "notifications"
+      ],
+      "status": "stable",
+      "path": "packages/telegram"
+    },
+    "PatternMiner": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Pattern mining engine. Extract design patterns from repos without copying code.",
+      "category": "evolution",
+      "tags": [
+        "evolution",
+        "patterns",
+        "mining",
+        "inspiration"
+      ],
+      "status": "beta",
+      "path": "packages/PatternMiner"
+    },
+    "Mutation": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Mutation engine for package evolution. Combines fragments into package candidates.",
+      "category": "evolution",
+      "tags": [
+        "evolution",
+        "mutation",
+        "candidates"
+      ],
+      "status": "beta",
+      "path": "packages/Mutation"
+    },
+    "SanityFilter": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Quality gate for package candidates. Filters candidates before development.",
+      "category": "evolution",
+      "tags": [
+        "evolution",
+        "quality",
+        "filter"
+      ],
+      "status": "beta",
+      "path": "packages/SanityFilter"
+    },
+    "SpecGenerator": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Build spec generator. Creates project specifications from candidates.",
+      "category": "evolution",
+      "tags": [
+        "evolution",
+        "specs",
+        "generation"
+      ],
+      "status": "beta",
+      "path": "packages/SpecGenerator"
+    },
+    "Autocoder": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Code generation from specs. Generates package code automatically.",
+      "category": "evolution",
+      "tags": [
+        "evolution",
+        "code-gen",
+        "codegen"
+      ],
+      "status": "beta",
+      "path": "packages/Autocoder"
+    },
+    "Bench": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Evaluation framework for package candidates. Tests and measures fitness.",
+      "category": "evolution",
+      "tags": [
+        "evolution",
+        "evaluation",
+        "testing"
+      ],
+      "status": "beta",
+      "path": "packages/Bench"
+    },
+    "AgentBazaar": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Agent discovery marketplace. Browse, register, and compose agents by capability.",
+      "category": "agents",
+      "tags": [
+        "agents",
+        "discovery",
+        "multi-agent"
+      ],
+      "status": "beta",
+      "path": "packages/AgentBazaar"
+    },
+    "ApprovalGate": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Human-in-the-loop approval gate. Pauses pipelines for human review before proceeding.",
+      "category": "safety",
+      "tags": [
+        "safety",
+        "human-in-the-loop",
+        "approval"
+      ],
+      "status": "beta",
+      "path": "packages/ApprovalGate"
+    },
+    "AudioBridge": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Local audio/voice bridge. Transcribe, synthesize, and route audio to AI pipelines.",
+      "category": "modalities",
+      "tags": [
+        "audio",
+        "voice",
+        "speech",
+        "local"
+      ],
+      "status": "beta",
+      "path": "packages/AudioBridge"
+    },
+    "AutoDistiller": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Automated model distillation. Trains compact student models from larger teacher outputs.",
+      "category": "ml",
+      "tags": [
+        "distillation",
+        "training",
+        "self-improvement"
+      ],
+      "status": "beta",
+      "path": "packages/AutoDistiller"
+    },
+    "AutoDocGen": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Auto documentation generator. Self-documents code and packages from source.",
+      "category": "productivity",
+      "tags": [
+        "documentation",
+        "self-documenting",
+        "automation"
+      ],
+      "status": "beta",
+      "path": "packages/AutoDocGen"
+    },
+    "BrowserDriver": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Browser automation driver. Controls headless browsers for web scraping and vision tasks.",
+      "category": "tools",
+      "tags": [
+        "browser",
+        "automation",
+        "vision",
+        "web"
+      ],
+      "status": "beta",
+      "path": "packages/BrowserDriver"
+    },
+    "CodeSandbox": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Isolated code execution sandbox. Run untrusted code safely with WASM isolation.",
+      "category": "execution",
+      "tags": [
+        "sandbox",
+        "code-execution",
+        "isolation",
+        "wasm"
+      ],
+      "status": "beta",
+      "path": "packages/CodeSandbox"
+    },
+    "ContextCompressor": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Context window compressor. Reduces token usage by summarizing and pruning context mid-flight.",
+      "category": "context",
+      "tags": [
+        "context",
+        "compression",
+        "middleware",
+        "window"
+      ],
+      "status": "beta",
+      "path": "packages/ContextCompressor"
+    },
+    "DocumentShredder": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Document ingestion engine. Parses, chunks, and indexes documents for RAG pipelines.",
+      "category": "ingestion",
+      "tags": [
+        "documents",
+        "parsing",
+        "chunking",
+        "rag"
+      ],
+      "status": "beta",
+      "path": "packages/DocumentShredder"
+    },
+    "EnvSyncer": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Environment secrets syncer. Keeps .env files consistent across services and machines.",
+      "category": "infrastructure",
+      "tags": [
+        "environment",
+        "secrets",
+        "sync",
+        "local"
+      ],
+      "status": "beta",
+      "path": "packages/EnvSyncer"
+    },
+    "FeedbackLoop": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Reinforcement feedback loop. Collects model outputs, scores them, and feeds back for improvement.",
+      "category": "ml",
+      "tags": [
+        "feedback",
+        "reinforcement",
+        "self-improvement"
+      ],
+      "status": "beta",
+      "path": "packages/FeedbackLoop"
+    },
+    "GraphMemory": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Semantic knowledge graph for AI conversational memory. SQLite-backed, zero runtime deps.",
+      "category": "memory",
+      "tags": [
+        "memory",
+        "knowledge-graph",
+        "entities",
+        "sqlite"
+      ],
+      "status": "beta",
+      "path": "packages/GraphMemory"
+    },
+    "PakManLock": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Deterministic lockfile manager for PakMan. Pins exact package versions for reproducible installs.",
+      "category": "infrastructure",
+      "tags": [
+        "lockfile",
+        "reproducibility",
+        "deterministic"
+      ],
+      "status": "beta",
+      "path": "packages/PakManLock"
+    },
+    "RedTeamer": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Adversarial red-teaming suite. Generates jailbreak and edge-case prompts to stress-test models.",
+      "category": "safety",
+      "tags": [
+        "safety",
+        "adversarial",
+        "red-team",
+        "testing"
+      ],
+      "status": "beta",
+      "path": "packages/RedTeamer"
+    },
+    "SemanticCache": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Semantic response cache. Deduplicates LLM calls by embedding-similarity with configurable threshold.",
+      "category": "performance",
+      "tags": [
+        "cache",
+        "semantic",
+        "embeddings",
+        "latency"
+      ],
+      "status": "beta",
+      "path": "packages/SemanticCache"
+    },
+    "SwarmProtocol": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Agent swarm coordination protocol. Negotiates task allocation across a pool of agents.",
+      "category": "agents",
+      "tags": [
+        "agents",
+        "swarm",
+        "negotiation",
+        "coordination"
+      ],
+      "status": "beta",
+      "path": "packages/SwarmProtocol"
+    },
+    "TerminalObserver": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Terminal session observer daemon. Monitors shell output and surfaces anomalies to the AI layer.",
+      "category": "tools",
+      "tags": [
+        "terminal",
+        "monitoring",
+        "dev-experience",
+        "daemon"
+      ],
+      "status": "beta",
+      "path": "packages/TerminalObserver"
+    },
+    "TokenBank": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Token budget bank. Allocates, tracks, and enforces per-agent token spend limits.",
+      "category": "cost",
+      "tags": [
+        "tokens",
+        "budget",
+        "cost",
+        "local"
+      ],
+      "status": "beta",
+      "path": "packages/TokenBank"
+    },
+    "TraceLog": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Distributed trace logger. Captures and correlates spans across multi-agent pipelines.",
+      "category": "observability",
+      "tags": [
+        "tracing",
+        "observability",
+        "distributed",
+        "logging"
+      ],
+      "status": "beta",
+      "path": "packages/TraceLog"
+    },
+    "WebHooker": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Webhook integration hub. Receives, validates, and routes webhook events to AI pipelines.",
+      "category": "integration",
+      "tags": [
+        "webhooks",
+        "events",
+        "integration",
+        "serverless"
+      ],
+      "status": "beta",
+      "path": "packages/WebHooker"
+    },
+    "AnomalyEngine": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Anomaly detection engine for AI agent behavior and system metrics.",
+      "category": "monitoring",
+      "tags": [
+        "anomaly",
+        "detection",
+        "monitoring",
+        "ai-behavior"
+      ],
+      "status": "beta",
+      "path": "packages/AnomalyEngine"
+    },
+    "EvaluationEngine": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Flexible evaluation engine for scoring and comparing model outputs with custom metrics.",
+      "category": "evaluation",
+      "tags": [
+        "evaluation",
+        "testing",
+        "metrics",
+        "scoring"
+      ],
+      "status": "beta",
+      "path": "packages/EvaluationEngine"
+    },
+    "LearningTypes": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Type definitions and schemas for machine learning data pipelines.",
+      "category": "ml",
+      "tags": [
+        "learning",
+        "ml",
+        "types",
+        "definitions"
+      ],
+      "status": "beta",
+      "path": "packages/LearningTypes"
+    },
+    "MLUtils": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Shared ML utility helpers: normalization, metrics, and numpy wrappers.",
+      "category": "ml",
+      "tags": [
+        "ml",
+        "utilities",
+        "helpers",
+        "numpy"
+      ],
+      "status": "beta",
+      "path": "packages/MLUtils"
+    },
+    "NERExtractor": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Named-entity recognition extraction pipeline for AI text analysis.",
+      "category": "nlp",
+      "tags": [
+        "nlp",
+        "ner",
+        "entities",
+        "extraction"
+      ],
+      "status": "beta",
+      "path": "packages/NERExtractor"
+    },
+    "NeuralNetworks": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Lightweight neural network building blocks and layer abstractions.",
+      "category": "ml",
+      "tags": [
+        "neural-networks",
+        "ml",
+        "deep-learning"
+      ],
+      "status": "beta",
+      "path": "packages/NeuralNetworks"
+    },
+    "NLPPipeline": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "NLP text processing pipeline: tokenization, normalization, and feature extraction.",
+      "category": "nlp",
+      "tags": [
+        "nlp",
+        "text",
+        "processing",
+        "pipeline"
+      ],
+      "status": "beta",
+      "path": "packages/NLPPipeline"
+    },
+    "PredictiveAnalytics": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Predictive analytics and forecasting utilities for time-series and tabular data.",
+      "category": "ml",
+      "tags": [
+        "predictive",
+        "analytics",
+        "forecasting",
+        "ml"
+      ],
+      "status": "beta",
+      "path": "packages/PredictiveAnalytics"
+    },
+    "TicketExecutor": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Automated ticket executor: runs tasks from the ProjectManager ticket queue.",
+      "category": "productivity",
+      "tags": [
+        "tickets",
+        "workflow",
+        "execution",
+        "automation"
+      ],
+      "status": "beta",
+      "path": "packages/TicketExecutor"
+    },
+    "TrainValidateTest": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Train/validate/test split utilities and dataset management helpers.",
+      "category": "ml",
+      "tags": [
+        "ml",
+        "train",
+        "validate",
+        "test",
+        "split"
+      ],
+      "status": "beta",
+      "path": "packages/TrainValidateTest"
+    },
+    "Vision": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Vision and image processing utilities for multimodal AI pipelines.",
+      "category": "modalities",
+      "tags": [
+        "vision",
+        "image",
+        "multimodal",
+        "processing"
+      ],
+      "status": "beta",
+      "path": "packages/Vision"
+    },
+    "ProjManSpec": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Spec generator for ProjectManager. Turns candidates into buildable build specs via debate loop.",
+      "category": "productivity",
+      "tags": [
+        "projects",
+        "specs",
+        "generation",
+        "alfred",
+        "productivity"
+      ],
+      "status": "beta",
+      "path": "packages/ProjManSpec"
     }
   }
 }

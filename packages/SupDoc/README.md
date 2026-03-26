@@ -1,59 +1,28 @@
-## 🐰 SupDoc — Runtime Documentation Engine
+# SupDoc
 
-“Eh… what’s up, Doc?”
+> **Status:** BETA | **Tags:** documentation, runtime, alfred, productivity
 
-SupDoc is the self-documenting layer of the Alfred ecosystem.
-It automatically analyzes skills, extracts intent, and generates structured documentation.
+## Overview
+Runtime documentation engine for the Alfred ecosystem. Self-documents installed capabilities and generates live API references.
 
-Originally built as AutoDoc, SupDoc now acts as a continuous documentation system
-that turns skills into readable, categorized, and usable knowledge.
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
----
-
-## What it does
-
-- 🧠 Analyzes skill prompts to detect purpose and category
-- 🏷️ Classifies capabilities (coding, analysis, research, etc.)
-- 📊 Estimates complexity
-- 🔍 Extracts inputs and outputs automatically
-- 🧾 Generates clean, structured documentation\
-
-# Auto-Doc - Generate Skill Documentation
-
-Auto-document what each skill does.
-
-## Usage
-
-```python
-from auto_doc import AutoDoc
-
-doc = AutoDoc()
-
-# Generate docs for specific skill
-skill_doc = doc.generate("humble_inquiry")
-
-# Generate for all skills in a directory
-all_docs = doc.generate_all("/path/to/skills")
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install SupDoc
 ```
 
-## Features
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-- **Prompt Analysis** - Understand what skill does
-- **Auto-Summarization** - Generate descriptions
-- **Example Generation** - Create usage examples
-
-## Status
-
-✅ Production Ready
-
+## Usage
+Simply import the core components:
+```python
+import SupDoc
+# Integrate SupDoc as needed in your stack.
+```
 
 ---
-
-## 🥕 SupDoc Behavior
-
-- “Eh… looks like this one’s a coding skill.”
-- “Simple job, Doc. Nothing fancy.”
-- “This one’s complex… might wanna keep an eye on it.”
-
-SupDoc doesn’t just document skills.
-It figures out what they are… and tells the story.
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

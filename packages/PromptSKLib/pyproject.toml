@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-promptsklib"
+version = "0.1.0"
+description = "26 reusable AI reasoning skills and strategy scaffolds. Injected into task briefs automatically."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "prompting"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["PromptSKLib*"]

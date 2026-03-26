@@ -1,8 +1,8 @@
 """
 GapMan - Complete Software Evolution Engine
 
-Combines: Frank (pattern mining), GapMan (mutation), SanityFilter (quality gate),
-ProjManSpec (spec generation), Autocoder (code gen), Bench (evaluation).
+Combines: PatternMiner (pattern mining), Mutation (mutation), SanityFilter (quality gate),
+SpecGenerator (spec generation), Autocoder (code gen), Bench (evaluation).
 
 All-in-one evolution engine.
 
@@ -13,47 +13,77 @@ Usage:
     results = evolve_toolkit(repos, max_candidates=10)
 """
 
-# === 1. Frank - Pattern Mining ===
-from .frank import (
-    mine_patterns,
-    DesignFragment,
-    categorize_fragments,
-    filter_fragments,
-)
+# === 1. PatternMiner - Pattern Mining ===
+try:
+    from PatternMiner import (
+        mine_patterns,
+        DesignFragment,
+        categorize_fragments,
+        filter_fragments,
+    )
+except ImportError:
+    mine_patterns = None
+    DesignFragment = None
+    categorize_fragments = None
+    filter_fragments = None
 
-# === 2. GapMan - Mutation Engine ===
-from .mutation import (
-    mutate_fragments,
-    score_candidate,
-    filter_candidates,
-    rank_candidates,
-    PackageCandidate,
-)
+# === 2. Mutation - Mutation Engine ===
+try:
+    from Mutation import (
+        mutate_fragments,
+        score_candidate,
+        filter_candidates,
+        rank_candidates,
+        PackageCandidate,
+    )
+except ImportError:
+    mutate_fragments = None
+    score_candidate = None
+    filter_candidates = None
+    rank_candidates = None
+    PackageCandidate = None
 
-# === 3. Sanity Filter - Quality Gate ===
-from .sanity import (
-    sanity_filter,
-    get_top_candidates,
-)
+# === 3. SanityFilter - Quality Gate ===
+try:
+    from SanityFilter import (
+        sanity_filter,
+        get_top_candidates,
+    )
+except ImportError:
+    sanity_filter = None
+    get_top_candidates = None
 
-# === 4. ProjMan Spec - Spec Generator ===
-from .spec import (
-    generate_build_spec,
-    create_projman_ticket,
-    BuildSpec,
-)
+# === 4. SpecGenerator - Spec Generator ===
+try:
+    from SpecGenerator import (
+        generate_build_spec,
+        create_projman_ticket,
+        BuildSpec,
+    )
+except ImportError:
+    generate_build_spec = None
+    create_projman_ticket = None
+    BuildSpec = None
 
 # === 5. Autocoder - Code Generation ===
-from .autocoder import (
-    generate_code,
-    generate_package,
-)
+try:
+    from Autocoder import (
+        generate_code,
+        generate_package,
+    )
+except ImportError:
+    generate_code = None
+    generate_package = None
 
 # === 6. Bench - Evaluation ===
-from .bench import (
-    evaluate_package,
-    fitness_test,
-)
+try:
+    from Bench import (
+        evaluate_package,
+        fitness_test,
+    )
+except ImportError:
+    evaluate_package = None
+    fitness_test = None
 
 # === Main Orchestrator ===
 from .orchestrator import (
@@ -63,29 +93,29 @@ from .orchestrator import (
 
 
 __all__ = [
-    # Frank
+    # PatternMiner
     "mine_patterns",
     "DesignFragment",
     "categorize_fragments",
     "filter_fragments",
     
-    # GapMan Mutation
+    # Mutation
     "mutate_fragments",
     "score_candidate",
     "filter_candidates",
     "rank_candidates",
     "PackageCandidate",
     
-    # Sanity
+    # SanityFilter
     "sanity_filter",
     "get_top_candidates",
     
-    # Spec
+    # SpecGenerator
     "generate_build_spec",
     "create_projman_ticket",
     "BuildSpec",
     
-    # Code
+    # Autocoder
     "generate_code",
     "generate_package",
     
@@ -97,3 +127,5 @@ __all__ = [
     "evolve_toolkit",
     "EvolutionEngine",
 ]
+
+__version__ = "1.0.0"

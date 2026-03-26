@@ -4,13 +4,11 @@ import sys
 import argparse
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
 
 def cmd_analyze(args):
     """Analyze stocks."""
-    from data import StockDataLoader
-    from analysis import StockAnalyzer
+    from StockAI.data import StockDataLoader
+    from StockAI.analysis import StockAnalyzer
 
     print(f"Loading data for {len(args.symbols)} symbols...")
 
@@ -51,8 +49,8 @@ def cmd_analyze(args):
 
 def cmd_top(args):
     """Show top stocks."""
-    from data import StockDataLoader
-    from analysis import StockAnalyzer
+    from StockAI.data import StockDataLoader
+    from StockAI.analysis import StockAnalyzer
 
     loader = StockDataLoader(data_dir=args.data_dir)
 
@@ -80,8 +78,8 @@ def cmd_top(args):
 
 def cmd_day_trading(args):
     """Day trading analysis."""
-    from data import StockDataLoader
-    from analysis.signals import DayTradingAnalyzer
+    from StockAI.data import StockDataLoader
+    from StockAI.analysis.signals import DayTradingAnalyzer
 
     loader = StockDataLoader(data_dir=args.data_dir)
 
@@ -102,16 +100,17 @@ def cmd_day_trading(args):
 
 def cmd_long_term(args):
     """Long-term investment analysis."""
-    from data import StockDataLoader
-    from analysis.signals import LongTermAnalyzer
-    import sys
-    from pathlib import Path
+    from StockAI.data import StockDataLoader
+    from StockAI.analysis.signals import LongTermAnalyzer
 
     yf_path = Path(__file__).parent.parent / "yfinance-main" / "yfinance-main"
     if yf_path.exists() and str(yf_path) not in sys.path:
         sys.path.insert(0, str(yf_path))
 
-    import yfinance as yf
+    try:
+        import yfinance as yf
+    except ImportError:
+        yf = None
 
     loader = StockDataLoader(data_dir=args.data_dir)
 
@@ -122,12 +121,13 @@ def cmd_long_term(args):
         return 1
 
     info_dict = {}
-    for symbol in args.symbols:
-        try:
-            ticker = yf.Ticker(symbol)
-            info_dict[symbol] = ticker.info
-        except:
-            info_dict[symbol] = {}
+    if yf is not None:
+        for symbol in args.symbols:
+            try:
+                ticker = yf.Ticker(symbol)
+                info_dict[symbol] = ticker.info
+            except Exception:
+                info_dict[symbol] = {}
 
     analyzer = LongTermAnalyzer()
     ratings = analyzer.analyze_multiple(data, info_dict)

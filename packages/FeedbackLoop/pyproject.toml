@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-feedbackloop"
+version = "0.1.0"
+description = "Capture human corrections to AI output as reinforcement learning signals."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "feedback", "rlhf", "correction", "antigrav"]
+dependencies = []
+
+[project.optional-dependencies]
+watch = ["watchdog"]
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["FeedbackLoop*"]

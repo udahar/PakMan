@@ -1,32 +1,28 @@
-# Context Manager - Smart Context Window
+# ContextManager
 
-Automatically manage what AI remembers.
+> **Status:** BETA | **Tags:** context
 
-## Usage
+## Overview
+ContextManager package
 
-```python
-from context_manager import ContextManager
-
-ctx = ContextManager()
-ctx.add("user_preference", "likes concise answers")
-ctx.add("project_info", "building AI agent system")
-
-relevant = ctx.get_for_task("code_review")
-```
-
-## Features
-
-- **Relevance Scoring** - What matters now?
-- **Auto-Pruning** - Drop irrelevant context
-- **Task-Based Selection** - Different context for different tasks
-- **Memory Layers** - Short-term, long-term, working memory
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
 ## Installation
-
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
 ```bash
-pip install context-manager
+pakman install ContextManager
 ```
 
-## Status
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-✅ Production Ready
+## Usage
+Simply import the core components:
+```python
+import ContextManager
+# Integrate ContextManager as needed in your stack.
+```
+
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-skillcomposer"
+version = "0.1.0"
+description = "Skill composer. Chain multiple skills into DAG pipelines with branching and fallback."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "tools"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SkillComposer*"]

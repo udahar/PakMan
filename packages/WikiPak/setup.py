@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 import pathlib
+import os
 
 HERE = pathlib.Path(__file__).parent
 README = (
@@ -15,7 +16,7 @@ setup(
     long_description=README,
     long_description_content_type="text/markdown",
     author="Richard",
-    author_email="richard@example.com",
+    author_email=os.environ.get("PACKAGE_AUTHOR_EMAIL", "author@packages.example.com"),
     url="https://github.com/richard/wikipak",
     license="MIT",
     packages=find_packages(),

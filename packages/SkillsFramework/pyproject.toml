@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-skillsframework"
+version = "0.1.0"
+description = "Core skills framework. Discover, load, and execute skills with a standardized interface."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "tools"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SkillsFramework*"]

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-webhooker"
+version = "0.1.0"
+description = "Zero-dependency inbound webhook server — GitHub/Stripe/Slack → normalized AiOS events."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "webhooks", "events", "github", "stripe", "antigrav"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["WebHooker*"]

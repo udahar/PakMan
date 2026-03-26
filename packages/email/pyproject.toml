@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-email"
+version = "0.1.0"
+description = "Email intake integration. Auto-ingest inbound email into projects, epics, and tickets."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "integration"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["email*"]

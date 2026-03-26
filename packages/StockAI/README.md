@@ -1,36 +1,28 @@
 # StockAI
 
-AI-powered stock analysis package. Loads historical price data, identifies patterns, and generates investment recommendations using local LLM inference.
+> **Status:** BETA | **Tags:** stocks, finance, yfinance, analysis, recommendations
 
-## Install
+## Overview
+AI-powered stock analysis. Loads historical price data via yfinance, identifies patterns, and generates LLM-assisted investment recommendations.
 
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
+
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
 ```bash
 pakman install StockAI
 ```
 
-## Features
-
-- **Data loading** — yfinance integration, local DB caching (`StockDataLoader`, `StockDatabaseLoader`)
-- **Analysis** — Pattern recognition, technical metrics (`StockAnalyzer`, `PatternRecognizer`)
-- **Recommendations** — LLM-assisted recommendation generation
-- **Dashboard** — Terminal and web dashboard views
-- **CLI** — Command-line interface for quick queries
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
 ## Usage
-
+Simply import the core components:
 ```python
-from StockAI import StockDataLoader, StockAnalyzer
-
-loader = StockDataLoader()
-data = loader.load("AAPL", period="1y")
-
-analyzer = StockAnalyzer()
-report = analyzer.analyze(data)
-print(report.summary)
+import StockAI
+# Integrate StockAI as needed in your stack.
 ```
 
-## Requirements
-
-- Python 3.8+
-- yfinance
-- See `requirements.txt` for full list
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

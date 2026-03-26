@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-ticketexecutor"
+version = "0.1.0"
+description = "Automated ticket executor: runs tasks from the ProjectManager ticket queue."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["TicketExecutor*"]

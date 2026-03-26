@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-browsermemory"
+version = "0.1.0"
+description = "Browser-based persistent memory. Stores and retrieves context across sessions using IndexedDB."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "memory"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["BrowserMemory*"]

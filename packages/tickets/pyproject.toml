@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-tickets"
+version = "0.1.0"
+description = "Lightweight ticket and task tracker for AI workflows."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "infrastructure"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["tickets*"]

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-supdoc"
+version = "0.1.0"
+description = "Runtime documentation engine for the Alfred ecosystem. Self-documents installed capabilities and generates live API references."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "productivity"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SupDoc*"]

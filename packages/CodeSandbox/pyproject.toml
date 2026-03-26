@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-codesandbox"
+version = "0.1.0"
+description = "Safe AI code execution — pattern scanner, subprocess and Docker backends."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "sandbox", "code-execution", "safety", "antigrav"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["CodeSandbox*"]

@@ -2,4 +2,11 @@
 
 __version__ = "0.1.0"
 
-__all__ = []
+from .key_manager import KeyManager, KeyScope, KeyRotationPolicy, APIKey
+
+__all__ = [
+    "KeyManager",
+    "KeyScope",
+    "KeyRotationPolicy",
+    "APIKey",
+]

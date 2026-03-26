@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-recursivecontext"
+version = "0.1.0"
+description = "Recursive context builder. Assembles context from nested documents with depth control."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "context"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["RecursiveContext*"]

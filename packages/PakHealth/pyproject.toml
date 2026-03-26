@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-pakhealth"
+version = "0.1.0"
+description = "System wellness dashboard for PakMan. Monitors package health, import status, and dependency integrity across your installed set."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "infrastructure"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["PakHealth*"]

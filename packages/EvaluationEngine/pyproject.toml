@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-evaluationengine"
+version = "0.1.0"
+description = "Flexible evaluation engine for scoring and comparing model outputs."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["EvaluationEngine*"]

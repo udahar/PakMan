@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-modelrouter"
+version = "0.1.0"
+description = "Intelligent model router. Selects the best model for each task based on capability, cost, and latency."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "routing"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["ModelRouter*"]

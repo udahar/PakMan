@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-audiobridge"
+version = "0.1.0"
+description = "Speech-to-text and text-to-speech pipeline — OpenAI, faster-whisper, pyttsx3, gTTS."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "speech", "stt", "tts", "whisper", "antigrav"]
+dependencies = []
+
+[project.optional-dependencies]
+openai         = ["openai"]
+faster_whisper = ["faster-whisper"]
+sr             = ["SpeechRecognition", "pyaudio"]
+gtts           = ["gTTS"]
+pyttsx3        = ["pyttsx3"]
+all            = ["openai", "faster-whisper", "SpeechRecognition", "gTTS", "pyttsx3"]
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["AudioBridge*"]

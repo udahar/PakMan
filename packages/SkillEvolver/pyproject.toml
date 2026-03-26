@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-skillevolver"
+version = "0.1.0"
+description = "Skill evolver. Tests skills against benchmarks and auto-generates improved variants."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "tools"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SkillEvolver*"]

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-swarmprotocol"
+version = "0.1.0"
+description = "Standardized multi-agent negotiation protocol over a SQLite event bus."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "agents", "swarm", "multi-agent", "antigrav"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SwarmProtocol*"]

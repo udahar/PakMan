@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-romai"
+version = "0.1.0"
+description = "Token and vendor orchestrator: budget enforcement, circuit breaking, and cost optimization."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "infrastructure"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["RomAI*"]

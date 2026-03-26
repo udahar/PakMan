@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-council"
+version = "0.1.0"
+description = "Multi-agent debate council. Routes a question through multiple models and synthesizes a consensus answer."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "agents"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["Council*"]

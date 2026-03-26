@@ -599,11 +599,14 @@ class AiOSKernel:
     
     async def _execute_basic_ticket(self, ticket: Ticket) -> Dict:
         """Execute a basic ticket using PromptRouter for model selection"""
-        from PromptRouter import rank_cards
-        
-        prompt = f"{ticket.title}: {ticket.description}"
-        best_models = rank_cards(prompt, top_k=3)
-        
+        try:
+            from PromptRouter import rank_cards
+            prompt = f"{ticket.title}: {ticket.description}"
+            best_models = rank_cards(prompt, top_k=3)
+        except ImportError:
+            # Fallback if PromptRouter is not installed
+            best_models = [{"model": "default-model", "score": 1.0}]
+            
         if best_models:
             best = best_models[0]
             return {
@@ -691,7 +694,10 @@ class AiOSKernel:
             from PromptRouter import get_all_models
             
             models = get_all_models()
+        except ImportError:
+            models = []
             
+        try:
             for model in models:
                 model_id = model.get("model", "unknown")
                 model_score = model.get("score", 0.0)

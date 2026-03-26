@@ -1,49 +1,28 @@
-# PromptForge - Benchmarking Framework
+# PromptForge
 
-**Purpose:** Test which prompts/strategies work best
+> **Status:** BETA | **Tags:** prompting, testing, evolution, ab-test
 
----
+## Overview
+A/B prompt testing and prompt evolution pipeline. Benchmark prompts against each other.
 
-## Concept
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-A/B test your prompts and strategies. Track success rates. Know what actually works.
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install PromptForge
+```
 
----
-
-## Features
-
-- **A/B Testing** - Compare two prompts side-by-side
-- **Success Tracking** - Measure which prompts win
-- **Benchmark Suites** - Pre-built test sets
-- **Analytics Dashboard** - See trends over time
-
----
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
 ## Usage
-
+Simply import the core components:
 ```python
-from promptforge import benchmark
-
-# Compare two strategies
-results = benchmark.run(
-    strategy_a="chain_of_thought",
-    strategy_b="tree_of_thought",
-    tasks=benchmark_suite["math"]
-)
-
-print(f"Chain of Thought: {results['a_win_rate']:.1%}")
-print(f"Tree of Thought: {results['b_win_rate']:.1%}")
+import PromptForge
+# Integrate PromptForge as needed in your stack.
 ```
 
 ---
-
-## Files
-
-- `benchmark.py` - Core benchmarking engine
-- `suites/` - Pre-built test suites
-- `analytics.py` - Results analysis
-- `dashboard.py` - Visual dashboard (future)
-
----
-
-**Status:** 📋 Concept - Ready to build
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

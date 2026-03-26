@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-agentbazaar"
+version = "0.1.0"
+description = "Dynamic agent skill-based service discovery for the AntiGrav AI ecosystem."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "agents", "service-discovery", "skills", "antigrav"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["AgentBazaar*"]

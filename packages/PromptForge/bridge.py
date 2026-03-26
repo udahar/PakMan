@@ -345,7 +345,13 @@ def create_bridge(
     Returns:
         PromptOSForgeBridge instance
     """
-    from PromptOS import PromptOS
+    try:
+        from PromptOS import PromptOS
+    except ImportError:
+        # PromptOS is not installed, so return early or raise a runtime exception depending on use case
+        # Since this is explicitly designed to bridge both, raising an error or returning a mock is expected.
+        raise ImportError("PromptOS is required to create a PromptOSForgeBridge. Please install it.")
+
     from PromptForge import ForgeEngine
 
     promptos_keys = {

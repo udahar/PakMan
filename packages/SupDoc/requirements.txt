@@ -1,0 +1,2 @@
+# SupDoc dependencies
+# Core package has no external dependencies

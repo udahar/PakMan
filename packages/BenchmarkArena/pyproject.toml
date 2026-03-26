@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-benchmarkarena"
+version = "0.1.0"
+description = "Benchmark arena for head-to-head model evaluation. Run, score, and compare model performance."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "evaluation"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["BenchmarkArena*"]

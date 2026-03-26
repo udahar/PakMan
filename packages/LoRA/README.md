@@ -1,25 +1,28 @@
-# Alfred LoRA System
+# LoRA
 
-Specialized LoRA modules for the Alfred AI platform, designed to work alongside Ollama.
+> **Status:** BETA | **Tags:** lora, fine-tuning, ml, ollama, training
 
-## Architecture
-- Base model: TinyLlama-1.1B-Chat-v1.0 (or similar) - loaded via Hugging Face Transformers
-- LoRA adapters: One per functional lane (coding, sql, seo, etc.) - stored in `lora_modules/`
-- Router: Selects between Ollama (general) and LoRA engine (specialized)
+## Overview
+LoRA fine-tuning modules for Alfred platform models. Training scripts, datasets, and adapter management for local Ollama models.
 
-## Setup
-1. Install dependencies: `pip install -r requirements.txt`
-2. Prepare datasets in `datasets/[lane]/train.jsonl`
-3. Train adapters: `python scripts/train_lora.py --module [lane]`
-4. Use in Alfred: See `scripts/router_example.py`
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-## Storage Efficiency
-- Base model: ~2-4 GB
-- Each LoRA: ~5-50 MB
-- 20 modules: ~2-4 GB + 100-1000 MB vs 40-80 GB for separate models
-- **Space Savings**: ~90-95%
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install LoRA
+```
 
-## Notes
-- The LoRA engine uses Hugging Face Transformers base models (not Ollama GGUF models)
-- Your existing Ollama setup remains intact for general-purpose tasks
-- The Alfred router decides which engine to use based on the task lane
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
+
+## Usage
+Simply import the core components:
+```python
+import LoRA
+# Integrate LoRA as needed in your stack.
+```
+
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

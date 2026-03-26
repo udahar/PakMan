@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-mlstack"
+version = "0.1.0"
+description = "Shared ML environment: PyTorch, TensorFlow, ONNX, PEFT, DSPy, and accelerate. Installs to ~/.pakman/venvs/ml — shared across FieldBench and other consumers."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "ml"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["MLStack*"]

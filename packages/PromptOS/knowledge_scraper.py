@@ -162,7 +162,7 @@ class BenchmarkKnowledgeScraper:
     def save_training_examples(
         self,
         examples: List[ScrapedExample],
-        table_name: str = "frank_benchmark_training",
+        table_name: str = "benchmark_training",
     ) -> int:
         """Save normalized examples to a training table."""
         if not examples:

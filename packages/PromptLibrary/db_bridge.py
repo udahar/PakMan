@@ -4,7 +4,7 @@
 
 """
 PromptOS Database Bridge
-Connect prompt_library to Frank's database tables for learning
+Connect prompt_library to database tables for learning
 """
 
 import json
@@ -23,20 +23,20 @@ except ImportError:
 
 class PromptOSDatabaseBridge:
     """
-    Bridge between prompt_library and Frank's database.
+    Bridge between prompt_library and database.
 
-    Uses Frank's tables:
-    - frank_prompts (learning data)
-    - frank_prompt_performance (usage stats)
-    - frank_strategy_effectiveness (strategy results)
+    Uses tables:
+    - prompts (learning data)
+    - prompt_performance (usage stats)
+    - strategy_effectiveness (strategy results)
     """
 
-    TABLE_PROMPTS = "frank_prompts"
-    TABLE_PERFORMANCE = "frank_prompt_performance"
-    TABLE_STRATEGIES = "frank_strategy_effectiveness"
+    TABLE_PROMPTS = "prompts"
+    TABLE_PERFORMANCE = "prompt_performance"
+    TABLE_STRATEGIES = "strategy_effectiveness"
 
-    COLLECTION_PROMPTS = "frank_prompts_embeddings"
-    COLLECTION_STRATEGIES = "frank_strategy_embeddings"
+    COLLECTION_PROMPTS = "prompts_embeddings"
+    COLLECTION_STRATEGIES = "strategy_embeddings"
 
     def __init__(
         self,

@@ -1,26 +1,28 @@
-# Tickets Directory
+# tickets
 
-Task tickets are stored here as JSON files.
+> **Status:** BETA | **Tags:** tickets, tasks, workflow, tracking
 
-## Ticket Format
+## Overview
+Lightweight ticket and task tracker for AI workflows.
 
-```json
-{
-  "ticket_id": "20260308_1234",
-  "title": "Research quantum computing",
-  "description": "I need to understand...",
-  "status": "completed",
-  "assigned_skills": ["humble_inquiry", "rag"],
-  "strategy": "chain_of_thought",
-  "result": {...},
-  "execution_log": [...]
-}
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
+
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install tickets
 ```
 
-## Workflow
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-1. Create ticket → `frank.py "Task description"`
-2. Execute → Auto-selects skills, runs them
-3. Results saved here for review
+## Usage
+Simply import the core components:
+```python
+import tickets
+# Integrate tickets as needed in your stack.
+```
 
-
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

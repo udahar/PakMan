@@ -2,4 +2,6 @@
 
 __version__ = "0.1.0"
 
-__all__ = []
+from .projman import ProjectManager, Project, Epic, Story, ProjectStatus, create_project, list_projects
+
+__all__ = ["ProjectManager", "Project", "Epic", "Story", "ProjectStatus", "create_project", "list_projects"]

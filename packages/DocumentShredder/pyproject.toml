@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-documentshredder"
+version = "0.1.0"
+description = "Universal document ingestion pipeline — PDF, DOCX, XLSX, ChatGPT HTML, images → AI-ready chunks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "rag", "document-parsing", "chunking", "antigrav"]
+dependencies = []
+
+[project.optional-dependencies]
+pdf    = ["pdfplumber", "PyMuPDF"]
+docx   = ["python-docx"]
+excel  = ["openpyxl"]
+html   = ["beautifulsoup4", "lxml"]
+ocr    = ["pytesseract", "Pillow"]
+tokens = ["tiktoken"]
+all    = [
+    "pdfplumber", "PyMuPDF", "python-docx", "openpyxl",
+    "beautifulsoup4", "lxml", "pytesseract", "Pillow", "tiktoken",
+]
+
+[project.scripts]
+shred = "DocumentShredder.cli:main"
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["DocumentShredder*"]

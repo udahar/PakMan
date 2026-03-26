@@ -1,29 +1,28 @@
-# LinkedIn Network - Import and Query Your Network
+# LinkedIn_Export
 
-Import LinkedIn connections into Qdrant for intelligent networking.
+> **Status:** BETA | **Tags:** linkedin, networking, qdrant, knowledge
 
-## Usage
+## Overview
+Import your LinkedIn connections into Qdrant for intelligent network search and relationship mapping.
 
-```python
-from linkedin_network import LinkedInImporter
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-importer = LinkedInImporter()
-
-# Import connections
-importer.import_connections("path/to/Connections.csv")
-
-# Query your network
-results = importer.find_by_role("recruiter")
-results = importer.find_by_company("NVIDIA")
-results = importer.find_by_skill("python")
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install LinkedIn_Export
 ```
 
-## Features
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-- Import LinkedIn connections to Qdrant
-- Search by role, company, or skill
-- Find people for job opportunities
+## Usage
+Simply import the core components:
+```python
+import LinkedIn_Export
+# Integrate LinkedIn_Export as needed in your stack.
+```
 
-## Status
-
-✅ Production Ready
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

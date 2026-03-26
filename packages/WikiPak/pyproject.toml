@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-wikipak"
+version = "0.1.0"
+description = "Unified documentation generator. Reads every installed package README and builds a searchable Zola static site. Powers `pakman wiki`."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "knowledge"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["WikiPak*"]

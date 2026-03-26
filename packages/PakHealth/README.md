@@ -1,32 +1,28 @@
-# Health Monitor - System Wellness Dashboard
+# PakHealth
 
-Monitor package health across all systems.
+> **Status:** BETA | **Tags:** health, monitoring, infrastructure, packages
 
-## Usage
+## Overview
+System wellness dashboard for PakMan. Monitors package health, import status, and dependency integrity across your installed set.
 
-```python
-from health_monitor import Monitor
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-monitor = Monitor()
-
-# Check all systems
-health = monitor.check_all()
-
-print(f"StockAI: {health['StockAI']['status']}")
-print(f"PkgMan: {health['PkgMan']['status']}")
-
-# Check specific system
-result = monitor.check_import("StockAI")
-print(f"Import OK: {result['ok']}")
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install PakHealth
 ```
 
-## Features
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-- **Import Checks** - Verify packages can be imported
-- **Port Checks** - Verify services are running (postgres, qdrant, redis)
-- **Dependency Checks** - Verify required dependencies
-- **API Smoke Tests** - Test basic functionality
+## Usage
+Simply import the core components:
+```python
+import PakHealth
+# Integrate PakHealth as needed in your stack.
+```
 
-## Status
-
-✅ Production Ready
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

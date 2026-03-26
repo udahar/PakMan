@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-gapman"
+version = "0.1.0"
+description = "Gap analysis engine. Finds what your model can't do yet and generates targeted hard tests."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "evaluation"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["GapMan*"]

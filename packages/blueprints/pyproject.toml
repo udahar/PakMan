@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-blueprints"
+version = "0.1.0"
+description = "Project and app blueprints. Templates for common AI app patterns, pre-wired with PakMan."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "scaffolding"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["blueprints*"]

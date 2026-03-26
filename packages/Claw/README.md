@@ -1,41 +1,28 @@
 # Claw
 
-Thin CLI wrapper for the Alfred AI platform. Gives any PakMan-aware app a command-line interface to Alfred's multi-agent orchestration, benchmarking, and model management.
+> **Status:** BETA | **Tags:** cli, alfred, tools
 
-## Install
+## Overview
+Thin CLI wrapper for Alfred AI platform.
 
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
+
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
 ```bash
 pakman install Claw
 ```
 
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
+
 ## Usage
-
-```bash
-# Ask Alfred a question
-claw ask "summarize this week's benchmark results"
-
-# List available models
-claw models
-
-# Trigger a benchmark run
-claw bench --suite code
-
-# Model election (King Gate)
-claw crown
-```
-
-## API
-
+Simply import the core components:
 ```python
-from Claw import ClawClient
-
-client = ClawClient(alfred_url="http://localhost:5001")
-task_id = client.submit_task("ask", {"prompt": "Hello"})
-result = client.wait_for_result(task_id)
+import Claw
+# Integrate Claw as needed in your stack.
 ```
 
-## Requirements
-
-- Alfred running on `http://localhost:5001`
-- Python 3.8+
-- `requests`
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

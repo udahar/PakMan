@@ -2,4 +2,9 @@
 
 __version__ = "0.1.0"
 
-__all__ = []
+from .skills.humble_inquiry import humble_inquiry, InquiryResult
+
+__all__ = [
+    "humble_inquiry",
+    "InquiryResult",
+]

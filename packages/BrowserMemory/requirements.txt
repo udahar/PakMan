@@ -1,0 +1,2 @@
+# BrowserMemory dependencies
+memory-graph>=0.1.0

@@ -148,7 +148,7 @@ class PromptIndex:
     If Qdrant is not available, falls back to simple text search.
     """
 
-    COLLECTION_NAME = "frank_prompts"
+    COLLECTION_NAME = "prompts"
 
     def __init__(
         self,

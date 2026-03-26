@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-contextdistiller"
+version = "0.1.0"
+description = "Context distillation engine. Compresses long context windows into dense, relevant summaries."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "context"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["ContextDistiller*"]

@@ -43,6 +43,7 @@ from .strategy_graph import StrategyGraph, StrategyGraphBuilder, ReasoningStep
 from .training_data_generator import TrainingDataGenerator, TrainingExample, DPOExample
 from .ollama_integration import OllamaClient, create_training_jsonl
 from .bridge import PromptOSForgeBridge, create_bridge
+from . import ForgeEngine
 
 __all__ = [
     "ForgeEngine",

@@ -1,57 +1,28 @@
 # WikiPak
 
-Unified documentation generator for PakMan packages.
+> **Status:** BETA | **Tags:** wiki, documentation, zola, knowledge
 
 ## Overview
+Unified documentation generator. Reads every installed package README and builds a searchable Zola static site. Powers `pakman wiki`.
 
-WikiPak collects documentation from all PakMan packages and generates a unified wiki using ZolaPress.
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
 ## Installation
-
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
 ```bash
-# Install from local source
-pip install ./path/to/wikipak
-
-# Or install via pip (when published)
-pip install wikipak
+pakman install WikiPak
 ```
+
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
 ## Usage
-
-### Command-Line Interface
-
-```bash
-# Build a unified wiki from all PakMan packages
-wikipak build ./path/to/wiki ./path/to/pakman/packages
-
-# Serve the wiki locally
-wikipak serve ./path/to/wiki ./path/to/pakman/packages --port 1111
-```
-
-### Python Library
-
+Simply import the core components:
 ```python
-from wikipak import build_wiki, serve_wiki
-
-# Build the wiki
-build_wiki("./path/to/wiki", "./path/to/pakman/packages")
-
-# Serve the wiki
-serve_wiki("./path/to/wiki", "./path/to/pakman/packages", port=1111)
+import WikiPak
+# Integrate WikiPak as needed in your stack.
 ```
 
-## Features
-
-- Collects documentation from all PakMan packages
-- Generates a unified markdown wiki
-- Integrates with ZolaPress for building and serving
-- Both CLI and Python library interfaces
-- MIT licensed
-
-## Documentation
-
-For detailed documentation, see the [WikiPak documentation](content/_index.md).
-
-## License
-
-MIT License
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

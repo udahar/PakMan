@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-terminalobserver"
+version = "0.1.0"
+description = "Proactive dev-terminal error daemon — detects tracebacks and suggests fixes instantly."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "debugging", "terminal", "errors", "antigrav"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["TerminalObserver*"]

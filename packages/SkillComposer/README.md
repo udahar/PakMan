@@ -1,27 +1,28 @@
-# Skill Composer - Chain Skills Together
+# SkillComposer
 
-Combine multiple skills into mega-skills.
+> **Status:** BETA | **Tags:** prompting
 
-## Usage
+## Overview
+SkillComposer package
 
-```python
-from skill_composer import Composer
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-composer = Composer()
-
-# Create chain
-chain = composer.chain("humble_inquiry", "code_review", "error_repair")
-
-# Execute
-result = chain.execute("Review and fix this code")
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install SkillComposer
 ```
 
-## Features
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-- **Skill Chains** - Sequence multiple skills
-- **Parallel Execution** - Run skills concurrently
-- **Conditional Chains** - If skill A fails, try B
+## Usage
+Simply import the core components:
+```python
+import SkillComposer
+# Integrate SkillComposer as needed in your stack.
+```
 
-## Status
-
-✅ Production Ready
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

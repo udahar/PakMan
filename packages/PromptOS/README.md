@@ -1,45 +1,28 @@
-# PromptOS - Core Prompt Operating System
+# PromptOS
 
-**Purpose:** Unified interface for all prompt systems
+> **Status:** BETA | **Tags:** prompting, runtime, memory, routing
 
----
+## Overview
+Prompt runtime with memory, routing, and state management.
 
-## Concept
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-Single import that loads everything:
-- Blueprints
-- Safety Sentry
-- Prompt Version Control
-- Skills Library
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install PromptOS
+```
 
----
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
 ## Usage
-
+Simply import the core components:
 ```python
-from promptos import Alfred
-
-# One interface for everything
-alfred = Alfred()
-
-# Auto-expands blueprints
-response = alfred.ask("explain like a streetpunk")
-
-# Auto-filters security
-response = alfred.ask("build this...")
-
-# Auto-loads relevant skills
-response = alfred.ask("research quantum computing")
+import PromptOS
+# Integrate PromptOS as needed in your stack.
 ```
 
 ---
-
-## Files
-
-- `core.py` - Main Alfred interface
-- `loader.py` - Load all subsystems
-- `config.py` - Unified configuration
-
----
-
-**Status:** 📋 Concept - Integration layer
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

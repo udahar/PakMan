@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-contextcache"
+version = "0.1.0"
+description = "Lightweight caching layer for LLM context. Avoids redundant re-computation of expensive context windows."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "context"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["ContextCache*"]

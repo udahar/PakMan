@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-approvalgate"
+version = "0.1.0"
+description = "Human-in-the-loop safety interlock — blocks sensitive AI operations pending approval."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "safety", "hitl", "approval", "antigrav"]
+dependencies = []
+
+[project.optional-dependencies]
+telegram = ["requests"]
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["ApprovalGate*"]

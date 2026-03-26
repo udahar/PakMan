@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-semanticcache"
+version = "0.1.0"
+description = "Prompt deduplication and response cache — exact, fuzzy, and embedding similarity modes."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "cache", "semantic", "dedup", "antigrav"]
+dependencies = []
+
+[project.optional-dependencies]
+embedding = ["numpy"]
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SemanticCache*"]

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-safetysentry"
+version = "0.1.0"
+description = "LLM output safety guard. Reviews generated code and content before use."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "safety"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["SafetySentry*"]

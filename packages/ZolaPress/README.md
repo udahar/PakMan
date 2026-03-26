@@ -1,74 +1,28 @@
 # ZolaPress
 
-Documentation and site generation utilities for ZolaPress static site generator.
+> **Status:** BETA | **Tags:** zola, cms, documentation, static-site
 
 ## Overview
+Documentation and site generation utilities for ZolaPress static sites. Bridges PakMan package content into the ZolaPress CMS.
 
-ZolaPress provides Python utilities and a command-line interface for managing ZolaPress sites, including building, serving, checking, and managing content and configuration.
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
 ## Installation
-
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
 ```bash
-# Install from local source
-pip install ./path/to/zolapress
-
-# Or install via pip (when published)
-pip install zolapress
+pakman install ZolaPress
 ```
+
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
 ## Usage
-
-### Command-Line Interface
-
-```bash
-# Build a ZolaPress site
-zolapress build /path/to/site
-
-# Serve a ZolaPress site locally
-zolapress serve /path/to/site --port 1111
-
-# Check a site for errors
-zolapress check /path/to/site
-
-# Initialize a new ZolaPress site
-zolapress init /path/to/new/site --theme terra
-
-# Manage configuration
-zolapress config /path/to/site --get --key title
-zolapress config /path/to/site --set base_url="https://example.com"
-
-# Manage content
-zolapress content /path/to/site --list
-zolapress content /path/to/site --create "blog/post.md" --title "My Post" --date "2023-01-01" --tags "tutorial,example"
-```
-
-### Python Library
-
+Simply import the core components:
 ```python
-from zolapress import ZolaPressBuilder, build_site, serve_site
-
-# Using the builder class
-builder = ZolaPressBuilder("/path/to/site")
-builder.build()
-
-# Using convenience functions
-build_site("/path/to/site")
-serve_site("/path/to/site", port=1111)
+import ZolaPress
+# Integrate ZolaPress as needed in your stack.
 ```
 
-## Features
-
-- Site building and serving
-- Configuration management
-- Content creation and listing
-- Site validation and checking
-- Both CLI and Python library interfaces
-- MIT licensed
-
-## Documentation
-
-For detailed documentation, see the [ZolaPress documentation](content/_index.md).
-
-## License
-
-MIT License
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

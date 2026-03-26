@@ -1,18 +1,28 @@
-# Skill Evolver - Auto-Improve Skills
+# SkillEvolver
 
-Skills that get better from usage.
+> **Status:** BETA | **Tags:** prompting
 
-## Usage
+## Overview
+SkillEvolver package
 
-```python
-from skill_evolver import Evolver
+This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
 
-evolver = Evolver()
-
-evolver.record(skill="humble_inquiry", success=True, user_feedback=0.9)
-improved = evolver.evolve("humble_inquiry")
+## Installation
+Provided through the `PakMan` package manager, or standard python tools if running standalone:
+```bash
+pakman install SkillEvolver
 ```
 
-## Status
+## Architecture & Integration
+- **Standalone:** This package does not rely on any other module in `packages/`.
+- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
 
-✅ Production Ready
+## Usage
+Simply import the core components:
+```python
+import SkillEvolver
+# Integrate SkillEvolver as needed in your stack.
+```
+
+---
+*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*

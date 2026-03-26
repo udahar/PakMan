@@ -1,7 +1,7 @@
 """
-Frank Integration - Auto-expand blueprints in user input
+Blueprint Integration - Auto-expand blueprints in user input
 
-Add this to frank.py to enable blueprint expansion.
+Add this to enable blueprint expansion in any application.
 """
 
 from pathlib import Path
@@ -18,7 +18,7 @@ class BlueprintExpander:
     """
     Automatically expand blueprint triggers in user input.
     
-    Usage in frank.py:
+    Usage:
     
     expander = BlueprintExpander()
     

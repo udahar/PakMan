@@ -17,7 +17,8 @@ PakMan is a local-first package manager designed specifically for AI systems.
 
 It installs **capabilities** — not libraries.
 
-* Prompting strategies n- Context management
+* Prompting strategies
+* Context management
 * Routing logic
 * Memory modules
 * Evaluation tools
@@ -221,15 +222,35 @@ pakman install ./my_package
 
 ---
 
+## 📦 Package Catalog
+
+**87 packages across 27 categories.** See [PACKAGES.md](PACKAGES.md) for the full index.
+
+Highlights:
+
+| Category | Packages |
+|----------|----------|
+| Agents | AgentBazaar, ApprovalGate, Council, SwarmProtocol |
+| Context | ContextCompressor, ContextDistiller, GraphMemory, SemanticCache |
+| Evaluation | EvalFramework, BenchmarkArena, GapMan, RedTeamer |
+| ML | LoRA, MLStack, AutoDistiller, FeedbackLoop, AnomalyEngine |
+| NLP | NLPPipeline, NERExtractor, DocumentShredder |
+| Prompting | PromptSKLib, PromptForge, PromptOS, PromptRouter |
+| Safety | SafetySentry, ApprovalGate, RedTeamer |
+| Skills | SkillsFramework, SkillComposer, SkillsRegistry, SkillEvolver |
+
+---
+
 ## 🌐 Ecosystem
 
 PakMan is part of a larger AI-native stack:
 
-* Guardian → system health + stability
-* Alfred → orchestration + execution
-* Claw → agent runtime
+* **Alfred** → orchestration + execution
+* **Claw** → agent runtime
+* **Benchmark** → model scoring + ranking
+* **FieldBench** → multi-agent coordination
 
-PakMan → capability layer that connects everything
+PakMan → the capability layer that connects everything
 
 ---
 
@@ -238,6 +259,9 @@ PakMan → capability layer that connects everything
 PakMan is built on one idea:
 
 > AI tools should be composable, not monolithic.
+
+This is the raw building blocks for your own AI stack — no cloud lock-in, no monolith.
+Install what you need. Everything else stays out of the way.
 
 ---
 

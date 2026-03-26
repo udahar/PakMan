@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-evalframework"
+version = "0.1.0"
+description = "Evaluation framework. Define metrics, run benchmarks, and compare model outputs systematically."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "evaluation"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["EvalFramework*"]

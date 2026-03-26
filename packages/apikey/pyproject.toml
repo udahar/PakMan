@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-apikey"
+version = "0.1.0"
+description = "Secure API key management. Store, rotate, and scope API keys for AI services."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "security"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["apikey*"]

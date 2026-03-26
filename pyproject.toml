@@ -20,8 +20,12 @@ dependencies = []
 pakman = "cli:main"
 
 [tool.setuptools]
-# Flat layout — all .py modules live at the repo root
-py-modules = ["cli", "package_manager", "security", "health", "hotload"]
+# Root-level modules
+py-modules = ["cli", "security", "health", "hotload"]
+
+[tool.setuptools.packages.find]
+# Also pick up the package_manager/ sub-package
+include = ["package_manager*"]
 
 [project.urls]
 Homepage = "https://github.com/udahar/PakMan"

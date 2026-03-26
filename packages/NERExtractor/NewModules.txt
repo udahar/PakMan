@@ -1,0 +1,7 @@
+NER → pakman.nlp.ner
+Sentiment → pakman.nlp.sentiment
+Key phrases → pakman.nlp.keyphrases
+Vision → pakman.vision.detect
+Speech → pakman.audio.transcribe
+
+GAN: General Adverserial Networks

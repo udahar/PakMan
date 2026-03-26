@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-pakmanlock"
+version = "0.1.0"
+description = "Deterministic prompt locking — SHA-256 hashing prevents silent prompt drift."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "prompts", "locking", "determinism", "antigrav"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["PakMan-Lock*", "PakManLock*"]

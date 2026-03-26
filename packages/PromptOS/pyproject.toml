@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pakman-promptos"
+version = "0.1.0"
+description = "Prompt runtime with memory, routing, and state management."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "pakman", "prompting"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["PromptOS*"]

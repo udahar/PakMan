@@ -1,0 +1,5 @@
+supervised learning
+unsupervised learning
+reinforcement learning
+
+Machnie learning - to learn without being programmed. 

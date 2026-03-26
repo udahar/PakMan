@@ -4,13 +4,17 @@ build-backend = "setuptools.backends.legacy:build"
 
 [project]
 name = "pakman-graphmemory"
-version = "0.1.0"
-description = "Semantic knowledge graph for AI conversational memory — SQLite backed, zero deps."
+version = "0.2.0"
+description = "Unified knowledge graph — SQLite core, optional Qdrant vector layer, graceful fallback."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-keywords = ["ai", "knowledge-graph", "memory", "entities", "antigrav"]
+keywords = ["ai", "knowledge-graph", "memory", "entities", "sqlite", "qdrant", "pakman"]
 dependencies = []
+
+[project.optional-dependencies]
+# pip install pakman-graphmemory[vector]
+vector = ["qdrant-client>=1.7", "requests>=2.28"]
 
 [tool.setuptools.packages.find]
 where = [".."]

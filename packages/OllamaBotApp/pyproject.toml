@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pakman-ollamabot-app"
+version = "0.1.0"
+description = "Composition package for the full OllamaBot app stack"
+requires-python = ">=3.9"
+

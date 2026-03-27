@@ -1,0 +1,27 @@
+{
+  "name": "OllamaBotApp",
+  "type": "app_bundle",
+  "version": "0.1.0",
+  "description": "Full OllamaBot app composition bundle",
+  "dependencies": [
+    "OllamaOps",
+    "OllamaGuard",
+    "OllamaProxy"
+  ],
+  "secrets_policy": {
+    "stores_secrets": false,
+    "allowed_files": [
+      ".env.example"
+    ]
+  },
+  "features": [
+    "local_ollama_control",
+    "stuck_state_recovery",
+    "priority_proxy_queue",
+    "app_frame_scaffold"
+  ],
+  "disabled_features": [
+    "legacy_multi_target_fanout"
+  ]
+}
+

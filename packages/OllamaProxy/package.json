@@ -1,0 +1,7 @@
+{
+  "name": "pakman-ollama-proxy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared Ollama reverse-proxy and queue server for local apps"
+}

@@ -120,6 +120,58 @@
       "status": "beta",
       "path": "packages/AutoCode"
     },
+    "OllamaOps": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Shared Ollama host control primitives for start, stop, restart, and status.",
+      "category": "infrastructure",
+      "tags": [
+        "ollama",
+        "control",
+        "restart",
+        "health"
+      ],
+      "status": "alpha",
+      "path": "packages/OllamaOps"
+    },
+    "OllamaGuard": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Shared stuck-state recovery bridge and launcher for Ollama-backed apps.",
+      "category": "infrastructure",
+      "tags": [
+        "ollama",
+        "watchdog",
+        "recovery",
+        "bridge"
+      ],
+      "status": "alpha",
+      "path": "packages/OllamaGuard"
+    },
+    "OllamaProxy": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Shared local Ollama reverse-proxy and queue server extracted from OllamaBot.",
+      "category": "infrastructure",
+      "tags": [
+        "ollama",
+        "proxy",
+        "queue",
+        "routing"
+      ],
+      "status": "alpha",
+      "path": "packages/OllamaProxy"
+    },
+    "OllamaBotApp": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Parent bundle that composes the full OllamaBot app stack from PakMan modules.",
+      "category": "infrastructure",
+      "tags": [
+        "ollama",
+        "app",
+        "bundle",
+        "composition"
+      ],
+      "status": "alpha",
+      "path": "packages/OllamaBotApp"
+    },
     "AiOSKernel": {
       "repo": "github.com/udahar/PakMan",
       "description": "Core kernel for AI operating system primitives â€” process model, memory model, I/O model.",

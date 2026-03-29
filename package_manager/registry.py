@@ -179,12 +179,9 @@ class RegistryMixin:
         return packages
 
     def _is_importable(self, name: str) -> bool:
-        """Check if package can be imported"""
-        try:
-            __import__(name)
-            return True
-        except ImportError:
-            return False
+        """Check if package files are present on disk (does not execute the package)."""
+        pkg_dir = self.packages_dir / name
+        return (pkg_dir / "__init__.py").exists()
 
     def get_package(self, name: str):
         """

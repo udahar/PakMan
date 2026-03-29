@@ -16,6 +16,13 @@ import json
 import sys
 from pathlib import Path
 
+# Force UTF-8 output on Windows — prevents UnicodeEncodeError when emoji hits a
+# CP1252 terminal, which would silently roll back installs mid-copy.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # Allow running as `python cli.py` from the PakMan directory without install
 sys.path.insert(0, str(Path(__file__).parent))
 

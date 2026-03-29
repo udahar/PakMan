@@ -127,7 +127,10 @@ class InstallerMixin:
                 try:
                     self.hotload.load(name, reload=upgrade)
                 except Exception as e:
-                    print(f"     Hot-load warning: {e}")
+                    try:
+                        print(f"     Hot-load warning: {e}")
+                    except Exception:
+                        print("     Hot-load warning: (message not printable)")
 
             print(f" Installed '{name}' to {install_path}")
 

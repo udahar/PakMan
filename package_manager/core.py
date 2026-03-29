@@ -98,12 +98,11 @@ class PackageManager(InstallerMixin, RegistryMixin):
         # Initialize database
         self._init_db()
 
-        # Load hotload if available
+        # Load hotload if available (watchfiles dep may not be installed)
         try:
             import hotload
-
             self.hotload = hotload
-        except ImportError:
+        except (ImportError, Exception):
             self.hotload = None
 
 
@@ -187,8 +186,9 @@ def get_stats() -> Dict:
 
 # === Auto-init ===
 
-# Make packages importable on import
-get_package_manager()
+# Deferred: PackageManager is initialized on first use, not on import.
+# Auto-init at import time caused CLI commands (pakman list, etc.) to hang
+# if any package initialization blocked or threw during module load.
 
 
 __all__ = [

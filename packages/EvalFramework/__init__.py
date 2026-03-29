@@ -3,8 +3,7 @@
 # PM-Ticket: UNTRACKED
 
 """
-Frank Eval Framework Module
-A/B testing and evaluation for prompts and models
+EvalFramework — A/B testing and evaluation for prompts and models.
 """
 
 from .evaluator import PromptEvaluator, ABTest, create_prompt_evaluator

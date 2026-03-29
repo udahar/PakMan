@@ -42,6 +42,7 @@ from .installer import InstallerMixin
 from .registry import RegistryMixin
 
 class PackageManager(InstallerMixin, RegistryMixin):
+    """
     Package manager for custom modules.
 
     Features:
@@ -56,7 +57,7 @@ class PackageManager(InstallerMixin, RegistryMixin):
         """
         Initialize package manager.
 
-        Default install location is ~/.pakman/ — clean, per-user, survives pip upgrades.
+        Default install location is ~/.pakman/ - clean, per-user, survives pip upgrades.
         Override with PAKMAN_HOME env var or explicit args.
 
         Args:

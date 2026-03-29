@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pakman-ratelimit"
+version = "0.1.0"
+description = "Standalone token-bucket rate limiter for PakMan with package-local .env defaults."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["pakman", "rate-limit", "throttling"]
+dependencies = []
+
+[project.scripts]
+pakman-ratelimit = "RateLimit.cli:main"
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["RateLimit*"]
+
+[tool.setuptools.package-data]
+RateLimit = [".env"]

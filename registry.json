@@ -1179,6 +1179,20 @@
       ],
       "status": "beta",
       "path": "packages/ProjManSpec"
+    },
+    "RateLimit": {
+      "repo": "github.com/udahar/PakMan",
+      "description": "Standalone token-bucket rate limiter. Shared across all services — vendor-proxy, Benchmark, FieldBench. Config via .env (RATELIMIT_REQUESTS_PER_SECOND, RATELIMIT_BURST).",
+      "category": "infrastructure",
+      "tags": [
+        "rate-limit",
+        "throttling",
+        "token-bucket",
+        "infrastructure",
+        "shared"
+      ],
+      "status": "stable",
+      "path": "packages/RateLimit"
     }
   }
 }

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 pakman - command-line interface for PakMan package manager
 
@@ -94,7 +95,7 @@ def _resolve_source(name: str) -> tuple[str, dict | None]:
     return name, None
 
 
-# ─── commands ────────────────────────────────────────────────────────────────
+# --- commands ---
 
 
 def cmd_wiki(args):
@@ -371,7 +372,7 @@ def cmd_search(args):
         print(f"  {name:<26} {status:<14} {desc}")
 
 
-# ─── main ────────────────────────────────────────────────────────────────────
+# --- main ---
 
 
 def main():

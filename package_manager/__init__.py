@@ -14,7 +14,7 @@ from .core import (
     search,
     get_stats
 )
-from security import SecurityManager, trust_source
+from ..security import SecurityManager, trust_source
 
 __all__ = [
     "PackageManager",

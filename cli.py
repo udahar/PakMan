@@ -380,6 +380,9 @@ def main():
         prog="pakman",
         description="PakMan — AI productivity package manager",
     )
+    parser.add_argument(
+        "--version", "-V", action="version", version=f"pakman {PAKMAN_VERSION}"
+    )
     sub = parser.add_subparsers(dest="command", metavar="<command>")
     sub.required = True
 

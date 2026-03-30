@@ -38,7 +38,7 @@ from update_check import (
 _pm = None
 _registry = None
 
-REGISTRY_FILE = Path(__file__).parent / "registry.json"
+REGISTRY_FILE = Path(__file__).parent / "package_manager" / "registry.json"
 
 
 def _get_pm() -> PackageManager:

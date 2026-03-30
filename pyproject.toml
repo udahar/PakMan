@@ -27,6 +27,9 @@ py-modules = ["cli", "security", "health", "hotload", "update_check"]
 # Also pick up the package_manager/ sub-package
 include = ["package_manager*"]
 
+[tool.setuptools.package-data]
+package_manager = ["registry.json", "community-registry.json"]
+
 [project.urls]
 Homepage = "https://github.com/udahar/PakMan"
 Repository = "https://github.com/udahar/PakMan"

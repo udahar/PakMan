@@ -1,0 +1,5 @@
+{
+  "_comment": "Community package registry. Entries here are NOT maintained by udahar. Install with: pakman install --community <repo>. Review the source before installing anything.",
+  "_how_to_add": "Open a PR adding your entry. Required fields: repo, description, category, tags, status, author. See CONTRIBUTING.md.",
+  "packages": {}
+}

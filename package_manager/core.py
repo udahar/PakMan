@@ -16,7 +16,7 @@ from datetime import datetime
 import json
 import re
 
-from ..security import (
+from security import (
     get_security_manager,
     SecurityManager,
     trust_source,

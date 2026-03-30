@@ -1,28 +1,62 @@
 # telegram
 
-> **Status:** STABLE | **Tags:** utility, telegram
+> **Status:** STABLE | **Tags:** utility, telegram, bot
 
 ## Overview
-telegram - A professional AI package module.
 
-This package is a standalone module designed as a professional AI upgrade. It has been strictly refactored for independent execution and clean architecture, with zero cross-package dependencies.
+Pure-Python Telegram integration with two modes:
+- **Send-only** (`TelegramBot`) — send messages and alerts from any script
+- **Bot runner** (`BotRunner`) — long-polling bot that forwards chats to a NeuralCanvas REST API
+
+Zero external dependencies — stdlib only.
 
 ## Installation
-Provided through the `PakMan` package manager, or standard python tools if running standalone:
+
 ```bash
 pakman install telegram
 ```
 
-## Architecture & Integration
-- **Standalone:** This package does not rely on any other module in `packages/`.
-- **Security:** Free of hard-coded secrets. Fully integrates into local AI workflows safely.
+## Bot Runner (TouchAI)
 
-## Usage
-Simply import the core components:
-```python
-import telegram
-# Integrate telegram as needed in your stack.
+Set environment variables and run:
+
+```bash
+export TELEGRAM_BOT_TOKEN=<your token>
+export NEURAL_API_URL=http://localhost:8081   # default
+export BOT_MODEL=llama3.2                     # default
+export TELEGRAM_ADMIN_IDS=123456,789012       # optional, restrict access
+
+python -m telegram.bot_runner
 ```
 
----
-*Generated centrally by PakMan Repository Management to ensure professional documentation standards.*
+### Bot commands
+| Command | Description |
+|---------|-------------|
+| `/start` | Welcome + API status |
+| `/help` | Show command list |
+| `/model <name>` | Switch Ollama model |
+| `/chat <msg>` | Explicit chat |
+| `/clear` | Clear conversation history |
+| _(any text)_ | Chat with AI |
+
+## Send-Only Usage
+
+```python
+from telegram import send_message, send_alert, TelegramBot
+
+# Quick send
+send_message("CHAT_ID", "Hello!", token="TOKEN")
+
+# Alerts
+send_alert("Deploy succeeded", chat_id="CHAT_ID", severity="success")
+
+# Full bot object
+bot = TelegramBot(token="TOKEN")
+bot.send_message("CHAT_ID", "*Bold* message")
+```
+
+## Architecture
+
+- Standalone — no cross-package dependencies
+- Secrets via environment variables only, never hard-coded
+- `BotRunner` connects to any HTTP API with `/api/chat` and `/api/health` endpoints

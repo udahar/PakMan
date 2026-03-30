@@ -4,8 +4,8 @@ build-backend = "setuptools.backends.legacy:build"
 
 [project]
 name = "pakman-telegram"
-version = "0.1.0"
-description = "Telegram bot integration. Scout pool, chat pool, and report delivery via the Alfred Telegram bot."
+version = "0.2.0"
+description = "Telegram bot: send messages and run a long-polling bot that forwards to any NeuralCanvas-compatible API."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}

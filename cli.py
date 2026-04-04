@@ -38,7 +38,7 @@ from update_check import (
 _pm = None
 _registry = None
 
-REGISTRY_FILE = Path(__file__).parent / "registry.json"
+REGISTRY_FILE = Path(__file__).parent / "package_manager" / "registry.json"
 
 
 def _get_pm() -> PackageManager:
@@ -379,6 +379,9 @@ def main():
     parser = argparse.ArgumentParser(
         prog="pakman",
         description="PakMan — AI productivity package manager",
+    )
+    parser.add_argument(
+        "--version", "-V", action="version", version=f"pakman {PAKMAN_VERSION}"
     )
     sub = parser.add_subparsers(dest="command", metavar="<command>")
     sub.required = True

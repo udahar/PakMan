@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 PkgMan Security Features
 
@@ -180,7 +181,9 @@ class SecurityManager:
                     if name.startswith('.') or name.endswith('.pyc') or name == '__pycache__':
                         ignored.append(name)
                 return ignored
-            
+
+            if backup_dir.exists():
+                shutil.rmtree(backup_dir)
             shutil.copytree(install_path, backup_dir, ignore=ignore_patterns)
             
             # Save metadata

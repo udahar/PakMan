@@ -21,11 +21,14 @@ pakman = "cli:main"
 
 [tool.setuptools]
 # Root-level modules
-py-modules = ["cli", "security", "health", "hotload"]
+py-modules = ["cli", "security", "health", "hotload", "update_check"]
 
 [tool.setuptools.packages.find]
 # Also pick up the package_manager/ sub-package
 include = ["package_manager*"]
+
+[tool.setuptools.package-data]
+package_manager = ["registry.json", "community-registry.json"]
 
 [project.urls]
 Homepage = "https://github.com/udahar/PakMan"

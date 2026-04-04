@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ModLib Hot-Reload Module Loader
 

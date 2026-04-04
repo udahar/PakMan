@@ -1,10 +1,10 @@
 {
-  "_comment": "Official PakMan package registry. All packages are hosted at github.com/udahar/. Only udahar repos are trusted by the security layer â€” this is not user-configurable.",
-  "_registry_url": "https://raw.githubusercontent.com/udahar/PakMan/master/registry.json",
+  "_comment": "Official Forge package registry. All packages are hosted at github.com/udahar/. Only udahar repos are trusted by the security layer â€” this is not user-configurable.",
+  "_registry_url": "https://raw.githubusercontent.com/udahar/Forge/master/registry.json",
   "_pakman_version": "1.0.0",
   "packages": {
     "PromptSKLib": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "26 reusable AI reasoning skills and strategy scaffolds. Injected into task briefs automatically.",
       "category": "prompting",
       "tags": [
@@ -17,7 +17,7 @@
       "path": "packages/PromptSKLib"
     },
     "PromptForge": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "A/B prompt testing and prompt evolution pipeline. Benchmark prompts against each other.",
       "category": "prompting",
       "tags": [
@@ -30,7 +30,7 @@
       "path": "packages/PromptForge"
     },
     "PromptOS": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Prompt runtime with memory, routing, and state management.",
       "category": "prompting",
       "tags": [
@@ -43,7 +43,7 @@
       "path": "packages/PromptOS"
     },
     "GapMan": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Gap analysis engine. Finds what your model can't do yet and generates targeted hard tests.",
       "category": "evaluation",
       "tags": [
@@ -56,7 +56,7 @@
       "path": "packages/GapMan"
     },
     "tickets": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Lightweight ticket and task tracker for AI workflows.",
       "category": "infrastructure",
       "tags": [
@@ -69,7 +69,7 @@
       "path": "packages/tickets"
     },
     "prompt_version_control": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Git-style version control for prompts. Diff, branch, and roll back prompts.",
       "category": "prompting",
       "tags": [
@@ -82,7 +82,7 @@
       "path": "packages/prompt_version_control"
     },
     "tool_composer": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Compose multiple tools into pipelines. Chain tool calls with routing and fallback.",
       "category": "tools",
       "tags": [
@@ -95,7 +95,7 @@
       "path": "packages/tool_composer"
     },
     "Alfred.rust": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "48 Rust utility crates for high-performance AI infrastructure (fs_scan, file_hash, http_get, etc.).",
       "category": "infrastructure",
       "tags": [
@@ -108,7 +108,7 @@
       "path": "packages/Alfred.rust"
     },
     "AutoCode": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Automated code generation pipeline. Task â†’ brief â†’ code â†’ validate â†’ commit.",
       "category": "coding",
       "tags": [
@@ -121,7 +121,7 @@
       "path": "packages/AutoCode"
     },
     "OllamaOps": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Shared Ollama host control primitives for start, stop, restart, and status.",
       "category": "infrastructure",
       "tags": [
@@ -134,7 +134,7 @@
       "path": "packages/OllamaOps"
     },
     "OllamaGuard": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Shared stuck-state recovery bridge and launcher for Ollama-backed apps.",
       "category": "infrastructure",
       "tags": [
@@ -147,7 +147,7 @@
       "path": "packages/OllamaGuard"
     },
     "OllamaProxy": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Shared local Ollama reverse-proxy and queue server extracted from OllamaBot.",
       "category": "infrastructure",
       "tags": [
@@ -160,8 +160,8 @@
       "path": "packages/OllamaProxy"
     },
     "OllamaBotApp": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Parent bundle that composes the full OllamaBot app stack from PakMan modules.",
+      "repo": "github.com/udahar/Forge",
+      "description": "Parent bundle that composes the full OllamaBot app stack from Forge modules.",
       "category": "infrastructure",
       "tags": [
         "ollama",
@@ -173,7 +173,7 @@
       "path": "packages/OllamaBotApp"
     },
     "AiOSKernel": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Core kernel for AI operating system primitives â€” process model, memory model, I/O model.",
       "category": "infrastructure",
       "tags": [
@@ -186,7 +186,7 @@
       "path": "packages/AiOSKernel"
     },
     "apikey": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Secure API key management. Store, rotate, and scope API keys for AI services.",
       "category": "security",
       "tags": [
@@ -199,8 +199,8 @@
       "path": "packages/apikey"
     },
     "blueprints": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Project and app blueprints. Templates for common AI app patterns, pre-wired with PakMan.",
+      "repo": "github.com/udahar/Forge",
+      "description": "Project and app blueprints. Templates for common AI app patterns, pre-wired with Forge.",
       "category": "scaffolding",
       "tags": [
         "blueprints",
@@ -212,7 +212,7 @@
       "path": "packages/blueprints"
     },
     "Claw": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Thin CLI wrapper for Alfred AI platform.",
       "category": "tools",
       "tags": [
@@ -224,7 +224,7 @@
       "path": "packages/Claw"
     },
     "LinkedIn_Export": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Import your LinkedIn connections into Qdrant for intelligent network search and relationship mapping.",
       "category": "knowledge",
       "tags": [
@@ -237,7 +237,7 @@
       "path": "packages/LinkedIn_Export"
     },
     "LoRA": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "LoRA fine-tuning modules for Alfred platform models. Training scripts, datasets, and adapter management for local Ollama models.",
       "category": "ml",
       "tags": [
@@ -251,8 +251,8 @@
       "path": "packages/LoRA"
     },
     "MLStack": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Shared ML environment: PyTorch, TensorFlow, ONNX, PEFT, DSPy, and accelerate. Installs to ~/.pakman/venvs/ml — shared across FieldBench and other consumers.",
+      "repo": "github.com/udahar/Forge",
+      "description": "Shared ML environment: PyTorch, TensorFlow, ONNX, PEFT, DSPy, and accelerate. Installs to ~/.forge/venvs/ml — shared across FieldBench and other consumers.",
       "category": "ml",
       "tags": [
         "ml",
@@ -266,8 +266,8 @@
       "path": "packages/MLStack"
     },
     "PakHealth": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "System wellness dashboard for PakMan. Monitors package health, import status, and dependency integrity across your installed set.",
+      "repo": "github.com/udahar/Forge",
+      "description": "System wellness dashboard for Forge. Monitors package health, import status, and dependency integrity across your installed set.",
       "category": "infrastructure",
       "tags": [
         "health",
@@ -279,7 +279,7 @@
       "path": "packages/PakHealth"
     },
     "ProjMan": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "CLI tools for Alfred ProjectManager integration. Create and query projects, epics, stories, and tickets from the command line.",
       "category": "productivity",
       "tags": [
@@ -293,7 +293,7 @@
       "path": "packages/ProjMan"
     },
     "PromptRouter": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Experimental prompt routing layer. Selects the optimal prompt strategy and target model based on task type and available capacity.",
       "category": "prompting",
       "tags": [
@@ -306,7 +306,7 @@
       "path": "packages/PromptRouter"
     },
     "RomAI": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Token and vendor orchestrator: budget enforcement, circuit breaking, and cost optimization.",
       "category": "infrastructure",
       "tags": [
@@ -319,7 +319,7 @@
       "path": "packages/RomAI"
     },
     "StockAI": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "AI-powered stock analysis. Loads historical price data via yfinance, identifies patterns, and generates LLM-assisted investment recommendations.",
       "category": "finance",
       "tags": [
@@ -333,7 +333,7 @@
       "path": "packages/StockAI"
     },
     "SupDoc": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Runtime documentation engine for the Alfred ecosystem. Self-documents installed capabilities and generates live API references.",
       "category": "productivity",
       "tags": [
@@ -346,8 +346,8 @@
       "path": "packages/SupDoc"
     },
     "WikiPak": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Unified documentation generator. Reads every installed package README and builds a searchable Zola static site. Powers `pakman wiki`.",
+      "repo": "github.com/udahar/Forge",
+      "description": "Unified documentation generator. Reads every installed package README and builds a searchable Zola static site. Powers `forge wiki`.",
       "category": "knowledge",
       "tags": [
         "wiki",
@@ -359,8 +359,8 @@
       "path": "packages/WikiPak"
     },
     "ZolaPress": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Documentation and site generation utilities for ZolaPress static sites. Bridges PakMan package content into the ZolaPress CMS.",
+      "repo": "github.com/udahar/Forge",
+      "description": "Documentation and site generation utilities for ZolaPress static sites. Bridges Forge package content into the ZolaPress CMS.",
       "category": "cms",
       "tags": [
         "zola",
@@ -372,7 +372,7 @@
       "path": "packages/ZolaPress"
     },
     "BenchmarkArena": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Benchmark arena for head-to-head model evaluation. Run, score, and compare model performance.",
       "category": "evaluation",
       "tags": [
@@ -385,7 +385,7 @@
       "path": "packages/BenchmarkArena"
     },
     "BrowserMemory": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Browser-based persistent memory. Stores and retrieves context across sessions using IndexedDB.",
       "category": "memory",
       "tags": [
@@ -398,7 +398,7 @@
       "path": "packages/BrowserMemory"
     },
     "ContextCache": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Lightweight caching layer for LLM context. Avoids redundant re-computation of expensive context windows.",
       "category": "context",
       "tags": [
@@ -411,7 +411,7 @@
       "path": "packages/ContextCache"
     },
     "ContextDistiller": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Context distillation engine. Compresses long context windows into dense, relevant summaries.",
       "category": "context",
       "tags": [
@@ -424,7 +424,7 @@
       "path": "packages/ContextDistiller"
     },
     "ContextManager": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Smart context window manager. Tracks token budgets and prioritizes content for optimal LLM performance.",
       "category": "context",
       "tags": [
@@ -437,7 +437,7 @@
       "path": "packages/ContextManager"
     },
     "CostOptimizer": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Token cost optimizer. Routes tasks to cheapest capable model and enforces per-task spend limits.",
       "category": "cost",
       "tags": [
@@ -450,7 +450,7 @@
       "path": "packages/CostOptimizer"
     },
     "Council": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Multi-agent debate council. Routes a question through multiple models and synthesizes a consensus answer.",
       "category": "agents",
       "tags": [
@@ -463,7 +463,7 @@
       "path": "packages/Council"
     },
     "Courtroom": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Code review loop. Iterates generated code through a judge-model until quality gates pass.",
       "category": "agents",
       "tags": [
@@ -476,7 +476,7 @@
       "path": "packages/Courtroom"
     },
     "EvalFramework": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Evaluation framework. Define metrics, run benchmarks, and compare model outputs systematically.",
       "category": "evaluation",
       "tags": [
@@ -489,7 +489,7 @@
       "path": "packages/EvalFramework"
     },
     "ModelRouter": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Intelligent model router. Selects the best model for each task based on capability, cost, and latency.",
       "category": "routing",
       "tags": [
@@ -502,7 +502,7 @@
       "path": "packages/ModelRouter"
     },
     "MultiModelOrchestrator": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Multi-model orchestrator. Fans out tasks across multiple models and merges results.",
       "category": "agents",
       "tags": [
@@ -515,7 +515,7 @@
       "path": "packages/MultiModelOrchestrator"
     },
     "PromptEvolution": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Prompt evolution engine. Generates prompt variants, benchmarks them, and promotes winners.",
       "category": "prompting",
       "tags": [
@@ -528,7 +528,7 @@
       "path": "packages/PromptEvolution"
     },
     "PromptLibrary": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Searchable prompt library. Tag, version, and retrieve prompts by task type or keyword.",
       "category": "prompting",
       "tags": [
@@ -541,7 +541,7 @@
       "path": "packages/PromptLibrary"
     },
     "RecursiveContext": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Recursive context builder. Assembles context from nested documents with depth control.",
       "category": "context",
       "tags": [
@@ -554,7 +554,7 @@
       "path": "packages/RecursiveContext"
     },
     "Scheduler": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Task scheduler for AI workflows. Cron-like scheduling with dependency tracking and retries.",
       "category": "infrastructure",
       "tags": [
@@ -567,7 +567,7 @@
       "path": "packages/Scheduler"
     },
     "SkillComposer": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Skill composer. Chain multiple skills into DAG pipelines with branching and fallback.",
       "category": "tools",
       "tags": [
@@ -580,7 +580,7 @@
       "path": "packages/SkillComposer"
     },
     "SkillEvolver": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Skill evolver. Tests skills against benchmarks and auto-generates improved variants.",
       "category": "tools",
       "tags": [
@@ -593,7 +593,7 @@
       "path": "packages/SkillEvolver"
     },
     "SkillsFramework": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Core skills framework. Discover, load, and execute skills with a standardized interface.",
       "category": "tools",
       "tags": [
@@ -606,7 +606,7 @@
       "path": "packages/SkillsFramework"
     },
     "SkillsRegistry": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Skill registry. Central catalog of available skills with metadata and capability declarations.",
       "category": "tools",
       "tags": [
@@ -619,8 +619,8 @@
       "path": "packages/SkillsRegistry"
     },
     "ToolBuilder": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Tool builder. Scaffold new PakMan tools from spec, with type hints and tests.",
+      "repo": "github.com/udahar/Forge",
+      "description": "Tool builder. Scaffold new Forge tools from spec, with type hints and tests.",
       "category": "tools",
       "tags": [
         "tools",
@@ -632,7 +632,7 @@
       "path": "packages/ToolBuilder"
     },
     "ToolRouter": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Tool router. Selects the right tool for a given intent using semantic matching.",
       "category": "tools",
       "tags": [
@@ -645,7 +645,7 @@
       "path": "packages/ToolRouter"
     },
     "SafetySentry": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "LLM output safety guard. Reviews generated code and content before use.",
       "category": "safety",
       "tags": [
@@ -658,7 +658,7 @@
       "path": "packages/SafetySentry"
     },
     "costs": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Cost tracking and reporting. Logs per-request token costs and generates spend reports across vendors.",
       "category": "cost",
       "tags": [
@@ -671,7 +671,7 @@
       "path": "packages/costs"
     },
     "email": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Email intake integration. Auto-ingest inbound email into projects, epics, and tickets.",
       "category": "integration",
       "tags": [
@@ -684,7 +684,7 @@
       "path": "packages/email"
     },
     "telegram": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Telegram bot integration. Scout pool, chat pool, and report delivery via the Alfred Telegram bot.",
       "category": "integration",
       "tags": [
@@ -697,7 +697,7 @@
       "path": "packages/telegram"
     },
     "PatternMiner": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Pattern mining engine. Extract design patterns from repos without copying code.",
       "category": "evolution",
       "tags": [
@@ -710,7 +710,7 @@
       "path": "packages/PatternMiner"
     },
     "Mutation": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Mutation engine for package evolution. Combines fragments into package candidates.",
       "category": "evolution",
       "tags": [
@@ -722,7 +722,7 @@
       "path": "packages/Mutation"
     },
     "SanityFilter": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Quality gate for package candidates. Filters candidates before development.",
       "category": "evolution",
       "tags": [
@@ -734,7 +734,7 @@
       "path": "packages/SanityFilter"
     },
     "SpecGenerator": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Build spec generator. Creates project specifications from candidates.",
       "category": "evolution",
       "tags": [
@@ -746,7 +746,7 @@
       "path": "packages/SpecGenerator"
     },
     "Autocoder": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Code generation from specs. Generates package code automatically.",
       "category": "evolution",
       "tags": [
@@ -758,7 +758,7 @@
       "path": "packages/Autocoder"
     },
     "Bench": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Evaluation framework for package candidates. Tests and measures fitness.",
       "category": "evolution",
       "tags": [
@@ -770,7 +770,7 @@
       "path": "packages/Bench"
     },
     "AgentBazaar": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Agent discovery marketplace. Browse, register, and compose agents by capability.",
       "category": "agents",
       "tags": [
@@ -782,7 +782,7 @@
       "path": "packages/AgentBazaar"
     },
     "ApprovalGate": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Human-in-the-loop approval gate. Pauses pipelines for human review before proceeding.",
       "category": "safety",
       "tags": [
@@ -794,7 +794,7 @@
       "path": "packages/ApprovalGate"
     },
     "AudioBridge": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Local audio/voice bridge. Transcribe, synthesize, and route audio to AI pipelines.",
       "category": "modalities",
       "tags": [
@@ -807,7 +807,7 @@
       "path": "packages/AudioBridge"
     },
     "AutoDistiller": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Automated model distillation. Trains compact student models from larger teacher outputs.",
       "category": "ml",
       "tags": [
@@ -819,7 +819,7 @@
       "path": "packages/AutoDistiller"
     },
     "AutoDocGen": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Auto documentation generator. Self-documents code and packages from source.",
       "category": "productivity",
       "tags": [
@@ -831,7 +831,7 @@
       "path": "packages/AutoDocGen"
     },
     "BrowserDriver": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Browser automation driver. Controls headless browsers for web scraping and vision tasks.",
       "category": "tools",
       "tags": [
@@ -844,7 +844,7 @@
       "path": "packages/BrowserDriver"
     },
     "CodeSandbox": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Isolated code execution sandbox. Run untrusted code safely with WASM isolation.",
       "category": "execution",
       "tags": [
@@ -857,7 +857,7 @@
       "path": "packages/CodeSandbox"
     },
     "ContextCompressor": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Context window compressor. Reduces token usage by summarizing and pruning context mid-flight.",
       "category": "context",
       "tags": [
@@ -870,7 +870,7 @@
       "path": "packages/ContextCompressor"
     },
     "DocumentShredder": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Document ingestion engine. Parses, chunks, and indexes documents for RAG pipelines.",
       "category": "ingestion",
       "tags": [
@@ -883,7 +883,7 @@
       "path": "packages/DocumentShredder"
     },
     "EnvSyncer": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Environment secrets syncer. Keeps .env files consistent across services and machines.",
       "category": "infrastructure",
       "tags": [
@@ -896,7 +896,7 @@
       "path": "packages/EnvSyncer"
     },
     "FeedbackLoop": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Reinforcement feedback loop. Collects model outputs, scores them, and feeds back for improvement.",
       "category": "ml",
       "tags": [
@@ -908,7 +908,7 @@
       "path": "packages/FeedbackLoop"
     },
     "GraphMemory": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Semantic knowledge graph for AI conversational memory. SQLite-backed, zero runtime deps.",
       "category": "memory",
       "tags": [
@@ -921,8 +921,8 @@
       "path": "packages/GraphMemory"
     },
     "PakManLock": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "Deterministic lockfile manager for PakMan. Pins exact package versions for reproducible installs.",
+      "repo": "github.com/udahar/Forge",
+      "description": "Deterministic lockfile manager for Forge. Pins exact package versions for reproducible installs.",
       "category": "infrastructure",
       "tags": [
         "lockfile",
@@ -933,7 +933,7 @@
       "path": "packages/PakManLock"
     },
     "RedTeamer": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Adversarial red-teaming suite. Generates jailbreak and edge-case prompts to stress-test models.",
       "category": "safety",
       "tags": [
@@ -946,7 +946,7 @@
       "path": "packages/RedTeamer"
     },
     "SemanticCache": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Semantic response cache. Deduplicates LLM calls by embedding-similarity with configurable threshold.",
       "category": "performance",
       "tags": [
@@ -959,7 +959,7 @@
       "path": "packages/SemanticCache"
     },
     "SwarmProtocol": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Agent swarm coordination protocol. Negotiates task allocation across a pool of agents.",
       "category": "agents",
       "tags": [
@@ -972,7 +972,7 @@
       "path": "packages/SwarmProtocol"
     },
     "TerminalObserver": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Terminal session observer daemon. Monitors shell output and surfaces anomalies to the AI layer.",
       "category": "tools",
       "tags": [
@@ -985,7 +985,7 @@
       "path": "packages/TerminalObserver"
     },
     "TokenBank": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Token budget bank. Allocates, tracks, and enforces per-agent token spend limits.",
       "category": "cost",
       "tags": [
@@ -998,7 +998,7 @@
       "path": "packages/TokenBank"
     },
     "TraceLog": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Distributed trace logger. Captures and correlates spans across multi-agent pipelines.",
       "category": "observability",
       "tags": [
@@ -1011,7 +1011,7 @@
       "path": "packages/TraceLog"
     },
     "WebHooker": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Webhook integration hub. Receives, validates, and routes webhook events to AI pipelines.",
       "category": "integration",
       "tags": [
@@ -1024,7 +1024,7 @@
       "path": "packages/WebHooker"
     },
     "AnomalyEngine": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Anomaly detection engine for AI agent behavior and system metrics.",
       "category": "monitoring",
       "tags": [
@@ -1037,7 +1037,7 @@
       "path": "packages/AnomalyEngine"
     },
     "EvaluationEngine": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Flexible evaluation engine for scoring and comparing model outputs with custom metrics.",
       "category": "evaluation",
       "tags": [
@@ -1050,7 +1050,7 @@
       "path": "packages/EvaluationEngine"
     },
     "LearningTypes": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Type definitions and schemas for machine learning data pipelines.",
       "category": "ml",
       "tags": [
@@ -1063,7 +1063,7 @@
       "path": "packages/LearningTypes"
     },
     "MLUtils": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Shared ML utility helpers: normalization, metrics, and numpy wrappers.",
       "category": "ml",
       "tags": [
@@ -1076,7 +1076,7 @@
       "path": "packages/MLUtils"
     },
     "NERExtractor": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Named-entity recognition extraction pipeline for AI text analysis.",
       "category": "nlp",
       "tags": [
@@ -1089,7 +1089,7 @@
       "path": "packages/NERExtractor"
     },
     "NeuralNetworks": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Lightweight neural network building blocks and layer abstractions.",
       "category": "ml",
       "tags": [
@@ -1101,7 +1101,7 @@
       "path": "packages/NeuralNetworks"
     },
     "NLPPipeline": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "NLP text processing pipeline: tokenization, normalization, and feature extraction.",
       "category": "nlp",
       "tags": [
@@ -1114,7 +1114,7 @@
       "path": "packages/NLPPipeline"
     },
     "PredictiveAnalytics": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Predictive analytics and forecasting utilities for time-series and tabular data.",
       "category": "ml",
       "tags": [
@@ -1127,7 +1127,7 @@
       "path": "packages/PredictiveAnalytics"
     },
     "TicketExecutor": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Automated ticket executor: runs tasks from the ProjectManager ticket queue.",
       "category": "productivity",
       "tags": [
@@ -1140,7 +1140,7 @@
       "path": "packages/TicketExecutor"
     },
     "TrainValidateTest": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Train/validate/test split utilities and dataset management helpers.",
       "category": "ml",
       "tags": [
@@ -1154,7 +1154,7 @@
       "path": "packages/TrainValidateTest"
     },
     "Vision": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Vision and image processing utilities for multimodal AI pipelines.",
       "category": "modalities",
       "tags": [
@@ -1167,7 +1167,7 @@
       "path": "packages/Vision"
     },
     "ProjManSpec": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Spec generator for ProjectManager. Turns candidates into buildable build specs via debate loop.",
       "category": "productivity",
       "tags": [
@@ -1181,7 +1181,7 @@
       "path": "packages/ProjManSpec"
     },
     "RateLimit": {
-      "repo": "github.com/udahar/PakMan",
+      "repo": "github.com/udahar/Forge",
       "description": "Standalone token-bucket rate limiter. Shared across all services — vendor-proxy, Benchmark, FieldBench. Config via .env (RATELIMIT_REQUESTS_PER_SECOND, RATELIMIT_BURST).",
       "category": "infrastructure",
       "tags": [
@@ -1196,3 +1196,5 @@
     }
   }
 }
+
+

@@ -1,4 +1,4 @@
-# Contributing to PakMan
+# Contributing to Forge
 
 There are two ways to contribute packages: **official packages** (in this repo, maintained by udahar) and **community packages** (your own repo, installed with `--community`).
 
@@ -6,11 +6,11 @@ There are two ways to contribute packages: **official packages** (in this repo, 
 
 ## Community packages
 
-The fastest path. Build your package in your own repo — PakMan can install it directly.
+The fastest path. Build your package in your own repo — Forge can install it directly.
 
 ### Package structure
 
-Any Python directory with these two files is a valid PakMan package:
+Any Python directory with these two files is a valid Forge package:
 
 ```
 my_package/
@@ -22,7 +22,7 @@ my_package/
 That's the minimum. Users install it with:
 
 ```bash
-pakman install --community github.com/you/my_package
+forge install --community github.com/you/my_package
 ```
 
 The `--community` flag is required for all non-udahar sources. It shows a warning and asks for confirmation before installing. This is intentional — it keeps users aware they are stepping outside the curated set.
@@ -30,14 +30,14 @@ The `--community` flag is required for all non-udahar sources. It shows a warnin
 ### What makes a good package
 
 - **Does one thing.** A package that does one thing well is composable. A package that does everything is an app.
-- **Has a real README.** The README is what `pakman info` and `pakman wiki` surface. Write it for someone who has never seen your code.
+- **Has a real README.** The README is what `forge info` and `forge wiki` surface. Write it for someone who has never seen your code.
 - **Exports a clean `__init__.py`.** Other packages and apps import from your package. Keep the public surface intentional.
-- **No hardcoded paths.** Use `Path.home() / ".pakman"` for any persistent state, not `./` relative paths.
+- **No hardcoded paths.** Use `Path.home() / ".forge"` for any persistent state, not `./` relative paths.
 - **No network calls on import.** Imports should be instant. Connect to things inside functions, not at module level.
 
 ### Listing in the community registry
 
-If your package is stable and you want it discoverable via `pakman search`, open a pull request adding an entry to `community-registry.json`:
+If your package is stable and you want it discoverable via `forge search`, open a pull request adding an entry to `community-registry.json`:
 
 ```json
 "my_package": {

@@ -3,21 +3,21 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pakman"
+name = "forge"
 version = "1.0.0"
-description = "AI productivity package manager — install, list, and manage AI packages"
+description = "Forge AI capability manager — install, list, and manage AI packages"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [{ name = "udahar" }]
-keywords = ["ai", "package-manager", "llm", "prompt", "alfred"]
+keywords = ["ai", "package-manager", "llm", "prompt", "forge"]
 
-# Runtime deps — minimal so pakman installs without friction
+# Runtime deps — minimal so Forge installs without friction
 dependencies = []
 
 [project.scripts]
-# Entry point: the `pakman` shell command → cli.py main()
-pakman = "cli:main"
+# Primary entry point: the `forge` shell command → cli.py main()
+forge = "cli:main"
 
 [tool.setuptools]
 # Root-level modules
@@ -31,5 +31,5 @@ include = ["package_manager*"]
 package_manager = ["registry.json", "community-registry.json"]
 
 [project.urls]
-Homepage = "https://github.com/udahar/PakMan"
-Repository = "https://github.com/udahar/PakMan"
+Homepage = "https://github.com/udahar/Forge"
+Repository = "https://github.com/udahar/Forge"

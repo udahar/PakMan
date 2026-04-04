@@ -1,4 +1,4 @@
-# PakMan 📦
+# Forge 📦
 
 **Package manager for AI-native capabilities**
 
@@ -6,14 +6,14 @@ Install a capability once. Every AI app on your machine gains it automatically.
 
 No wiring. No config. Just restart the app.
 
-![PakMan Demo](./pakman_demo.png)
+![Forge Demo](./pakman_demo.png)
 
 
 ---
 
-## ⚡ What PakMan Is
+## ⚡ What Forge Is
 
-PakMan is a local-first package manager designed specifically for AI systems.
+Forge is a local-first package manager designed specifically for AI systems.
 
 It installs **capabilities** — not libraries.
 
@@ -23,7 +23,7 @@ It installs **capabilities** — not libraries.
 * Memory modules
 * Evaluation tools
 
-Once installed, any PakMan-aware app can discover and use them instantly.
+Once installed, any Forge-aware app can discover and use them instantly.
 
 ---
 
@@ -35,7 +35,7 @@ Today:
 * Nothing composes cleanly
 * Everything is duplicated
 
-PakMan fixes that.
+Forge fixes that.
 
 > Install once → reuse everywhere
 
@@ -46,32 +46,32 @@ It turns AI tools into a **modular ecosystem instead of isolated apps**.
 ## 🚀 Quick Start
 
 ```bash
-pip install git+https://github.com/udahar/PakMan.git
+pip install git+https://github.com/udahar/Forge.git
 
-pakman install PromptSKLib
-pakman install context_distiller
-pakman list
+forge install PromptSKLib
+forge install context_distiller
+forge list
 ```
 
 ---
 
 ## 🧠 How It Works
 
-PakMan installs packages into:
+Forge installs packages into:
 
 ```
-~/.pakman/
+~/.forge/
   packages/
-  pakman.db
+  forge.db
   hashes/
 ```
 
-Then PakMan-aware apps call `hotload()` on startup:
+Then Forge-aware apps call `hotload()` on startup:
 
 ```
-pakman install PromptSKLib
+forge install PromptSKLib
         ↓
-~/.pakman/packages/PromptSKLib/
+~/.forge/packages/PromptSKLib/
         ↓
 App restarts
         ↓
@@ -85,15 +85,15 @@ No imports. No config. No glue code.
 🧩 System Diagram
 
            ┌──────────────────────────────┐
-           │        PakMan CLI                       │
+           │        Forge CLI                        │
            │  (install / update / remove)            │
            └─────────────┬────────────────┘
                          │
                          ▼
                 ┌─────────────────┐
-                │ ~/.pakman/            │
+                │ ~/.forge/             │
                 │ packages/             │
-                │ pakman.db             │
+                │ forge.db              │
                 │ hashes/               │
                 └───────┬─────────┘
                         │
@@ -118,9 +118,9 @@ No imports. No config. No glue code.
 
 🔄 Flow
 
-pakman install PromptSKLib
+forge install PromptSKLib
         ↓
-~/.pakman/packages/PromptSKLib/
+~/.forge/packages/PromptSKLib/
         ↓
 App restarts
         ↓
@@ -159,7 +159,7 @@ No imports. No config. No glue code.
 ### 🧪 Health System
 
 ```bash
-pakman health
+forge health
 ```
 
 Detects broken packages and missing dependencies before runtime
@@ -170,23 +170,23 @@ Detects broken packages and missing dependencies before runtime
 
 ```bash
 # Install
-pakman install PromptSKLib
-pakman install ./local_package
+forge install PromptSKLib
+forge install ./local_package
 
 # Update
-pakman update
+forge update
 
 # Remove
-pakman remove PromptSKLib
+forge remove PromptSKLib
 
 # Search
-pakman search prompt
+forge search prompt
 
 # Inspect
-pakman info PromptSKLib
+forge info PromptSKLib
 
 # Health check
-pakman health
+forge health
 ```
 
 ---
@@ -194,7 +194,7 @@ pakman health
 ## 🔥 Example Flow
 
 ```
-pakman install cost_optimizer
+forge install cost_optimizer
         ↓
 Restart your AI app
         ↓
@@ -217,7 +217,7 @@ my_package/
 Install locally:
 
 ```bash
-pakman install ./my_package
+forge install ./my_package
 ```
 
 ---
@@ -243,20 +243,20 @@ Highlights:
 
 ## 🌐 Ecosystem
 
-PakMan is part of a larger AI-native stack:
+Forge is part of a larger AI-native stack:
 
 * **Alfred** → orchestration + execution
 * **Claw** → agent runtime
 * **Benchmark** → model scoring + ranking
 * **FieldBench** → multi-agent coordination
 
-PakMan → the capability layer that connects everything
+Forge → the capability layer that connects everything
 
 ---
 
 ## 🧨 Philosophy
 
-PakMan is built on one idea:
+Forge is built on one idea:
 
 > AI tools should be composable, not monolithic.
 

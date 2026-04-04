@@ -37,13 +37,13 @@ class PackageManager(InstallerMixin, RegistryMixin):
 
     def __init__(self, packages_dir: str = None, db_path: str = None):
         """Initialize package manager."""
-        pakman_home = Path(os.environ.get("PAKMAN_HOME", str(Path.home() / ".pakman")))
-        pakman_home.mkdir(parents=True, exist_ok=True)
+        forge_home = Path(os.environ.get("FORGE_HOME", str(Path.home() / ".forge")))
+        forge_home.mkdir(parents=True, exist_ok=True)
 
         if packages_dir:
             self.packages_dir = Path(packages_dir)
         else:
-            self.packages_dir = pakman_home / "packages"
+            self.packages_dir = forge_home / "packages"
 
         self.packages_dir.mkdir(exist_ok=True)
 
@@ -53,7 +53,7 @@ class PackageManager(InstallerMixin, RegistryMixin):
         if db_path:
             self.db_path = Path(db_path)
         else:
-            self.db_path = pakman_home / "pakman.db"
+            self.db_path = forge_home / "forge.db"
 
         self.security = get_security_manager(str(self.packages_dir), str(self.db_path))
         self.security.add_trusted_source("github.com/udahar/*")
@@ -136,7 +136,7 @@ def get_stats() -> Dict:
 
 
 # Deferred: PackageManager is initialized on first use, not on import.
-# Auto-init at import time caused CLI commands (pakman list, etc.) to hang
+# Auto-init at import time caused CLI commands (forge list, etc.) to hang
 # if any package initialization blocked or threw during module load.
 
 

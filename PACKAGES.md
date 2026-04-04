@@ -1,9 +1,9 @@
-# PakMan Package Index
+# Forge Package Index
 
 87 packages across 27 categories. Install any package with:
 
 ```bash
-pakman install <PackageName>
+forge install <PackageName>
 ```
 
 ---
@@ -64,7 +64,7 @@ pakman install <PackageName>
 | [AiOSKernel](packages/AiOSKernel/) | Core kernel for AI operating system primitives — process model, memory model, I/O model. | alpha |
 | [apikey](packages/apikey/) | Secure API key management. Store, rotate, and scope API keys for AI services. | stable |
 | [EnvSyncer](packages/EnvSyncer/) | Environment secrets syncer. Keeps .env files consistent across services and machines. | beta |
-| [PakManLock](packages/PakManLock/) | Deterministic lockfile manager for PakMan. Pins exact package versions for reproducible installs. | beta |
+| [PakManLock](packages/PakManLock/) | Deterministic lockfile manager for Forge. Pins exact package versions for reproducible installs. | beta |
 | [Scheduler](packages/Scheduler/) | Task scheduler for AI workflows. Cron-like scheduling with dependency tracking and retries. | beta |
 
 ## Ingestion
@@ -113,7 +113,7 @@ pakman install <PackageName>
 | Package | Description | Status |
 |---------|-------------|--------|
 | [AnomalyEngine](packages/AnomalyEngine/) | Anomaly detection engine for AI agent behavior and system metrics. | beta |
-| [PakHealth](packages/PakHealth/) | System wellness dashboard for PakMan. Monitors package health, import status, and dependency integrity. | beta |
+| [PakHealth](packages/PakHealth/) | System wellness dashboard for Forge. Monitors package health, import status, and dependency integrity. | beta |
 | [TerminalObserver](packages/TerminalObserver/) | Terminal session observer daemon. Monitors shell output and surfaces anomalies to the AI layer. | beta |
 | [TraceLog](packages/TraceLog/) | Distributed trace logger. Captures and correlates spans across multi-agent pipelines. | beta |
 
@@ -162,7 +162,7 @@ pakman install <PackageName>
 | [MultiModelOrchestrator](packages/MultiModelOrchestrator/) | Multi-model orchestrator. Fans out tasks across multiple models and merges results. | beta |
 | [RomAI](packages/RomAI/) | Token and vendor orchestrator: budget enforcement, circuit breaking, and cost optimization. | beta |
 | [tool_composer](packages/tool_composer/) | Compose multiple tools into pipelines. Chain tool calls with routing and fallback. | alpha |
-| [ToolBuilder](packages/ToolBuilder/) | Tool builder. Scaffold new PakMan tools from spec, with type hints and tests. | beta |
+| [ToolBuilder](packages/ToolBuilder/) | Tool builder. Scaffold new Forge tools from spec, with type hints and tests. | beta |
 | [ToolRouter](packages/ToolRouter/) | Tool router. Selects the right tool for a given intent using semantic matching. | beta |
 
 ## Safety
@@ -175,7 +175,7 @@ pakman install <PackageName>
 ## Scaffolding
 | Package | Description | Status |
 |---------|-------------|--------|
-| [blueprints](packages/blueprints/) | Project and app blueprints. Templates for common AI app patterns, pre-wired with PakMan. | alpha |
+| [blueprints](packages/blueprints/) | Project and app blueprints. Templates for common AI app patterns, pre-wired with Forge. | alpha |
 
 ## Skills
 | Package | Description | Status |

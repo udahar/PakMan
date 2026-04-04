@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-pakman - command-line interface for PakMan package manager
+forge - command-line interface for Forge capability manager
 
 Usage:
-    pakman list                     # show installed packages
-    pakman install <name|path|url>  # install a package
-    pakman remove  <name>           # uninstall a package
-    pakman update  [name]           # update one or all packages
-    pakman info    <name>           # show package details
-    pakman search  <query>          # search available and installed packages
-    pakman wiki               [--port PORT]  # build and serve unified wiki from all packages
+    forge list                     # show installed packages
+    forge install <name|path|url>  # install a package
+    forge remove  <name>           # uninstall a package
+    forge update  [name]           # update one or all packages
+    forge info    <name>           # show package details
+    forge search  <query>          # search available and installed packages
+    forge wiki               [--port PORT]  # build and serve unified wiki from all packages
 """
 
 import argparse
@@ -24,7 +24,7 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-# Allow running as `python cli.py` from the PakMan directory without install
+# Allow running as `python cli.py` from the repo without install
 sys.path.insert(0, str(Path(__file__).parent))
 
 from package_manager import PackageManager
@@ -70,7 +70,7 @@ def _resolve_source(name: str) -> tuple[str, dict | None]:
 
     Source format:
       - Full repo clone:         github.com/udahar/MyRepo
-      - Monorepo subfolder:     github.com/udahar/PakMan#packages/PromptSKLib
+      - Monorepo subfolder:     github.com/udahar/Forge#packages/PromptSKLib
       - Local path:             ./my_package  or  /abs/path
     """
     # Already a URL or local path — use as-is
@@ -99,7 +99,7 @@ def _resolve_source(name: str) -> tuple[str, dict | None]:
 
 
 def cmd_wiki(args):
-    """Build and serve unified wiki from all PakMan packages.
+    """Build and serve unified wiki from all Forge packages.
 
     Requires: Zola static site generator (https://www.getzola.org/documentation/getting-started/installation/)
     Install: winget install getzola.zola  (Windows)
@@ -112,7 +112,7 @@ def cmd_wiki(args):
     if not shutil.which("zola"):
         print(
             "  Error: Zola is not installed or not on PATH.\n"
-            "  pakman wiki requires Zola to render the documentation site.\n\n"
+            "  forge wiki requires Zola to render the documentation site.\n\n"
             "  Install Zola:\n"
             "    Windows : winget install getzola.zola\n"
             "    macOS   : brew install zola\n"
@@ -139,7 +139,7 @@ def cmd_wiki(args):
     except FileNotFoundError:
         print(
             "  Error: wikipak command not found.\n"
-            "  Run: pakman install WikiPak",
+            "  Run: forge install WikiPak",
             file=sys.stderr,
         )
         return
@@ -180,14 +180,14 @@ def cmd_list(args):
 def _print_update_notices(packages: list):
     """Quietly check for updates (cached 24h) and print a one-line notice if any."""
     try:
-        # PakMan self-update
+        # Forge self-update
         newer_pakman = check_pakman_update()
         if newer_pakman:
             print(
-                f"\n  [pakman] New version available: {PAKMAN_VERSION} -> {newer_pakman}"
+                f"\n  [forge] New version available: {PAKMAN_VERSION} -> {newer_pakman}"
             )
             print(
-                "           Run: pip install --upgrade git+https://github.com/udahar/PakMan.git"
+                "           Run: pip install --upgrade git+https://github.com/udahar/Forge.git"
             )
 
         # Package updates (packages that exist in the remote registry)
@@ -197,7 +197,7 @@ def _print_update_notices(packages: list):
                 names = ", ".join(p["name"] for p in available[:5])
                 extra = f" (+{len(available) - 5} more)" if len(available) > 5 else ""
                 print(f"\n  [packages] Updates may be available for: {names}{extra}")
-                print("             Run: pakman update")
+                print("             Run: forge update")
     except Exception:
         pass  # Never let the update check crash the main command
 
@@ -211,9 +211,9 @@ def cmd_install(args):
     if source.startswith("github.com") and not source.startswith("github.com/udahar"):
         if not community:
             print(
-                f"  Error: '{source}' is not an official PakMan package.\n"
+                f"  Error: '{source}' is not an official Forge package.\n"
                 "  Community packages require explicit opt-in:\n"
-                f"    pakman install --community {args.package}\n"
+                f"    forge install --community {args.package}\n"
                 "  Only install community packages from authors you trust.",
                 file=sys.stderr,
             )
@@ -377,11 +377,11 @@ def cmd_search(args):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="pakman",
-        description="PakMan — AI productivity package manager",
+        prog="forge",
+        description="Forge — AI capability manager",
     )
     parser.add_argument(
-        "--version", "-V", action="version", version=f"pakman {PAKMAN_VERSION}"
+        "--version", "-V", action="version", version=f"forge {PAKMAN_VERSION}"
     )
     sub = parser.add_subparsers(dest="command", metavar="<command>")
     sub.required = True

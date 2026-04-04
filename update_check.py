@@ -2,8 +2,8 @@
 """
 update_check.py
 
-Checks for available updates to PakMan itself and installed packages.
-Results are cached for 24 hours in ~/.pakman/last_check.json so the
+Checks for available updates to Forge itself and installed packages.
+Results are cached for 24 hours in ~/.forge/last_check.json so the
 check doesn't slow down every command.
 
 Design decisions:
@@ -20,8 +20,8 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 PAKMAN_VERSION = "1.0.0"
-REGISTRY_URL   = "https://raw.githubusercontent.com/udahar/PakMan/master/registry.json"
-CACHE_FILE     = Path.home() / ".pakman" / "last_check.json"
+REGISTRY_URL   = "https://raw.githubusercontent.com/udahar/Forge/master/registry.json"
+CACHE_FILE     = Path.home() / ".forge" / "last_check.json"
 CACHE_TTL_HRS  = 24
 
 
@@ -54,7 +54,7 @@ def _fetch_remote_registry() -> dict | None:
 
 
 def _load_bundled_registry() -> dict | None:
-    """Load the registry.json that shipped with this PakMan install."""
+    """Load the registry.json that shipped with this Forge install."""
     try:
         bundled = Path(__file__).parent / "registry.json"
         if bundled.exists():
@@ -87,11 +87,11 @@ def get_remote_registry(force: bool = False) -> dict | None:
     return cache.get("registry") or _load_bundled_registry()
 
 
-# ─── pakman self-version check ────────────────────────────────────────────────
+# ─── forge self-version check ─────────────────────────────────────────────────
 
 def check_pakman_update() -> str | None:
     """
-    Return the remote PakMan version string if it's newer than the installed one.
+    Return the remote Forge version string if it's newer than the installed one.
     Returns None if up to date or offline.
     """
     remote = get_remote_registry()

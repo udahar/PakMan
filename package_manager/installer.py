@@ -156,7 +156,7 @@ class InstallerMixin:
                     text=True,
                 )
                 print(
-                    f"📚 Wiki built/updated at {wiki_dir}. Run 'pakman wiki' to serve it."
+                    f"📚 Wiki built/updated at {wiki_dir}. Run 'forge wiki' to serve it."
                 )
             except Exception as e:
                 print(f"⚠️ Failed to build wiki after install: {e}")
@@ -181,7 +181,7 @@ class InstallerMixin:
 
         Supports two formats:
           github.com/udahar/MyRepo          -> "MyRepo"
-          github.com/udahar/PakMan#packages/PromptSKLib  -> "PromptSKLib"
+          github.com/udahar/Forge#packages/PromptSKLib  -> "PromptSKLib"
         """
         # Subfolder syntax: repo#path/to/subfolder  -> name is last path segment
         if "#" in url:
@@ -196,7 +196,7 @@ class InstallerMixin:
         """Clone from GitHub, or sparse-checkout a subfolder via # syntax.
 
         Full repo:   github.com/udahar/MyRepo
-        Subfolder:   github.com/udahar/PakMan#packages/PromptSKLib
+        Subfolder:   github.com/udahar/Forge#packages/PromptSKLib
         """
         if "#" in url:
             repo_url, subfolder = url.split("#", 1)

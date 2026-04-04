@@ -188,7 +188,6 @@ pakman install <PackageName>
 ## Domain-Specific
 | Package | Description | Status |
 |---------|-------------|--------|
-| [Alfred.rust](packages/Alfred.rust/) | 48 Rust utility crates for high-performance AI infrastructure (fs_scan, file_hash, http_get, etc.). | beta |
 | [BrowserDriver](packages/BrowserDriver/) | Browser automation driver. Controls headless browsers for web scraping and vision tasks. | beta |
 | [StockAI](packages/StockAI/) | AI-powered stock analysis. Pattern identification and LLM-assisted investment recommendations. | beta |
 | [ZolaPress](packages/ZolaPress/) | Documentation and site generation utilities for ZolaPress static sites. | beta |

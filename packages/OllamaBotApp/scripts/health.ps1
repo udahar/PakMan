@@ -6,7 +6,6 @@ $ErrorActionPreference = "Stop"
 
 $urls = @(
     "http://127.0.0.1:11434/api/tags",
-    "http://127.0.0.1:11435/health",
     "http://127.0.0.1:11437/api/tags",
     "http://127.0.0.1:8772/health"
 )
@@ -30,4 +29,3 @@ foreach ($url in $urls) {
 }
 
 $results | ConvertTo-Json -Depth 3
-

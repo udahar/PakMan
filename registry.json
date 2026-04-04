@@ -94,19 +94,6 @@
       "status": "alpha",
       "path": "packages/tool_composer"
     },
-    "Alfred.rust": {
-      "repo": "github.com/udahar/PakMan",
-      "description": "48 Rust utility crates for high-performance AI infrastructure (fs_scan, file_hash, http_get, etc.).",
-      "category": "infrastructure",
-      "tags": [
-        "rust",
-        "utilities",
-        "performance",
-        "infrastructure"
-      ],
-      "status": "beta",
-      "path": "packages/Alfred.rust"
-    },
     "AutoCode": {
       "repo": "github.com/udahar/PakMan",
       "description": "Automated code generation pipeline. Task â†’ brief â†’ code â†’ validate â†’ commit.",

@@ -22,7 +22,7 @@ PACKAGES_DIR = ROOT / "packages"
 REGISTRY_FILE = ROOT / "registry.json"
 
 # Packages that are not Python — skip __init__.py check
-NON_PYTHON_PACKAGES = {"Alfred.rust"}
+NON_PYTHON_PACKAGES = set()
 
 # Items in packages/ that are not packages (files, not dirs handled by iterdir already)
 # but also skip these names even if they somehow appear as dirs
@@ -62,7 +62,7 @@ def check_package(pkg_dir: Path) -> list[str]:
 def main():
     fix_mode = "--fix" in sys.argv
 
-    with open(REGISTRY_FILE) as f:
+    with open(REGISTRY_FILE, encoding="utf-8") as f:
         registry = json.load(f)
 
     # External packages live in separate repos — exclude from disk checks
@@ -120,7 +120,7 @@ def main():
             }
             print(f"  ADDED stub: {name} (category: {category})")
 
-        with open(REGISTRY_FILE, "w") as f:
+        with open(REGISTRY_FILE, "w", encoding="utf-8") as f:
             json.dump(registry, f, indent=2)
         print(f"\nRegistry updated. Review registry.json before committing.")
         print("Edit descriptions and tags — the stubs are placeholders only.")

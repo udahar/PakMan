@@ -213,7 +213,7 @@ function pushDeadLetter(entry) {
 function validateDebugKey(req, res) {
   if (!DEBUG_QUEUE_KEY) return true;
   const supplied = String(req.headers['x-ollamabot-debug-key'] || req.query?.api_key || '').trim();
-  if (supplied && supplied === DEBUG_QUEUE_KEY) return true;
+  if (supplied && crypto.timingSafeEqual(Buffer.from(supplied), Buffer.from(DEBUG_QUEUE_KEY))) return true;
   res.status(403).json({ error: 'debug_access_denied' });
   return false;
 }

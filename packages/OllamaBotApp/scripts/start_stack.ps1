@@ -24,18 +24,4 @@ if (-not $SkipGuard) {
     }
 }
 
-$listening = netstat -ano -p tcp | Select-String -Pattern "^\s*TCP\s+\S+:11435\s+\S+\s+LISTENING\s+(\d+)\s*$" | Select-Object -First 1
-if (-not $listening) {
-    $stdout = Join-Path $AppRoot "logs\ollamabot_stdout.log"
-    $stderr = Join-Path $AppRoot "logs\ollamabot_stderr.log"
-    Start-Process -FilePath node `
-        -ArgumentList "src/server.js" `
-        -WorkingDirectory $AppRoot `
-        -WindowStyle Hidden `
-        -RedirectStandardOutput $stdout `
-        -RedirectStandardError $stderr | Out-Null
-    Start-Sleep -Seconds 3
-}
-
 Write-Output "started:$AppRoot"
-
